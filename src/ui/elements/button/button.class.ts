@@ -6,11 +6,17 @@ import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/sizeCl
 import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
 import { StyleClassNameResolver } from '@/logic/classes/classNamesResolver/styleClassNamesResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
-import { JointedProps } from '@/logic/interfaces/props/jointed';
+import { Color } from '@/logic/interfaces/props/color';
+import { Common } from '@/logic/interfaces/props/common';
+import { FullWidth } from '@/logic/interfaces/props/fullwidth';
+import { Size } from '@/logic/interfaces/props/size';
+import { State } from '@/logic/interfaces/props/state';
+import { Style } from '@/logic/interfaces/props/style';
 import { container } from 'tsyringe';
 
-export class ButtonClassNameResolver<T extends JointedProps>
-  implements ClassNameFactory<T>
+export class ButtonClassNameResolver<
+  T extends Common & Color & Size & FullWidth & Style & State,
+> implements ClassNameFactory<T>
 {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const commonClass = container.resolve(CommonClassNameResolver);

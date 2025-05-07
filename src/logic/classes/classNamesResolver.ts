@@ -1,6 +1,5 @@
 import { GenericObject } from '../interfaces/genericObject';
 import { isEmpty } from 'lodash';
-import { JointedProps } from '../interfaces/props/jointed';
 import { Shape } from '../interfaces/props/shape';
 import { Ratio } from '../interfaces/props/ratio';
 import { TextColor } from '../interfaces/props/textColor';
@@ -10,9 +9,20 @@ import { TagsProps } from '@/ui/elements/tags/tags.props';
 import { Grouped } from '../interfaces/props/grouped';
 import { ClassNameFactory } from './classNameFactory';
 import { HeadingProps } from '@/ui/elements/headings/heading.props';
+import { State } from '../interfaces/props/state';
+import { Style } from '../interfaces/props/style';
+import { FullWidth } from '../interfaces/props/fullwidth';
+import { Size } from '../interfaces/props/size';
+import { Color } from '../interfaces/props/color';
+import { Common } from '../interfaces/props/common';
 
 export class ClassNameResolver<
-  T extends JointedProps &
+  T extends Common &
+    Color &
+    Size &
+    FullWidth &
+    Style &
+    State &
     Shape &
     Ratio &
     TextColor &
