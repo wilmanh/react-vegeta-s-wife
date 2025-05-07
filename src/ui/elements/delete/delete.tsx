@@ -16,7 +16,7 @@ export const Delete = <T extends AnyElement>({
 
   return (
     <Element
-      className={classNames(classesResolver.getClasses(props))}
+      className={classNames(classesResolver.prepareClasses(props))}
       nameOf='delete'
       as='button'
       key={key}

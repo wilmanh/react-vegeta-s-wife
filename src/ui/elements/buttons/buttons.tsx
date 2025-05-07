@@ -15,7 +15,7 @@ export const Buttons = ({
 }: (JSX.IntrinsicElements['p'] | JSX.IntrinsicElements['div']) &
   ButtonsProps): JSX.Element => {
   const classesResolver = container.resolve(ClassNameResolver);
-  const tagClasses = classesResolver.getClasses({ size });
+  const tagClasses = classesResolver.prepareClasses({ size });
   const asDefault = as ?? 'div';
   return (
     <Element

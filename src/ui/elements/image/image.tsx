@@ -13,7 +13,7 @@ export const Image = ({
   ...props
 }: JSX.IntrinsicElements['img'] & ImageProps): JSX.Element | undefined => {
   const classesResolver = container.resolve(ClassNameResolver);
-  const figureClasses = classesResolver.getClasses({ shape, ratio });
+  const figureClasses = classesResolver.prepareClasses({ shape, ratio });
 
   /*TODO: export to a non nextJs Project */
   return (

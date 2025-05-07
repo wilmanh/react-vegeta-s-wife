@@ -17,7 +17,7 @@ export const Progress = ({
     <progress
       className={classNames(
         'progress',
-        classesResolver.getClasses({ color, size }),
+        classesResolver.prepareClasses({ color, size }),
       )}
       {...props}
     >

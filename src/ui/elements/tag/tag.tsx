@@ -26,7 +26,7 @@ export const Tag = ({
 ) &
   TagProps): JSX.Element => {
   const classesResolver = container.resolve(ClassNameResolver);
-  const tagClasses = classesResolver.getClasses({
+  const tagClasses = classesResolver.prepareClasses({
     hoverable,
     rounded,
     color,

@@ -24,7 +24,7 @@ export const Title = ({
 ) &
   HeadingProps): JSX.Element => {
   const classesResolver = container.resolve(ClassNameResolver);
-  const tagClasses = classesResolver.getClasses({
+  const tagClasses = classesResolver.prepareClasses({
     spaced,
     hSize,
   });

@@ -8,11 +8,8 @@ import { Hoverable } from '../interfaces/props/hoverable';
 import { Delete } from '../interfaces/props/delete';
 import { TagsProps } from '@/ui/elements/tags/tags.props';
 import { Grouped } from '../interfaces/props/grouped';
-import { HeadingProps } from '@/ui/elements/heading/heading.props';
-
-interface IClassNameResolver<T> {
-  getClasses: (parameters: T) => GenericObject;
-}
+import { ClassNameFactory } from './classNameFactory';
+import { HeadingProps } from '@/ui/elements/headings/heading.props';
 
 export class ClassNameResolver<
   T extends JointedProps &
@@ -24,9 +21,9 @@ export class ClassNameResolver<
     TagsProps &
     Grouped &
     Omit<HeadingProps, 'as'>,
-> implements IClassNameResolver<T>
+> implements ClassNameFactory<T>
 {
-  getClasses: (parameters: T) => GenericObject = (parameters) => {
+  prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     if (isEmpty(parameters)) {
       return {};
     }
@@ -56,19 +53,19 @@ export class ClassNameResolver<
     } = parameters;
     const classes = {
       [`is-${color}`]: color,
+      'is-dark': dark,
+      'is-light': light,
       [`is-${shape}`]: shape,
       [`is-${hSize}`]: hSize,
       [`is-${ratio}`]: ratio,
       [`is-${size}`]: size,
       [`has-text-${textColor}`]: textColor,
       'is-grouped-multiline': multiline,
-      'is-dark': dark,
+      'is-grouped': grouped,
       'is-spaced': spaced,
       'is-delete': deleted,
       'is-hoverable': hoverable,
       'has-addons': addons,
-      'is-light': light,
-      'is-grouped': grouped,
       'is-fullwidth': fullwidth,
       'is-loading': loading,
       'is-active': active,

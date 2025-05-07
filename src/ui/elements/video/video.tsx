@@ -17,7 +17,7 @@ export const Video = ({
   | JSX.Element
   | undefined => {
   const classesResolver = container.resolve(ClassNameResolver);
-  const figureClasses = classesResolver.getClasses({ ratio });
+  const figureClasses = classesResolver.prepareClasses({ ratio });
   return (
     <figure
       key={key}

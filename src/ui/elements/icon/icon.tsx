@@ -19,7 +19,7 @@ export const Icon = ({
   Omit<ElementProps, 'nameOf'> &
   IconProps): JSX.Element | undefined => {
   const classesResolver = container.resolve(ClassNameResolver);
-  const iconClasses = classesResolver.getClasses({ textColor, size });
+  const iconClasses = classesResolver.prepareClasses({ textColor, size });
   const asDefault = as ?? 'span';
   return (
     <Element

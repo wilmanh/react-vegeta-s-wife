@@ -19,7 +19,7 @@ export const Tags = ({
 ) &
   TagsProps): JSX.Element => {
   const classesResolver = container.resolve(ClassNameResolver);
-  const tagClasses = classesResolver.getClasses({ addons });
+  const tagClasses = classesResolver.prepareClasses({ addons });
 
   return (
     <Element

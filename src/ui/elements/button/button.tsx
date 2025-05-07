@@ -11,8 +11,6 @@ import { ButtonProps } from './button.props';
 
 export const Button = <T extends AnyElement>({
   as,
-  noResponsive,
-  static: frozen,
   children,
   key,
   ...props
@@ -31,12 +29,14 @@ export const Button = <T extends AnyElement>({
     outlined,
     rounded,
     size,
+    noResponsive,
+    static: frozen,
     ...params
   } = props;
   const classes = {
     'is-responsive': !noResponsive,
     'is-static': frozen,
-    ...classesResolver.getClasses({
+    ...classesResolver.prepareClasses({
       active,
       color,
       dark,

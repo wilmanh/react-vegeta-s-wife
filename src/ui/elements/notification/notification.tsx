@@ -18,7 +18,7 @@ export const Notification = <T extends AnyElement>({
 }: PropsOf<T> & Omit<NotificationProps, 'nameOf'>): JSX.Element | undefined => {
   const classesResolver = container.resolve(ClassNameResolver);
   const classes = {
-    ...classesResolver.getClasses(props),
+    ...classesResolver.prepareClasses(props),
   };
   return (
     <Element

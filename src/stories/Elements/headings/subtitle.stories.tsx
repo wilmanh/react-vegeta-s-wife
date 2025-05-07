@@ -4,12 +4,12 @@ import { ComponentType } from 'react';
 import { argHeadingSizes } from '@/stories/Types/argHeadings';
 import { argSpaced } from '@/stories/Types/argSpaced';
 import { ArrayOfHeadingSizes } from '@/logic/types/sizes';
-import { Title } from '@/ui/elements/headings/title/title';
+import { Subtitle } from '@/ui/elements/headings/subtitle/subtitle';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Bulma/Elements/Headings/Title',
-  component: Title as ComponentType,
+  title: 'Bulma/Elements/Headings/Subtitle',
+  component: Subtitle as ComponentType,
   decorators: (Story) => (
     <div className='theme-light'>
       <Story />
@@ -33,7 +33,7 @@ const meta = {
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
-} satisfies Meta<typeof Title>;
+} satisfies Meta<typeof Subtitle>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -46,27 +46,27 @@ export const Primary: Story = {
   },
 };
 
-export const Titles: Story = {
+export const Subtitles: Story = {
   render: () => (
     <div>
-      <Title spaced hSize={1}>
-        Title 1
-      </Title>
-      <Title spaced hSize={2}>
-        Title 2
-      </Title>
-      <Title spaced hSize={3}>
-        Title 3
-      </Title>
-      <Title spaced hSize={4}>
-        Title 4
-      </Title>
-      <Title spaced hSize={5}>
-        Title 5
-      </Title>
-      <Title spaced hSize={6}>
-        Title 6
-      </Title>
+      <Subtitle spaced hSize={1}>
+        Subtitle 1
+      </Subtitle>
+      <Subtitle spaced hSize={2}>
+        Subtitle 2
+      </Subtitle>
+      <Subtitle spaced hSize={3}>
+        Subtitle 3
+      </Subtitle>
+      <Subtitle spaced hSize={4}>
+        Subtitle 4
+      </Subtitle>
+      <Subtitle spaced hSize={5}>
+        Subtitle 5
+      </Subtitle>
+      <Subtitle spaced hSize={6}>
+        Subtitle 6
+      </Subtitle>
     </div>
   ),
 };
