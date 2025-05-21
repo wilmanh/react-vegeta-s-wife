@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { container } from 'tsyringe';
-import { ClassNameResolver } from '@/logic/classes/classNamesResolver';
 import classNames from 'classnames';
 import { IconProps } from './icon.props';
 import { ElementProps } from '@/logic/interfaces/props/element';
 import { Element } from '../generic/element';
+import { IconClasses } from './icon.classes';
 
 export const Icon = ({
   as,
@@ -18,7 +18,7 @@ export const Icon = ({
 }: (JSX.IntrinsicElements['span'] | JSX.IntrinsicElements['div']) &
   Omit<ElementProps, 'nameOf'> &
   IconProps): JSX.Element | undefined => {
-  const classesResolver = container.resolve(ClassNameResolver);
+  const classesResolver = container.resolve(IconClasses);
   const iconClasses = classesResolver.prepareClasses({ textColor, size });
   const asDefault = as ?? 'span';
   return (

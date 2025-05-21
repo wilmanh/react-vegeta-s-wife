@@ -177,7 +177,7 @@ export const TagsAddons: Story = {
       <div className='control'>
         <Tags addons>
           <Tag color='danger'>Delete</Tag>
-          <Tag color='black' as='a' deleted></Tag>
+          <Tag as='a' deleted></Tag>
         </Tags>
         <Tags addons>
           <Tag color='warning'>Warning</Tag>

@@ -14,7 +14,7 @@ import { State } from '@/logic/interfaces/props/state';
 import { Style } from '@/logic/interfaces/props/style';
 import { container } from 'tsyringe';
 
-export class ButtonClassNameResolver<
+export class ButtonClasses<
   T extends Common & Color & Size & FullWidth & Style & State,
 > implements ClassNameFactory<T>
 {

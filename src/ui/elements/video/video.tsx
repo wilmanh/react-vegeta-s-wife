@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { container } from 'tsyringe';
-import { ClassNameResolver } from '@/logic/classes/classNamesResolver';
 import classNames from 'classnames';
 import { VideoProps } from './video.props';
+import { VideoClasses } from './video.classes';
 
 export const Video = ({
   key,
@@ -16,7 +16,7 @@ export const Video = ({
 }: VideoProps & PropsWithChildren & JSX.IntrinsicElements['iframe']):
   | JSX.Element
   | undefined => {
-  const classesResolver = container.resolve(ClassNameResolver);
+  const classesResolver = container.resolve(VideoClasses);
   const figureClasses = classesResolver.prepareClasses({ ratio });
   return (
     <figure

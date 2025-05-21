@@ -4,10 +4,10 @@ import { JSX } from 'react';
 import { Element } from '../generic/element';
 import { PropsOf } from '@/logic/types/propsOf';
 import { container } from 'tsyringe';
-import { ClassNameResolver } from '@/logic/classes/classNamesResolver';
 import classNames from 'classnames';
 import { Delete } from '../delete/delete';
 import { NotificationProps } from './notification.props';
+import { NotificationClasses } from './notification.classes';
 
 export const Notification = <T extends AnyElement>({
   as,
@@ -16,7 +16,7 @@ export const Notification = <T extends AnyElement>({
   onClose,
   ...props
 }: PropsOf<T> & Omit<NotificationProps, 'nameOf'>): JSX.Element | undefined => {
-  const classesResolver = container.resolve(ClassNameResolver);
+  const classesResolver = container.resolve(NotificationClasses);
   const classes = {
     ...classesResolver.prepareClasses(props),
   };

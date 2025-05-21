@@ -1,10 +1,10 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { container } from 'tsyringe';
-import { ClassNameResolver } from '@/logic/classes/classNamesResolver';
 import classNames from 'classnames';
 import { HeadingProps } from '../heading.props';
 import { Element } from '../../generic/element';
+import { HeadingClassNameResolver } from '@/logic/classes/classNamesResolver/headingClassNamesResolver';
 
 export const Subtitle = ({
   className,
@@ -23,7 +23,7 @@ export const Subtitle = ({
   | JSX.IntrinsicElements['h6']
 ) &
   HeadingProps): JSX.Element => {
-  const classesResolver = container.resolve(ClassNameResolver);
+  const classesResolver = container.resolve(HeadingClassNameResolver);
   const tagClasses = classesResolver.prepareClasses({
     spaced,
     hSize,

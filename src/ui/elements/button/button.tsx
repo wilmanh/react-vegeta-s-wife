@@ -3,11 +3,11 @@ import { AnyElement } from '@/logic/types/anyElement';
 import classNames from 'classnames';
 import { InputType } from './buttonType';
 import { container } from 'tsyringe';
-import { ClassNameResolver } from '@/logic/classes/classNamesResolver';
 import { Element } from '../generic/element';
 import { ElementProps } from '@/logic/interfaces/props/element';
 import { PropsOf } from '@/logic/types/propsOf';
 import { ButtonProps } from './button.props';
+import { ButtonClasses } from './button.classes';
 
 export const Button = <T extends AnyElement>({
   as,
@@ -15,7 +15,7 @@ export const Button = <T extends AnyElement>({
   key,
   ...props
 }: PropsOf<T> & Omit<ElementProps, 'nameOf'> & ButtonProps) => {
-  const classesResolver = container.resolve(ClassNameResolver);
+  const classesResolver = container.resolve(ButtonClasses);
   const {
     active,
     color,

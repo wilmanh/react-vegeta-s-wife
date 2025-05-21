@@ -29,3 +29,10 @@ export const Primary: Story = {
     src: 'https://placehold.co/400x400.png',
   },
 };
+
+export const Rounded: Story = {
+  args: {
+    src: 'https://placehold.co/400x400.png',
+    isRounded: true,
+  },
+};

@@ -1,10 +1,10 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { container } from 'tsyringe';
-import { ClassNameResolver } from '@/logic/classes/classNamesResolver';
 import classNames from 'classnames';
 import { TagProps } from './tag.props';
 import { Element } from '../generic/element';
+import { TagClasses } from './tag.classes';
 
 export const Tag = ({
   hoverable,
@@ -25,7 +25,7 @@ export const Tag = ({
   | JSX.IntrinsicElements['button']
 ) &
   TagProps): JSX.Element => {
-  const classesResolver = container.resolve(ClassNameResolver);
+  const classesResolver = container.resolve(TagClasses);
   const tagClasses = classesResolver.prepareClasses({
     hoverable,
     rounded,
