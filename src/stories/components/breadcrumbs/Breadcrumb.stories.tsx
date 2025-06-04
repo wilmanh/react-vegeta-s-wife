@@ -10,7 +10,11 @@ import { GrBug } from 'react-icons/gr';
 const meta = {
   title: 'Bulma/Components/Breadcrumbs',
   component: Breadcrumb as ComponentType,
-
+  decorators: (Story) => (
+    <div className='theme-light'>
+      <Story />
+    </div>
+  ),
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes

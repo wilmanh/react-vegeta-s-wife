@@ -19,6 +19,11 @@ import { JSX } from 'react/jsx-runtime';
 const meta = {
   title: 'Bulma/Elements/Tag',
   component: Tag as ComponentType,
+  decorators: (Story) => (
+    <div className='theme-light'>
+      <Story />
+    </div>
+  ),
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',

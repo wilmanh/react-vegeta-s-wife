@@ -1,17 +1,25 @@
 import Card from '@/ui/components/card/card';
 import CardContent from '@/ui/components/card/content/content';
+import CardFooter from '@/ui/components/card/footer/footer';
+import CardHeader from '@/ui/components/card/header/header';
 import CardImage from '@/ui/components/card/image/image';
 import { Content } from '@/ui/elements/content/content';
+import { Icon } from '@/ui/elements/icon/icon';
 import { Image } from '@/ui/elements/image/image';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { ComponentType } from 'react';
+import { LiaAngleDownSolid } from 'react-icons/lia';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Components/Card',
   component: Card as ComponentType,
-
+  decorators: (Story) => (
+    <div className='theme-light'>
+      <Story />
+    </div>
+  ),
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -32,7 +40,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Example: Story = {
   args: {
     children: (
       <>
@@ -65,6 +73,40 @@ export const Primary: Story = {
             <time dateTime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
           </Content>
         </CardContent>
+      </>
+    ),
+  },
+};
+
+export const Example1: Story = {
+  args: {
+    children: (
+      <>
+        <CardHeader
+          title='Component'
+          icon={
+            <Icon>
+              <LiaAngleDownSolid size={'large'} />
+            </Icon>
+          }
+        ></CardHeader>
+
+        <CardContent>
+          <Content>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            nec iaculis mauris. <a>@bulmaio</a>. <a href='#'>#css</a>
+            <a href='#'>#responsive</a>
+            <br />
+            <time dateTime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+          </Content>
+        </CardContent>
+        <CardFooter
+          items={[
+            { id: 'item-1', value: 'Save' },
+            { id: 'item-2', value: 'Edit' },
+            { id: 'item-3', value: 'Cance;' },
+          ]}
+        ></CardFooter>
       </>
     ),
   },

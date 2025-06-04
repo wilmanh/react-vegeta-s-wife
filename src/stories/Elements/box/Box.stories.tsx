@@ -7,7 +7,11 @@ import { ComponentType } from 'react';
 const meta = {
   title: 'Bulma/Elements/Box',
   component: Box as ComponentType,
-
+  decorators: (Story) => (
+    <div className='theme-light'>
+      <Story />
+    </div>
+  ),
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',

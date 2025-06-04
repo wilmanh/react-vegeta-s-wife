@@ -11,6 +11,11 @@ import { argSizes } from '@/stories/Types/argSizes';
 const meta = {
   title: 'Bulma/Elements/Icon',
   component: Icon as ComponentType,
+  decorators: (Story) => (
+    <div className='theme-light'>
+      <Story />
+    </div>
+  ),
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',

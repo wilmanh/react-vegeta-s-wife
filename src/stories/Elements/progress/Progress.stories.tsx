@@ -9,16 +9,15 @@ import { argSizes } from '@/stories/Types/argSizes';
 const meta = {
   title: 'Bulma/Elements/Progress',
   component: Progress as ComponentType,
+  decorators: (Story) => (
+    <div style={{ width: '20em' }} className='theme-light'>
+      <Story />
+    </div>
+  ),
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-  decorators: (Story) => (
-    <div style={{ width: '20em' }}>
-      <Story />
-    </div>
-  ),
-
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes

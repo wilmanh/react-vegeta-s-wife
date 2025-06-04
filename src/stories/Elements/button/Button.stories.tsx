@@ -19,6 +19,11 @@ import { Buttons } from '@/ui/elements/buttons/buttons';
 const meta = {
   title: 'Bulma/Elements/Button',
   component: Button as ComponentType,
+  decorators: (Story) => (
+    <div className='theme-light'>
+      <Story />
+    </div>
+  ),
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',

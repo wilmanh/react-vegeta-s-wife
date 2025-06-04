@@ -14,7 +14,7 @@ const CardHeader = ({
   return (
     <Element nameOf='card-header' as='header' {...props}>
       {title ? (
-        <Element nameOf='card-header-header' as='p'>
+        <Element nameOf='card-header-title' as='p'>
           {title}
         </Element>
       ) : null}
@@ -23,7 +23,9 @@ const CardHeader = ({
           nameOf='card-header-icon'
           aria-label='more options'
           as='button'
-        ></Element>
+        >
+          {icon}
+        </Element>
       ) : null}
     </Element>
   );
