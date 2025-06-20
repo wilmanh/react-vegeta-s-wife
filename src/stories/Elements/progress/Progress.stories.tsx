@@ -1,6 +1,6 @@
 import { Progress } from '@/ui/elements/progress/progress';
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
 import { argColors } from '@/stories/Types/argColors';
 import { argSizes } from '@/stories/Types/argSizes';

@@ -2,8 +2,8 @@ import { argColors } from '@/stories/Types/argColors';
 import { argSizes } from '@/stories/Types/argSizes';
 import { Tag } from '@/ui/elements/tag/tag';
 import { Delete as Del } from '@/ui/elements/delete/delete';
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,

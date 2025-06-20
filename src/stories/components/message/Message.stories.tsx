@@ -4,7 +4,8 @@ import { argSizes } from '@/stories/Types/argSizes';
 import Message from '@/ui/components/message/message';
 import MessageBody from '@/ui/components/message/messageBody/messageBody';
 import MessageHeader from '@/ui/components/message/messageHeader/messageHeader';
-import type { Meta, StoryObj } from '@storybook/react';
+import { Delete } from '@/ui/elements/delete/delete';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -37,6 +38,7 @@ export const Example: Story = {
       <>
         <MessageHeader>
           <p>Hello World</p>
+          <Delete />
         </MessageHeader>
         <MessageBody>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.

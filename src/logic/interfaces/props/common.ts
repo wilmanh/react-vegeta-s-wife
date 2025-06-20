@@ -1,4 +1,4 @@
 export interface Common {
-    disabled?: boolean;
-    loading?: boolean;
+  disabled?: boolean;
+  loading?: boolean;
 }

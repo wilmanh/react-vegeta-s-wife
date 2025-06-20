@@ -1,4 +1,4 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 import "../src/assets/styles/bulma.scss";
 const preview: Preview = {
   parameters: {

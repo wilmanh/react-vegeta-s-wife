@@ -1,4 +1,4 @@
-import { Args, ArgTypes } from "@storybook/react";
+import { Args, ArgTypes } from "@storybook/react-vite";
 
 export const argStyles: Partial<ArgTypes<Args>> = {
   outlined: { control: "boolean" },

@@ -1,4 +1,4 @@
-import { Args, ArgTypes } from '@storybook/react';
+import { Args, ArgTypes } from '@storybook/react-vite';
 import { ArrayOfColors, ArrayOfOnlyColors } from '../../logic/types/colors';
 
 export const argColors: Partial<ArgTypes<Args>> = {

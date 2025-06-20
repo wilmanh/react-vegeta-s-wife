@@ -6,8 +6,8 @@ import CardImage from '@/ui/components/card/image/image';
 import { Content } from '@/ui/elements/content/content';
 import { Icon } from '@/ui/elements/icon/icon';
 import { Image } from '@/ui/elements/image/image';
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
 import { LiaAngleDownSolid } from 'react-icons/lia';
 

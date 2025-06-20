@@ -1,6 +1,6 @@
 import { Button } from '@/ui/elements/button/button';
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
 import { Icon } from '@/ui/elements/icon/icon';
 import { GrBug } from 'react-icons/gr';

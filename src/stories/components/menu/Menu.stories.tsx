@@ -2,7 +2,7 @@ import Menu from '@/ui/components/menu/menu';
 import MenuLabel from '@/ui/components/menu/menu-label/menu-label';
 import MenuItem from '@/ui/components/menu/menu-list/menu-item/menu-item';
 import MenuList from '@/ui/components/menu/menu-list/menu-list';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

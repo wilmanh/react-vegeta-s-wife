@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { fn } from 'storybook/test';
 import { Icon } from '@/ui/elements/icon/icon';
 import { GrBug } from 'react-icons/gr';
 import { ComponentType } from 'react';
