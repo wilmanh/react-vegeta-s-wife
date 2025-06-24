@@ -5,7 +5,7 @@ import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { CrumbProps } from './crumb.props';
-import { CrumbClasses } from './crumb.classes';
+import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
 
 export const Crumb = ({
   children,
@@ -16,7 +16,7 @@ export const Crumb = ({
 }: JSX.IntrinsicElements['li'] &
   Omit<ElementProps, 'nameOf'> &
   CrumbProps): JSX.Element => {
-  const classesResolver = container.resolve(CrumbClasses);
+  const classesResolver = container.resolve(StateClassNameResolver);
   const classes = classesResolver.prepareClasses({ active });
   return (
     <Element

@@ -2,34 +2,33 @@ import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/logic/interfaces/props/element';
 import { Element } from '@/ui/elements/generic/element';
-import Background from './background/background';
-import { container } from 'tsyringe';
-import { State } from '@/logic/interfaces/props/state';
-import classNames from 'classnames';
+import { TabsTabProps } from './tabsTab.props';
 import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
+import { container } from 'tsyringe';
+import classNames from 'classnames';
 
-const Modal = ({
+const Tab = ({
   children,
-  className,
   active,
+  className,
+  anchorProps,
   ...props
-}: JSX.IntrinsicElements['div'] &
+}: JSX.IntrinsicElements['li'] &
   PropsWithChildren &
-  Omit<State, 'focus' | 'hover'> &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+  TabsTabProps &
+  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
   const classesResolver = container.resolve(StateClassNameResolver);
   const classes = classesResolver.prepareClasses({ active });
   return (
     <Element
-      className={classNames(classes, className)}
-      nameOf='modal'
-      as={'div'}
+      className={classNames(className, classes)}
+      nameOf='tab'
+      as={'li'}
       {...props}
     >
-      <Background />
-      {children}
+      <a {...anchorProps}>{children}</a>
     </Element>
   );
 };
 
-export default Modal;
+export default Tab;

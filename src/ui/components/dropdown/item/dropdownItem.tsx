@@ -3,9 +3,9 @@ import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/logic/interfaces/props/element';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
-import { DropdownItemClasses } from './dropdownItem.classes';
 import { DropdownItemProps } from './dropdownItem.props';
 import classNames from 'classnames';
+import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
 
 const DropdownItem = ({
   as,
@@ -17,7 +17,7 @@ const DropdownItem = ({
   Omit<ElementProps, 'nameOf'> &
   DropdownItemProps &
   PropsWithChildren): JSX.Element => {
-  const classesResolver = container.resolve(DropdownItemClasses);
+  const classesResolver = container.resolve(StateClassNameResolver);
   const classes = classesResolver.prepareClasses({
     active,
   });

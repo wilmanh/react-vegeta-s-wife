@@ -4,23 +4,25 @@ import { ElementProps } from '@/logic/interfaces/props/element';
 import { Element } from '@/ui/elements/generic/element';
 import { MenuItemProps } from './menu-item.props';
 import classNames from 'classnames';
+import { container } from 'tsyringe';
+import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
 
 const MenuItem = ({
-  href,
-  onClick,
   children,
+  className,
   active,
   ...props
-}: JSX.IntrinsicElements['li'] &
+}: JSX.IntrinsicElements['a'] &
   PropsWithChildren &
   MenuItemProps &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
-  const classes = {
-    ['is-active']: active,
-  };
+  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  const classesResolver = container.resolve(StateClassNameResolver);
+  const classes = classesResolver.prepareClasses({
+    active,
+  });
   return (
-    <Element as={'li'} {...props}>
-      <a className={classNames(classes)} href={href} onClick={onClick}>
+    <Element as={'li'}>
+      <a className={classNames(className, classes)} {...props}>
         {children}
       </a>
     </Element>

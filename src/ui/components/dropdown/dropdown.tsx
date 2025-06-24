@@ -37,7 +37,6 @@ const Dropdown = ({
     right,
     up,
   });
-
   const colorClasses = colorClassesResolver.prepareClasses({
     color,
     light,
