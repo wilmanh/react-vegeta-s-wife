@@ -21,7 +21,7 @@ const MenuItem = ({
     active,
   });
   return (
-    <Element as={'li'}>
+    <Element nameOf='' as={'li'}>
       <a className={classNames(className, classes)} {...props}>
         {children}
       </a>
