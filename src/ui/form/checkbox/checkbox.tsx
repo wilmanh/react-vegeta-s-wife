@@ -1,0 +1,51 @@
+import 'reflect-metadata';
+import { JSX } from 'react';
+import { ElementProps } from '@/logic/interfaces/props/element';
+import { Element } from '@/ui/elements/generic/element';
+import { container } from 'tsyringe';
+import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/inputClassNamesResolver';
+import classNames from 'classnames';
+import { Color } from '@/logic/interfaces/props/color';
+import { Size } from '@/logic/interfaces/props/size';
+
+const Checkbox = ({
+  className,
+  color,
+  size,
+  children,
+  ...props
+}: Color &
+  Size &
+  JSX.IntrinsicElements['input'] &
+  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  const inputClasses = container.resolve(InputClassNameResolver);
+  return (
+    <label
+      className={classNames(
+        'b-checkbox',
+        'checkbox',
+        inputClasses.prepareClasses({
+          size,
+        }),
+      )}
+    >
+      <Element
+        {...props}
+        className={classNames(className)}
+        as={'input'}
+        type='checkbox'
+      />
+      <span
+        className={classNames(
+          'check',
+          inputClasses.prepareClasses({
+            color,
+          }),
+        )}
+      ></span>
+      <span className='control-label'>{children}</span>
+    </label>
+  );
+};
+
+export default Checkbox;

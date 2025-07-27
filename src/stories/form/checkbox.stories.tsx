@@ -2,15 +2,15 @@ import { argSizes } from '@/stories/Types/argSizes';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType, JSX } from 'react';
 import { argColors } from '../Types/argColors';
-import Radio from '@/ui/form/radio/radio';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
 import { ElementProps } from '@/logic/interfaces/props/element';
+import Checkbox from '@/ui/form/checkbox/checkbox';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Bulma/Form/Radio',
-  component: Radio as ComponentType,
+  title: 'Bulma/Form/Checkbox',
+  component: Checkbox as ComponentType,
   decorators: (Story) => (
     <div style={{ margin: '1rem' }} className='theme-dark'>
       <Story />
@@ -26,7 +26,7 @@ const meta = {
     ...argColors,
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-} satisfies Meta<typeof Radio>;
+} satisfies Meta<typeof Checkbox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -41,14 +41,14 @@ export const Primary: Story = {
   render: (args: ArgsProps) => (
     <>
       <div className='field'>
-        <Radio {...args} name='radiostorybook'>
+        <Checkbox {...args} name='radiostorybook'>
           Selected
-        </Radio>
+        </Checkbox>
       </div>
       <div className='field'>
-        <Radio {...args} name='radiostorybook'>
+        <Checkbox {...args} name='radiostorybook'>
           Unselected
-        </Radio>
+        </Checkbox>
       </div>
       {/* <div className='field'>
         <label className='switch'>
@@ -72,24 +72,24 @@ export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
       <div className='field'>
-        <Radio {...args} name='radiostorybook2' size='small'>
+        <Checkbox {...args} name='radiostorybook2' size='small'>
           Small
-        </Radio>
+        </Checkbox>
       </div>
       <div className='field'>
-        <Radio {...args} name='radiostorybook2'>
+        <Checkbox {...args} name='radiostorybook2'>
           Deafault
-        </Radio>
+        </Checkbox>
       </div>
       <div className='field'>
-        <Radio {...args} name='radiostorybook2' size='medium'>
+        <Checkbox {...args} name='radiostorybook2' size='medium'>
           Medium
-        </Radio>
+        </Checkbox>
       </div>
       <div className='field'>
-        <Radio {...args} name='radiostorybook2' size='large'>
+        <Checkbox {...args} name='radiostorybook2' size='large'>
           Large
-        </Radio>
+        </Checkbox>
       </div>
     </>
   ),
@@ -99,29 +99,29 @@ export const Colors: Story = {
   render: (args: ArgsProps) => (
     <>
       <div className='field'>
-        <Radio {...args} checked name='default'>
+        <Checkbox {...args} checked name='default'>
           Small
-        </Radio>
+        </Checkbox>
       </div>
       <div className='field'>
-        <Radio {...args} checked name='info' color='info'>
+        <Checkbox {...args} checked name='info' color='info'>
           Deafault
-        </Radio>
+        </Checkbox>
       </div>
       <div className='field'>
-        <Radio {...args} checked name='succcess' color='success'>
+        <Checkbox {...args} checked name='succcess' color='success'>
           Medium
-        </Radio>
+        </Checkbox>
       </div>
       <div className='field'>
-        <Radio {...args} checked name='warning' color='warning'>
+        <Checkbox {...args} checked name='warning' color='warning'>
           Large
-        </Radio>
+        </Checkbox>
       </div>
       <div className='field'>
-        <Radio {...args} checked name='danger' color='danger'>
+        <Checkbox {...args} checked name='danger' color='danger'>
           Large
-        </Radio>
+        </Checkbox>
       </div>
     </>
   ),

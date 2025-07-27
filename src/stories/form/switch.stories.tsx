@@ -2,15 +2,15 @@ import { argSizes } from '@/stories/Types/argSizes';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType, JSX } from 'react';
 import { argColors } from '../Types/argColors';
-import Radio from '@/ui/form/radio/radio';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
 import { ElementProps } from '@/logic/interfaces/props/element';
+import Switch from '@/ui/form/switch/switch';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Bulma/Form/Radio',
-  component: Radio as ComponentType,
+  title: 'Bulma/Form/Switch',
+  component: Switch as ComponentType,
   decorators: (Story) => (
     <div style={{ margin: '1rem' }} className='theme-dark'>
       <Story />
@@ -26,7 +26,7 @@ const meta = {
     ...argColors,
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-} satisfies Meta<typeof Radio>;
+} satisfies Meta<typeof Switch>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -41,28 +41,14 @@ export const Primary: Story = {
   render: (args: ArgsProps) => (
     <>
       <div className='field'>
-        <Radio {...args} name='radiostorybook'>
+        <Switch {...args} name='radiostorybook'>
           Selected
-        </Radio>
+        </Switch>
       </div>
       <div className='field'>
-        <Radio {...args} name='radiostorybook'>
+        <Switch {...args} isRounded name='radiostorybook'>
           Unselected
-        </Radio>
-      </div>
-      {/* <div className='field'>
-        <label className='switch'>
-          <input type='checkbox' />
-          <span className='check'></span>
-          <span className='control-label'></span>
-        </label>
-      </div> */}
-      <div className='field'>
-        <label className='b-checkbox checkbox'>
-          <input type='checkbox' />
-          <span className='check'></span>
-          <span className='control-label'>Basic</span>
-        </label>
+        </Switch>
       </div>
     </>
   ),
@@ -72,24 +58,24 @@ export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
       <div className='field'>
-        <Radio {...args} name='radiostorybook2' size='small'>
+        <Switch {...args} name='radiostorybook2' size='small'>
           Small
-        </Radio>
+        </Switch>
       </div>
       <div className='field'>
-        <Radio {...args} name='radiostorybook2'>
+        <Switch {...args} name='radiostorybook2'>
           Deafault
-        </Radio>
+        </Switch>
       </div>
       <div className='field'>
-        <Radio {...args} name='radiostorybook2' size='medium'>
+        <Switch {...args} name='radiostorybook2' size='medium'>
           Medium
-        </Radio>
+        </Switch>
       </div>
       <div className='field'>
-        <Radio {...args} name='radiostorybook2' size='large'>
+        <Switch {...args} name='radiostorybook2' size='large'>
           Large
-        </Radio>
+        </Switch>
       </div>
     </>
   ),
@@ -99,29 +85,29 @@ export const Colors: Story = {
   render: (args: ArgsProps) => (
     <>
       <div className='field'>
-        <Radio {...args} checked name='default'>
+        <Switch {...args} checked name='default'>
           Small
-        </Radio>
+        </Switch>
       </div>
       <div className='field'>
-        <Radio {...args} checked name='info' color='info'>
+        <Switch {...args} checked name='info' color='info'>
           Deafault
-        </Radio>
+        </Switch>
       </div>
       <div className='field'>
-        <Radio {...args} checked name='succcess' color='success'>
+        <Switch {...args} checked name='succcess' color='success'>
           Medium
-        </Radio>
+        </Switch>
       </div>
       <div className='field'>
-        <Radio {...args} checked name='warning' color='warning'>
+        <Switch {...args} checked name='warning' color='warning'>
           Large
-        </Radio>
+        </Switch>
       </div>
       <div className='field'>
-        <Radio {...args} checked name='danger' color='danger'>
+        <Switch {...args} checked name='danger' color='danger'>
           Large
-        </Radio>
+        </Switch>
       </div>
     </>
   ),

@@ -1,8 +1,8 @@
-@use 'variables.scss' as v;
+@use 'sass:list';
+@use '../common/variables' as v;
 @use 'bulma/sass/utilities/initial-variables' as c;
 @use 'bulma/sass/utilities/controls' as co;
 @use 'bulma/sass/utilities/extends';
-@use 'sass:list';
 
 .b-radio {
   &.radio {
