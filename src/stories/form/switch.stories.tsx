@@ -64,7 +64,7 @@ export const Sizes: Story = {
       </div>
       <div className='field'>
         <Switch {...args} name='radiostorybook2'>
-          Deafault
+          Default
         </Switch>
       </div>
       <div className='field'>
@@ -91,7 +91,7 @@ export const Colors: Story = {
       </div>
       <div className='field'>
         <Switch {...args} checked name='info' color='info'>
-          Deafault
+          Default
         </Switch>
       </div>
       <div className='field'>
@@ -100,12 +100,58 @@ export const Colors: Story = {
         </Switch>
       </div>
       <div className='field'>
-        <Switch {...args} checked name='warning' color='warning'>
+        <Switch {...args} isRounded checked name='warning' color='warning'>
           Large
         </Switch>
       </div>
       <div className='field'>
-        <Switch {...args} checked name='danger' color='danger'>
+        <Switch {...args} isRounded checked name='danger' color='danger'>
+          Large
+        </Switch>
+      </div>
+    </>
+  ),
+};
+
+export const Outlined: Story = {
+  render: (args: ArgsProps) => (
+    <>
+      <div className='field'>
+        <Switch outlined {...args} checked name='default'>
+          Small
+        </Switch>
+      </div>
+      <div className='field'>
+        <Switch outlined {...args} checked name='info' color='info'>
+          Default
+        </Switch>
+      </div>
+      <div className='field'>
+        <Switch outlined {...args} checked name='succcess' color='success'>
+          Medium
+        </Switch>
+      </div>
+      <div className='field'>
+        <Switch
+          outlined
+          isRounded
+          {...args}
+          checked
+          name='warning'
+          color='warning'
+        >
+          Large
+        </Switch>
+      </div>
+      <div className='field'>
+        <Switch
+          outlined
+          isRounded
+          {...args}
+          checked
+          name='danger'
+          color='danger'
+        >
           Large
         </Switch>
       </div>

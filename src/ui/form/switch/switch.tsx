@@ -8,26 +8,32 @@ import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
 import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/roundedClassNamesResolver';
-import { IsRounded } from '@/logic/interfaces/props/style';
+import { IsRounded, Style } from '@/logic/interfaces/props/style';
+import { StyleClassNameResolver } from '@/logic/classes/classNamesResolver/styleClassNamesResolver';
 
 const Switch = ({
   className,
   color,
   isRounded,
   size,
+  outlined,
   children,
   ...props
 }: Color &
   Size &
+  Pick<Style, 'outlined'> &
+  Style &
   IsRounded &
   JSX.IntrinsicElements['input'] &
   Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
   const inputClasses = container.resolve(InputClassNameResolver);
+  const styleClasses = container.resolve(StyleClassNameResolver);
   const roundedResolver = container.resolve(RoundedClassNameResolver);
   return (
     <label
       className={classNames(
         'switch',
+        styleClasses.prepareClasses({ outlined }),
         roundedResolver.prepareClasses({ isRounded }),
         inputClasses.prepareClasses({
           size,
