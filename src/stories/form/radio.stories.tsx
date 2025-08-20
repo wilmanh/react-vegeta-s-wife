@@ -50,20 +50,6 @@ export const Primary: Story = {
           Unselected
         </Radio>
       </div>
-      {/* <div className='field'>
-        <label className='switch'>
-          <input type='checkbox' />
-          <span className='check'></span>
-          <span className='control-label'></span>
-        </label>
-      </div> */}
-      <div className='field'>
-        <label className='b-checkbox checkbox'>
-          <input type='checkbox' />
-          <span className='check'></span>
-          <span className='control-label'>Basic</span>
-        </label>
-      </div>
     </>
   ),
 };
@@ -78,7 +64,7 @@ export const Sizes: Story = {
       </div>
       <div className='field'>
         <Radio {...args} name='radiostorybook2'>
-          Deafault
+          Default
         </Radio>
       </div>
       <div className='field'>
@@ -105,7 +91,7 @@ export const Colors: Story = {
       </div>
       <div className='field'>
         <Radio {...args} checked name='info' color='info'>
-          Deafault
+          Default
         </Radio>
       </div>
       <div className='field'>
