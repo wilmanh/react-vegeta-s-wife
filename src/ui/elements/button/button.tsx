@@ -57,7 +57,7 @@ export const Button = <T extends AnyElement>({
   const child = !inputType ? children : undefined;
   const value = inputType ? children : undefined;
   if (frozen) {
-    return <span className={classNames(classes)}>{child}</span>;
+    return <span className={classNames('button', classes)}>{child}</span>;
   }
 
   return (

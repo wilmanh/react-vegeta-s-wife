@@ -10,16 +10,23 @@ import { IconClasses } from './icon.classes';
 export const Icon = ({
   as,
   text,
+  size,
+  left,
+  right,
   children,
   className,
-  size,
   textColor,
   ...props
 }: (JSX.IntrinsicElements['span'] | JSX.IntrinsicElements['div']) &
   Omit<ElementProps, 'nameOf'> &
   IconProps): JSX.Element | undefined => {
   const classesResolver = container.resolve(IconClasses);
-  const iconClasses = classesResolver.prepareClasses({ textColor, size });
+  const iconClasses = classesResolver.prepareClasses({
+    textColor,
+    size,
+    left,
+    right,
+  });
   const asDefault = as ?? 'span';
   return (
     <Element

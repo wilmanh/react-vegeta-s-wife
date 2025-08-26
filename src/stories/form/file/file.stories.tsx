@@ -1,16 +1,17 @@
 import { argSizes } from '@/stories/Types/argSizes';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
-import { argColors } from '../Types/argColors';
 import File from '@/ui/form/file/file';
 import { FileProps } from '@/ui/form/file/file.props';
+import { argColors } from '@/stories/Types/argColors';
+import Field from '@/ui/form/field/field';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Form/File',
   component: File as ComponentType,
   decorators: (Story) => (
-    <div style={{ margin: '1rem' }} className='theme-light'>
+    <div style={{ padding: '1rem' }} className='theme-light'>
       <Story />
     </div>
   ),
@@ -79,21 +80,21 @@ type ArgsProps = FileProps;
 export const Colors: Story = {
   render: (args: ArgsProps) => (
     <>
-      <div className='field'>
+      <Field>
         <File {...args} name='default' />
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <File {...args} boxed name='info' color='info' />
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <File {...args} name='succcess' color='success' />
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <File {...args} name='warning' color='warning' />
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <File {...args} name='danger' color='danger' />
-      </div>
+      </Field>
     </>
   ),
 };
@@ -101,21 +102,21 @@ export const Colors: Story = {
 export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
-      <div className='field'>
+      <Field>
         <File {...args} name='default' size={'small'} />
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <File {...args} name='warning' />
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <File {...args} name='warning' size={'medium'} />
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <File {...args} name='danger' size={'large'} />
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <File {...args} boxed name='info' size={'large'} />
-      </div>
+      </Field>
     </>
   ),
 };

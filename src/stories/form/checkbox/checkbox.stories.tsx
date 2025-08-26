@@ -1,18 +1,19 @@
 import { argSizes } from '@/stories/Types/argSizes';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType, JSX } from 'react';
-import { argColors } from '../Types/argColors';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
 import { ElementProps } from '@/logic/interfaces/props/element';
 import Checkbox from '@/ui/form/checkbox/checkbox';
+import { argColors } from '@/stories/Types/argColors';
+import Field from '@/ui/form/field/field';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Form/Checkbox',
   component: Checkbox as ComponentType,
   decorators: (Story) => (
-    <div style={{ margin: '1rem' }} className='theme-dark'>
+    <div style={{ padding: '1rem' }} className='theme-dark'>
       <Story />
     </div>
   ),
@@ -40,16 +41,16 @@ type ArgsProps = Color &
 export const Primary: Story = {
   render: (args: ArgsProps) => (
     <>
-      <div className='field'>
+      <Field>
         <Checkbox {...args} name='radiostorybook'>
           Selected
         </Checkbox>
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <Checkbox {...args} name='radiostorybook'>
           Unselected
         </Checkbox>
-      </div>
+      </Field>
     </>
   ),
 };
@@ -57,26 +58,26 @@ export const Primary: Story = {
 export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
-      <div className='field'>
+      <Field>
         <Checkbox {...args} name='radiostorybook2' size='small'>
           Small
         </Checkbox>
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <Checkbox {...args} name='radiostorybook2'>
           Default
         </Checkbox>
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <Checkbox {...args} name='radiostorybook2' size='medium'>
           Medium
         </Checkbox>
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <Checkbox {...args} name='radiostorybook2' size='large'>
           Large
         </Checkbox>
-      </div>
+      </Field>
     </>
   ),
 };
@@ -84,31 +85,31 @@ export const Sizes: Story = {
 export const Colors: Story = {
   render: (args: ArgsProps) => (
     <>
-      <div className='field'>
+      <Field>
         <Checkbox {...args} checked name='default'>
           Small
         </Checkbox>
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <Checkbox {...args} checked name='info' color='info'>
           Default
         </Checkbox>
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <Checkbox {...args} checked name='succcess' color='success'>
           Medium
         </Checkbox>
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <Checkbox {...args} checked name='warning' color='warning'>
           Large
         </Checkbox>
-      </div>
-      <div className='field'>
+      </Field>
+      <Field>
         <Checkbox {...args} checked name='danger' color='danger'>
           Large
         </Checkbox>
-      </div>
+      </Field>
     </>
   ),
 };

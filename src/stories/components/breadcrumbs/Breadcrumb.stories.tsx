@@ -38,13 +38,6 @@ export const Primary: Story = {
         <Crumb>Home</Crumb>
         <Crumb>Docs</Crumb>
         <Crumb active>Components</Crumb>
-        <div className='field'>
-          <label className='b-radio radio'>
-            <input type='radio' name='radio' className='radio' id='' />
-            <span className='check is-primary'></span>
-            <span className='control-label'>info</span>
-          </label>
-        </div>
       </>
     ),
   },

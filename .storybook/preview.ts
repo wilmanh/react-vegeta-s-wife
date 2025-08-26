@@ -1,5 +1,6 @@
-import type { Preview } from "@storybook/react-vite";
-import "../src/assets/styles/bulma.scss";
+import type { Preview } from '@storybook/react-vite';
+import '../src/assets/styles/bulma.scss';
+import './fixtag.scss';
 const preview: Preview = {
   parameters: {
     controls: {

@@ -9,7 +9,7 @@ const meta = {
   title: 'Bulma/Components/Tabs',
   component: Tabs as ComponentType,
   decorators: (Story) => (
-    <div style={{ margin: '5rem' }} className='theme-dark'>
+    <div style={{ padding: '5rem' }} className='theme-dark'>
       <Story />
     </div>
   ),

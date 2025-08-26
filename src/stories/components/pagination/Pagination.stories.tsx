@@ -12,7 +12,7 @@ const meta = {
   title: 'Bulma/Components/Pagination',
   component: Pagination as ComponentType,
   decorators: (Story) => (
-    <div style={{ margin: '5rem' }} className='theme-light'>
+    <div style={{ padding: '5rem' }} className='theme-light'>
       <Story />
     </div>
   ),

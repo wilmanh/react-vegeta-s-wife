@@ -1,37 +1,18 @@
-import type { StorybookConfig } from "@storybook/react-vite";
+import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    "@storybook/addon-onboarding",
-    "@chromatic-com/storybook",
-    "@storybook/addon-vitest",
-    "@storybook/addon-links",
-    "@storybook/addon-interactions",
-    "@storybook/addon-docs"
+    '@storybook/addon-onboarding',
+    '@chromatic-com/storybook',
+    '@storybook/addon-vitest',
+    '@storybook/addon-docs',
   ],
-  docs: {},
-  // typescript: {
-  //   check: false,
-  //   reactDocgen: "react-docgen",
-  //   reactDocgenTypescriptOptions: {
-  //     include: ["**/**.tsx"],
-  //     shouldExtractLiteralValuesFromEnum: true,
-  //     skipChildrenPropWithoutDoc: false,
-  //     shouldRemoveUndefinedFromOptional: true,
-  //     tsconfigPath: "./tsconfig.app.json",
-  //     compilerOptions: {
-  //       allowSyntheticDefaultImports: false,
-  //       esModuleInterop: false,
-  //     },
-  //     propFilter: () => true,
-  //   },
-  // },
   typescript: {
-    reactDocgen: "react-docgen-typescript",
+    reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      include: ["../../../packages/horizon/src/**/*.{ts,tsx}"],
-      tsconfigPath: "../tsconfig.app.json",
+      include: ['../../../packages/horizon/src/**/*.{ts,tsx}'],
+      tsconfigPath: '../tsconfig.app.json',
       compilerOptions: {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
@@ -41,7 +22,7 @@ const config: StorybookConfig = {
     },
   },
   framework: {
-    name: "@storybook/react-vite",
+    name: '@storybook/react-vite',
     options: {},
   },
 };
