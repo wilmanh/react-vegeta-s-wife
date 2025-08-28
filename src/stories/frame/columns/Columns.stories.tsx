@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import { ComponentType, JSX, useState } from 'react';
+import { ComponentType, useState } from 'react';
 import Columns from '@/ui/columns/columns/columns';
 import Column from '@/ui/columns/column/column';
 import { ColumnsProps } from '@/ui/columns/columns/columns.props';

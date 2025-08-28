@@ -4,31 +4,33 @@ export const getDisplay = <T>(
   value?: T | Display<T>,
   name?: string,
   useName?: boolean,
+  preffix = 'is-',
+  suffix = '',
 ) => {
   if (typeof value === 'string') {
-    return { [`is-${value}`]: !!value };
+    return { [`${preffix}${value}${suffix}`]: !!value };
   }
   if (typeof value === 'boolean') {
-    return { [`is-${name}`]: !!value };
+    return { [`${preffix}${name}${suffix}`]: !!value };
   }
   return {
-    [`is-${useName ? name : (value as Display<T>)?.mobile}-mobile`]: !!(
-      value as Display<T>
-    )?.mobile,
-    [`is-${useName ? name : (value as Display<T>)?.tablet}-tablet`]: !!(
-      value as Display<T>
-    )?.tablet,
-    [`is-${useName ? name : (value as Display<T>)?.touch}-touch`]: !!(
-      value as Display<T>
-    )?.touch,
-    [`is-${useName ? name : (value as Display<T>)?.desktop}-desktop`]: !!(
-      value as Display<T>
-    )?.desktop,
-    [`is-${useName ? name : (value as Display<T>)?.widescreen}-widescreen`]: !!(
-      value as Display<T>
-    )?.widescreen,
-    [`is-${useName ? name : (value as Display<T>)?.fullhd}-fullhd`]: !!(
-      value as Display<T>
-    )?.fullhd,
+    [`${preffix}${
+      useName ? name : (value as Display<T>)?.mobile
+    }${suffix}-mobile`]: !!(value as Display<T>)?.mobile,
+    [`${preffix}${
+      useName ? name : (value as Display<T>)?.tablet
+    }${suffix}-tablet`]: !!(value as Display<T>)?.tablet,
+    [`${preffix}${
+      useName ? name : (value as Display<T>)?.touch
+    }${suffix}-touch`]: !!(value as Display<T>)?.touch,
+    [`${preffix}${
+      useName ? name : (value as Display<T>)?.desktop
+    }${suffix}-desktop`]: !!(value as Display<T>)?.desktop,
+    [`${preffix}${
+      useName ? name : (value as Display<T>)?.widescreen
+    }${suffix}-widescreen`]: !!(value as Display<T>)?.widescreen,
+    [`${preffix}${
+      useName ? name : (value as Display<T>)?.fullhd
+    }${suffix}-fullhd`]: !!(value as Display<T>)?.fullhd,
   };
 };
