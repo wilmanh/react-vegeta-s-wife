@@ -2,8 +2,8 @@ import 'reflect-metadata';
 import { AnyElement } from '@/logic/types/anyElement';
 import { JSX } from 'react';
 import classNames from 'classnames';
-import { ElementProps } from '@/logic/interfaces/props/element';
 import { IntrinsicElementsNoSVG, PropsOf } from '@/logic/types/propsOf';
+import { ElementProps } from '@/logic/interfaces/props/element';
 
 /**
  * A generic component that renders an HTML element based on either the "as"

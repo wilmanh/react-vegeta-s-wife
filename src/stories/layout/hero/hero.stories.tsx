@@ -19,6 +19,7 @@ import NavbarBurger from '@/ui/components/navbar/navbarBurger/navbarBurger';
 import HeroFooter from '@/ui/layout/hero/hero.footer';
 import Tab from '@/ui/components/tabs/tab/tabsTab';
 import Tabs from '@/ui/components/tabs/tabs';
+import { Image } from '@/ui/elements/image/image';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -238,7 +239,7 @@ export const FullHeighIn3Parts: Story = {
               <Container fluid>
                 <NavbarBrand>
                   <NavbarItem>
-                    <img
+                    <Image
                       src='https://bulma.io/assets/images/bulma-type-white.png'
                       alt='Logo'
                     />

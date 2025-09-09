@@ -11,6 +11,7 @@ import NavbarMenu from '@/ui/components/navbar/navbarMenu/navbarMenu';
 import NavbarStart from '@/ui/components/navbar/navbarStart/navbarStart';
 import { Button } from '@/ui/elements/button/button';
 import { Buttons } from '@/ui/elements/buttons/buttons';
+import { Image } from '@/ui/elements/image/image';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType, useState } from 'react';
 
@@ -49,7 +50,7 @@ const BurgerWithHooks = () => {
     <>
       <NavbarBrand>
         <NavbarItem href='https://bulma.io'>
-          <img
+          <Image
             src='https://bulma.io/assets/images/made-with-bulma.png'
             alt='Made with Bulma'
             width='128'
