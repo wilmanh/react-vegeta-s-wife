@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { State } from '@/logic/interfaces/props/state';
 import classNames from 'classnames';
@@ -13,10 +13,12 @@ const NavbarMenu = ({
   className,
   as,
   ...props
-}: (JSX.IntrinsicElements['div'] | JSX.IntrinsicElements['a']) &
-  Omit<State, 'focus' | 'hover'> &
+}: Omit<State, 'focus' | 'hover'> &
   PropsWithChildren &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div'] | JSX.IntrinsicElements['a']>,
+    'nameOf'
+  >): JSX.Element => {
   const classResolver = container.resolve(NavbarMenuClasses);
   const classes = classResolver.prepareClasses({
     active,

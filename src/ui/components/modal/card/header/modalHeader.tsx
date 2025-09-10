@@ -1,15 +1,17 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { Delete } from '@/ui/elements/delete/delete';
 
 const ModalCardHeader = ({
   children,
   ...props
-}: JSX.IntrinsicElements['header'] &
-  PropsWithChildren &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+}: PropsWithChildren &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['header']>,
+    'nameOf'
+  >): JSX.Element => {
   return (
     <Element nameOf='modal-card-head' as={'header'} {...props}>
       {children}

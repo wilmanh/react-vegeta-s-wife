@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
@@ -11,9 +11,11 @@ const Level = ({
   children,
   className,
   ...props
-}: JSX.IntrinsicElements['nav'] &
-  LevelProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: LevelProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['nav']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const levelClasses = container.resolve(LevelClasses);
   return (
     <Element

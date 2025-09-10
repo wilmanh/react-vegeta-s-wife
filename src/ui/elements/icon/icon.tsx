@@ -3,7 +3,7 @@ import { JSX } from 'react';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { IconProps } from './icon.props';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '../generic/element';
 import { IconClasses } from './icon.classes';
 
@@ -17,8 +17,10 @@ export const Icon = ({
   className,
   textColor,
   ...props
-}: (JSX.IntrinsicElements['span'] | JSX.IntrinsicElements['div']) &
-  Omit<ElementProps, 'nameOf'> &
+}: Omit<
+  ElementProps<JSX.IntrinsicElements['span'] | JSX.IntrinsicElements['div']>,
+  'nameOf'
+> &
   IconProps): JSX.Element | undefined => {
   const classesResolver = container.resolve(IconClasses);
   const iconClasses = classesResolver.prepareClasses({

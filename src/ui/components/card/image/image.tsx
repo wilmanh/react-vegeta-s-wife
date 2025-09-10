@@ -1,13 +1,12 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 
 const CardImage = ({
   children,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  Omit<ElementProps, 'nameOf'> &
+}: Omit<ElementProps<JSX.IntrinsicElements['div']>, 'nameOf'> &
   PropsWithChildren): JSX.Element => {
   return (
     <Element nameOf='card-image' as='div' {...props}>

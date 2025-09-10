@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { TagProps } from './tag.props';
 import { Element } from '../generic/element';
 import { TagClasses } from './tag.classes';
+import { ElementProps } from '../generic/element.props';
 
 export const Tag = ({
   hoverable,
@@ -18,12 +19,12 @@ export const Tag = ({
   dark,
   as,
   ...props
-}: (
+}: ElementProps<
   | JSX.IntrinsicElements['span']
   | JSX.IntrinsicElements['a']
   | JSX.IntrinsicElements['div']
   | JSX.IntrinsicElements['button']
-) &
+> &
   TagProps): JSX.Element => {
   const classesResolver = container.resolve(TagClasses);
   const tagClasses = classesResolver.prepareClasses({

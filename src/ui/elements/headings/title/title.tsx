@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { HeadingProps } from '../heading.props';
 import { Element } from '../../generic/element';
 import { HeadingClassNameResolver } from '@/logic/classes/classNamesResolver/headingClassNamesResolver';
+import { ElementProps } from '../../generic/element.props';
 
 export const Title = ({
   className,
@@ -13,7 +14,7 @@ export const Title = ({
   hSize,
   as,
   ...props
-}: (
+}: ElementProps<
   | JSX.IntrinsicElements['p']
   | JSX.IntrinsicElements['h1']
   | JSX.IntrinsicElements['h2']
@@ -21,7 +22,7 @@ export const Title = ({
   | JSX.IntrinsicElements['h4']
   | JSX.IntrinsicElements['h5']
   | JSX.IntrinsicElements['h6']
-) &
+> &
   HeadingProps): JSX.Element => {
   const classesResolver = container.resolve(HeadingClassNameResolver);
   const tagClasses = classesResolver.prepareClasses({

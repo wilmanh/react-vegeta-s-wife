@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
 import { container } from 'tsyringe';
@@ -12,10 +12,12 @@ const PanelBlock = ({
   active,
   className,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   Omit<State, 'focus' | 'hover'> &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const stateClass = container.resolve(StateClassNameResolver);
   const classes = stateClass.prepareClasses({
     active,

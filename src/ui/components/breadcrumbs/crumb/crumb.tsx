@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { CrumbProps } from './crumb.props';
 import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 export const Crumb = ({
   children,
@@ -13,8 +13,7 @@ export const Crumb = ({
   href,
   className,
   ...props
-}: JSX.IntrinsicElements['li'] &
-  Omit<ElementProps, 'nameOf'> &
+}: Omit<ElementProps<JSX.IntrinsicElements['li']>, 'nameOf'> &
   CrumbProps): JSX.Element => {
   const classesResolver = container.resolve(StateClassNameResolver);
   const classes = classesResolver.prepareClasses({ active });

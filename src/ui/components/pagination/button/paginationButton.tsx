@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { PaginationButtonProps } from './paginationButton.props';
 import { container } from 'tsyringe';
@@ -13,10 +13,12 @@ const PaginationButton = ({
   type,
   disabled,
   ...props
-}: JSX.IntrinsicElements['a'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   PaginationButtonProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['a']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const classResolver = container.resolve(PaginationButtonClasses);
   const classes = classResolver.prepareClasses({
     disabled,

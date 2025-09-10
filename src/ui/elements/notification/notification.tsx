@@ -2,12 +2,12 @@ import 'reflect-metadata';
 import { AnyElement } from '@/logic/types/anyElement';
 import { JSX } from 'react';
 import { Element } from '../generic/element';
-import { PropsOf } from '@/logic/types/propsOf';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { Delete } from '../delete/delete';
 import { NotificationProps } from './notification.props';
 import { NotificationClasses } from './notification.classes';
+import { ElementProps } from '../generic/element.props';
 
 export const Notification = <T extends AnyElement>({
   as,
@@ -15,7 +15,9 @@ export const Notification = <T extends AnyElement>({
   children,
   onClose,
   ...props
-}: PropsOf<T> & Omit<NotificationProps, 'nameOf'>): JSX.Element | undefined => {
+}: ElementProps<T> & Omit<NotificationProps, 'nameOf'>):
+  | JSX.Element
+  | undefined => {
   const classesResolver = container.resolve(NotificationClasses);
   const classes = {
     ...classesResolver.prepareClasses(props),
@@ -28,7 +30,7 @@ export const Notification = <T extends AnyElement>({
       key={key}
       {...props}
     >
-      {onClose ? <Delete onClick={onClose} /> : null}
+      {onClose ? <Delete htmlProps={{ onClick: onClose }} /> : null}
       {children}
     </Element>
   );

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { CardHeaderProps } from './header.props';
 
@@ -8,8 +8,7 @@ const CardHeader = ({
   title,
   icon,
   ...props
-}: JSX.IntrinsicElements['header'] &
-  Omit<ElementProps, 'nameOf'> &
+}: Omit<ElementProps<JSX.IntrinsicElements['header']>, 'nameOf'> &
   CardHeaderProps): JSX.Element => {
   return (
     <Element nameOf='card-header' as='header' {...props}>

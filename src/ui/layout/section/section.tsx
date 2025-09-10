@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
@@ -11,9 +11,11 @@ const Section = ({
   children,
   className,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  SectionProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: SectionProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const sectionClasses = container.resolve(SectionClasses);
   return (
     <Element

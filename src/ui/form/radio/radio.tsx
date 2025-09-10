@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/inputClassNamesResolver';
@@ -13,11 +13,14 @@ const Radio = ({
   color,
   size,
   children,
+  htmlProps,
   ...props
 }: Color &
   Size &
-  JSX.IntrinsicElements['input'] &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['input']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const inputClasses = container.resolve(InputClassNameResolver);
   return (
     <label
@@ -33,7 +36,9 @@ const Radio = ({
         {...props}
         className={classNames(className)}
         as={'input'}
-        type='radio'
+        htmlProps={
+          { type: 'radio', ...htmlProps } as JSX.IntrinsicElements['input']
+        }
       />
       <span
         className={classNames(

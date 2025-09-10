@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { FieldProps } from './field.props';
@@ -14,9 +14,11 @@ const Field = ({
   multiline,
   className,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  FieldProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: FieldProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const fieldClasses = container.resolve(FieldClasses);
   return (
     <Element

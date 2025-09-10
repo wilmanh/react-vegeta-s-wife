@@ -1,14 +1,13 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 
 const NavbarBrand = ({
   children,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  PropsWithChildren &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+}: PropsWithChildren &
+  Omit<ElementProps<JSX.IntrinsicElements['div']>, 'nameOf'>): JSX.Element => {
   return (
     <Element nameOf='navbar-brand' as={'div'} {...props}>
       {children}

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
@@ -13,10 +13,14 @@ const Panel = ({
   color,
   children,
   ...props
-}: (JSX.IntrinsicElements['nav'] | JSX.IntrinsicElements['article']) &
-  PropsWithChildren &
+}: PropsWithChildren &
   Omit<Color, 'dark' | 'light'> &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+  Omit<
+    ElementProps<
+      JSX.IntrinsicElements['nav'] | JSX.IntrinsicElements['article']
+    >,
+    'nameOf'
+  >): JSX.Element => {
   const colorClass = container.resolve(ColorClassNameResolver);
   const classes = colorClass.prepareClasses({
     color,

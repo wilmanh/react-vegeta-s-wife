@@ -2,13 +2,12 @@ import 'reflect-metadata';
 import { AnyElement } from '@/logic/types/anyElement';
 import { JSX } from 'react';
 import { Element } from '../generic/element';
-import { ElementProps } from '@/logic/interfaces/props/element';
-import { PropsOf } from '@/logic/types/propsOf';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 export const Box = <T extends AnyElement>({
   children,
   ...props
-}: PropsOf<T> & Omit<ElementProps, 'nameOf'>): JSX.Element | undefined => {
+}: Omit<ElementProps<T>, 'nameOf'>): JSX.Element | undefined => {
   return (
     <Element nameOf='box' {...props}>
       {children}

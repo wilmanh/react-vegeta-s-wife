@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { TabsTabProps } from './tabsTab.props';
 import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
@@ -13,10 +13,12 @@ const Tab = ({
   className,
   anchorProps,
   ...props
-}: JSX.IntrinsicElements['li'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   TabsTabProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['li']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const classesResolver = container.resolve(StateClassNameResolver);
   const classes = classesResolver.prepareClasses({ active });
   return (

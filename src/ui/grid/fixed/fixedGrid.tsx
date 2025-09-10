@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
@@ -13,9 +13,11 @@ const FixedGrid = ({
   children,
   className,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  FixedGridProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: FixedGridProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const fixedClasses = container.resolve(FixedGridClasses);
   return (
     <Element

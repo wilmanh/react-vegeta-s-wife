@@ -5,18 +5,19 @@ import classNames from 'classnames';
 import { TagsProps } from './tags.props';
 import { Element } from '../generic/element';
 import { TagsClasses } from './tags.classes';
+import { ElementProps } from '../generic/element.props';
 
 export const Tags = ({
   className,
   children,
   addons,
   ...props
-}: (
+}: ElementProps<
   | JSX.IntrinsicElements['span']
   | JSX.IntrinsicElements['a']
   | JSX.IntrinsicElements['div']
   | JSX.IntrinsicElements['button']
-) &
+> &
   TagsProps): JSX.Element => {
   const classesResolver = container.resolve(TagsClasses);
   const tagClasses = classesResolver.prepareClasses({ addons });

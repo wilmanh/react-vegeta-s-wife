@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { PaginationProps } from './pagination.props';
 import { container } from 'tsyringe';
@@ -13,13 +13,14 @@ const Pagination = ({
   children,
   position,
   size,
-  role,
-  'aria-label': ariaLabel,
+  htmlProps,
   ...props
-}: JSX.IntrinsicElements['nav'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   PaginationProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['nav']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const classResolver = container.resolve(PagintaionClasses);
   const classes = classResolver.prepareClasses({
     position,
@@ -31,8 +32,11 @@ const Pagination = ({
       className={classNames(className, classes)}
       nameOf='pagination'
       as={'nav'}
-      role={role ?? 'navigation'}
-      aria-label={ariaLabel ?? 'pagination'}
+      htmlProps={{
+        role: htmlProps?.role ?? 'navigation',
+        'aria-label': htmlProps?.ariaLabel ?? 'pagination',
+        ...htmlProps,
+      }}
       {...props}
     >
       {children}

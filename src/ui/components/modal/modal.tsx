@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import Background from './background/background';
 import { container } from 'tsyringe';
@@ -13,10 +13,9 @@ const Modal = ({
   className,
   active,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   Omit<State, 'focus' | 'hover'> &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+  Omit<ElementProps<JSX.IntrinsicElements['div']>, 'nameOf'>): JSX.Element => {
   const classesResolver = container.resolve(StateClassNameResolver);
   const classes = classesResolver.prepareClasses({ active });
   return (

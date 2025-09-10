@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import { FileProps } from './file.props';
 import { FileClasses } from './file.classes';
 import { GrDownload } from 'react-icons/gr';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 const File = ({
   className,
@@ -20,8 +21,9 @@ const File = ({
   fullwidth,
   dark,
   light,
+  htmlProps,
   ...props
-}: FileProps & JSX.IntrinsicElements['input']): JSX.Element => {
+}: FileProps & ElementProps<JSX.IntrinsicElements['input']>): JSX.Element => {
   const inputClasses = container.resolve(FileClasses);
   return (
     <div
@@ -45,9 +47,14 @@ const File = ({
         <Element
           nameOf='file-input'
           as={'input'}
-          name='file'
           {...props}
-          type='file'
+          htmlProps={
+            {
+              type: 'file',
+              name: 'file',
+              ...htmlProps,
+            } as ElementProps<JSX.IntrinsicElements['input']>
+          }
         />
         <span className='file-cta'>
           <span className='file-icon'>{icon ?? <GrDownload />}</span>

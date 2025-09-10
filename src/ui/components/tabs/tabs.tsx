@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
@@ -17,10 +17,12 @@ const Tabs = ({
   boxed,
   size,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   TabsProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const classesResolver = container.resolve(TabsClasses);
   const classes = classesResolver.prepareClasses({
     position,

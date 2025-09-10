@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { LevelItemClasses } from './level.classes';
@@ -11,9 +11,11 @@ const LevelItem = ({
   children,
   className,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  LevelItemProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: LevelItemProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const levelItemClasses = container.resolve(LevelItemClasses);
   return (
     <Element

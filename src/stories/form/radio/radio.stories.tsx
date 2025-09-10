@@ -4,7 +4,7 @@ import { ComponentType, JSX } from 'react';
 import Radio from '@/ui/form/radio/radio';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { argColors } from '@/stories/Types/argColors';
 import Field from '@/ui/form/field/field';
 
@@ -34,8 +34,7 @@ type Story = StoryObj<typeof meta>;
 
 type ArgsProps = Color &
   Size &
-  JSX.IntrinsicElements['input'] &
-  Omit<ElementProps, 'nameOf' | 'as'>;
+  Omit<ElementProps<JSX.IntrinsicElements['input']>, 'nameOf' | 'as'>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {

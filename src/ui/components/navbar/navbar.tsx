@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import { NavbarProps } from './navbar.props';
@@ -15,14 +15,12 @@ const Navbar = ({
   shadow,
   transparent,
   className,
-  role,
-  'aria-label': ariaLabel,
+  htmlProps,
   ...props
-}: JSX.IntrinsicElements['nav'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   NavbarProps &
   Color &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+  Omit<ElementProps<JSX.IntrinsicElements['nav']>, 'nameOf'>): JSX.Element => {
   const classResolver = container.resolve(NavbarClasses);
   const classes = classResolver.prepareClasses({
     transparent,
@@ -35,8 +33,11 @@ const Navbar = ({
       className={classNames(className, classes)}
       nameOf='navbar'
       as={'nav'}
-      role={role ?? 'navigation'}
-      aria-label={ariaLabel ?? 'main navigation'}
+      htmlProps={{
+        role: htmlProps?.role ?? 'navigation',
+        'aria-label': htmlProps?.ariaLabel ?? 'main navigation',
+        ...htmlProps,
+      }}
       {...props}
     >
       {children}

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { NavbarLinkProps } from './navbarLink.props';
 import { container } from 'tsyringe';
@@ -12,10 +12,12 @@ const NavbarLink = ({
   className,
   arrowless,
   ...props
-}: JSX.IntrinsicElements['a'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   NavbarLinkProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['a']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const classResolver = container.resolve(NavbarLinkClasses);
   const classes = classResolver.prepareClasses({
     arrowless,

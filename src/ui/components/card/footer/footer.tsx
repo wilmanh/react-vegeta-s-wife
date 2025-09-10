@@ -1,14 +1,14 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { CardFooterProps } from './footer.props';
 
 const CardFooter = ({
   items,
+  htmlProps,
   ...props
-}: JSX.IntrinsicElements['footer'] &
-  Omit<ElementProps, 'nameOf'> &
+}: Omit<ElementProps<JSX.IntrinsicElements['footer']>, 'nameOf'> &
   CardFooterProps): JSX.Element => {
   return (
     <Element nameOf='card-footer' as='footer' {...props}>
@@ -17,7 +17,12 @@ const CardFooter = ({
           key={item.id}
           nameOf='card-footer-item'
           as='a'
-          href={item.href ?? '#'}
+          htmlProps={
+            {
+              href: item.href ?? '#',
+              ...htmlProps,
+            } as JSX.IntrinsicElements['a']
+          }
         >
           {item.value}
         </Element>

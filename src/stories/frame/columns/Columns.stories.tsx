@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
 import { ComponentType, useState } from 'react';
 import Columns from '@/ui/columns/columns/columns';
 import Column from '@/ui/columns/column/column';
 import { ColumnsProps } from '@/ui/columns/columns/columns.props';
 import { Box } from '@/ui/elements/box/box';
 import { Title } from '@/ui/elements/headings/title/title';
+import { ColumnSize, Gap } from '@/logic/types/column';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Frame/Columns',
   component: Columns as ComponentType,
@@ -16,16 +15,12 @@ const meta = {
       <Story />
     </div>
   ),
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
 } satisfies Meta<typeof Columns>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Basics: Story = {
   args: {
     children: (
@@ -86,50 +81,58 @@ type ArgsProps = ColumnsProps;
 
 export const SizesByString: Story = {
   render: (args: ArgsProps) => {
-    return sizeText.map((size) => (
-      <Columns {...args}>
-        <Column size={size}>
-          <p className='bd-notification is-primary'>
-            <code>is {size}</code>
-          </p>
-        </Column>
-        {size !== 'full' ? (
-          <>
-            <Column>
-              <p className='bd-notification'>
-                <code>auto</code>
+    return (
+      <>
+        {sizeText.map((size) => (
+          <Columns {...args}>
+            <Column size={size as ColumnSize}>
+              <p className='bd-notification is-primary'>
+                <code>is {size}</code>
               </p>
             </Column>
-            <Column>
-              <p className='bd-notification'>
-                <code>auto</code>
-              </p>
-            </Column>
-          </>
-        ) : null}
-      </Columns>
-    ));
+            {size !== 'full' ? (
+              <>
+                <Column>
+                  <p className='bd-notification'>
+                    <code>auto</code>
+                  </p>
+                </Column>
+                <Column>
+                  <p className='bd-notification'>
+                    <code>auto</code>
+                  </p>
+                </Column>
+              </>
+            ) : null}
+          </Columns>
+        ))}
+      </>
+    );
   },
 };
 
 export const SizesByNumber: Story = {
   render: (args: ArgsProps) => {
-    return sizeNumber.map((size) => (
-      <Columns {...args}>
-        <Column size={size}>
-          <p className='bd-notification is-primary'>
-            <code>is {size}</code>
-          </p>
-        </Column>
-        {size !== '12' ? (
-          <Column>
-            <p className='bd-notification'>
-              <code>auto</code>
-            </p>
-          </Column>
-        ) : null}
-      </Columns>
-    ));
+    return (
+      <>
+        {sizeNumber.map((size) => (
+          <Columns {...args}>
+            <Column size={size as ColumnSize}>
+              <p className='bd-notification is-primary'>
+                <code>is {size}</code>
+              </p>
+            </Column>
+            {size !== '12' ? (
+              <Column>
+                <p className='bd-notification'>
+                  <code>auto</code>
+                </p>
+              </Column>
+            ) : null}
+          </Columns>
+        ))}
+      </>
+    );
   },
 };
 
@@ -429,7 +432,7 @@ const VariableGapComponent = () => {
         </strong>
         {options}
       </div>
-      <Columns gap={gap.toString()}>
+      <Columns gap={gap.toString() as Gap}>
         <Column size={'3'}>
           <p className='bd-notification is-primary'>
             <code>Side</code>
@@ -441,7 +444,7 @@ const VariableGapComponent = () => {
           </p>
         </Column>
       </Columns>
-      <Columns gap={gap.toString()}>
+      <Columns gap={gap.toString() as Gap}>
         <Column>
           <p className='bd-notification is-primary'>
             <code>Three Columns</code>

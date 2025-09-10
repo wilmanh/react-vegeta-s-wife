@@ -4,14 +4,14 @@ import { JSX } from 'react';
 import { Element } from '../generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { PropsOf } from '@/logic/types/propsOf';
 import { Size } from '@/logic/interfaces/props/size';
 import { DeleteClasses } from './delete.classes';
+import { ElementProps } from '../generic/element.props';
 
 export const Delete = <T extends AnyElement>({
   key,
   ...props
-}: PropsOf<T> & Size): JSX.Element | undefined => {
+}: ElementProps<T> & Size): JSX.Element | undefined => {
   const classesResolver = container.resolve(DeleteClasses);
 
   return (

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { Input as InputProps } from '@/logic/interfaces/props/input';
 import { container } from 'tsyringe';
@@ -20,8 +20,10 @@ const Input = ({
   static: frozen,
   ...props
 }: Omit<InputProps, 'fixed'> &
-  JSX.IntrinsicElements['input'] &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['input']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const inputClasses = container.resolve(InputClassNameResolver);
   const roundedClasses = container.resolve(RoundedClassNameResolver);
   return (

@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
-import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
 import { ColumnProps } from './column.props';
 import { ColumnClasses } from './column.classes';
+import { Element } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 const Column = ({
   children,
@@ -14,9 +14,11 @@ const Column = ({
   narrow,
   className,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  ColumnProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: ColumnProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const fieldClasses = container.resolve(ColumnClasses);
   return (
     <Element

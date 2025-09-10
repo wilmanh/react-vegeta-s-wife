@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { ControlProps } from './control.props';
@@ -15,9 +15,11 @@ const Control = ({
   multiline,
   expanded,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  ControlProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: ControlProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const controlClasses = container.resolve(ControlClasses);
   return (
     <Element

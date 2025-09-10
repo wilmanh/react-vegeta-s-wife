@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import { DropdownItemProps } from './dropdownItem.props';
@@ -13,8 +13,10 @@ const DropdownItem = ({
   children,
   className,
   ...props
-}: (JSX.IntrinsicElements['div'] | JSX.IntrinsicElements['a']) &
-  Omit<ElementProps, 'nameOf'> &
+}: Omit<
+  ElementProps<JSX.IntrinsicElements['div'] | JSX.IntrinsicElements['a']>,
+  'nameOf'
+> &
   DropdownItemProps &
   PropsWithChildren): JSX.Element => {
   const classesResolver = container.resolve(StateClassNameResolver);

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { SmartGridProps } from './smartGrid.props';
 import classNames from 'classnames';
@@ -15,9 +15,11 @@ const Grid = ({
   children,
   className,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  SmartGridProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: SmartGridProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const smartGridClasses = container.resolve(SmartGridClasses);
   return (
     <Element

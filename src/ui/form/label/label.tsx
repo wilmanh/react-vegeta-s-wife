@@ -1,14 +1,16 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 
 const Label = ({
   className,
   ...props
-}: JSX.IntrinsicElements['label'] &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: Omit<
+  ElementProps<JSX.IntrinsicElements['label']>,
+  'nameOf' | 'as'
+>): JSX.Element => {
   return (
     <Element
       className={classNames(className)}

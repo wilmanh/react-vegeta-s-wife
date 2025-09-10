@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/colorClassNamesResolver';
 import { container } from 'tsyringe';
@@ -17,11 +17,13 @@ const Message = ({
   size,
   className,
   ...props
-}: JSX.IntrinsicElements['article'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   Color &
   Size &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['article']>,
+    'nameOf'
+  >): JSX.Element => {
   const sizeClassResolver = container.resolve(SizeClassNameResolver);
   const sizeClasses = sizeClassResolver.prepareClasses({ size });
   const colorClassesResolver = container.resolve(ColorClassNameResolver);

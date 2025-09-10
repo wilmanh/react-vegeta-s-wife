@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import { State } from '@/logic/interfaces/props/state';
@@ -11,9 +11,8 @@ const NavbarBurger = ({
   active,
   className,
   ...props
-}: JSX.IntrinsicElements['a'] &
-  Omit<State, 'focus' | 'hover'> &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+}: Omit<State, 'focus' | 'hover'> &
+  Omit<ElementProps<JSX.IntrinsicElements['a']>, 'nameOf'>): JSX.Element => {
   const classResolver = container.resolve(NavbarBurgerClasses);
   const classes = classResolver.prepareClasses({
     active,

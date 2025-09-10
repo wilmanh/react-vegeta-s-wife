@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { Element } from '../generic/element';
 import { ButtonsProps } from './buttons.props';
 import { ButtonsClasses } from './buttons.classes';
+import { ElementProps } from '../generic/element.props';
 
 export const Buttons = ({
   className,
@@ -12,7 +13,7 @@ export const Buttons = ({
   size,
   as,
   ...props
-}: (JSX.IntrinsicElements['p'] | JSX.IntrinsicElements['div']) &
+}: ElementProps<JSX.IntrinsicElements['p'] | JSX.IntrinsicElements['div']> &
   ButtonsProps): JSX.Element => {
   const classesResolver = container.resolve(ButtonsClasses);
   const tagClasses = classesResolver.prepareClasses({ size });

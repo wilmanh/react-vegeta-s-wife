@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import NavbarDropdownProps from './navbarDropdown.props';
 import classNames from 'classnames';
@@ -13,10 +13,12 @@ const NavbarDropdown = ({
   className,
   position,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   NavbarDropdownProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const classResolver = container.resolve(NavbarDropdownClasses);
   const classes = classResolver.prepareClasses({
     position,

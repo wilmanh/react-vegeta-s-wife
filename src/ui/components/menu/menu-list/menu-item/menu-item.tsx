@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { MenuItemProps } from './menu-item.props';
 import classNames from 'classnames';
@@ -12,10 +12,12 @@ const MenuItem = ({
   className,
   active,
   ...props
-}: JSX.IntrinsicElements['a'] &
-  PropsWithChildren &
+}: PropsWithChildren &
   MenuItemProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+  Omit<
+    ElementProps<JSX.IntrinsicElements['a']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const classesResolver = container.resolve(StateClassNameResolver);
   const classes = classesResolver.prepareClasses({
     active,

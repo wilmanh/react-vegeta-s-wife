@@ -1,14 +1,16 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 
 const ModalCardFooter = ({
   children,
   ...props
-}: JSX.IntrinsicElements['footer'] &
-  PropsWithChildren &
-  Omit<ElementProps, 'nameOf'>): JSX.Element => {
+}: PropsWithChildren &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['footer']>,
+    'nameOf'
+  >): JSX.Element => {
   return (
     <Element nameOf='modal-card-foot' as={'footer'} {...props}>
       <Element nameOf='buttons' as={'div'}>

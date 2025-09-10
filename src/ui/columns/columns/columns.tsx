@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { ElementProps } from '@/logic/interfaces/props/element';
 import { Element } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
 import { ColumnsProps } from './columns.props';
 import { ColumnsClasses } from './columns.classes';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 const Columns = ({
   gap,
@@ -17,9 +17,11 @@ const Columns = ({
   multiline,
   className,
   ...props
-}: JSX.IntrinsicElements['div'] &
-  ColumnsProps &
-  Omit<ElementProps, 'nameOf' | 'as'>): JSX.Element => {
+}: ColumnsProps &
+  Omit<
+    ElementProps<JSX.IntrinsicElements['div']>,
+    'nameOf' | 'as'
+  >): JSX.Element => {
   const fieldClasses = container.resolve(ColumnsClasses);
   return (
     <Element
