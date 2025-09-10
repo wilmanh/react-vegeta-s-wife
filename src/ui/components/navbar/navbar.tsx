@@ -35,7 +35,7 @@ const Navbar = ({
       as={'nav'}
       htmlProps={{
         role: htmlProps?.role ?? 'navigation',
-        'aria-label': htmlProps?.ariaLabel ?? 'main navigation',
+        'aria-label': htmlProps?.['aria-label'] ?? 'main navigation',
         ...htmlProps,
       }}
       {...props}

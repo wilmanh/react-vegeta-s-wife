@@ -41,12 +41,12 @@ export const Primary: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Checkbox {...args} name='radiostorybook'>
+        <Checkbox {...args} htmlProps={{ name: 'radiostorybook' }}>
           Selected
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} name='radiostorybook'>
+        <Checkbox {...args} htmlProps={{ name: 'radiostorybook' }}>
           Unselected
         </Checkbox>
       </Field>
@@ -58,22 +58,34 @@ export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Checkbox {...args} name='radiostorybook2' size='small'>
+        <Checkbox
+          {...args}
+          htmlProps={{ name: 'radiostorybook2' }}
+          size='small'
+        >
           Small
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} name='radiostorybook2'>
+        <Checkbox {...args} htmlProps={{ name: 'radiostorybook2' }}>
           Default
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} name='radiostorybook2' size='medium'>
+        <Checkbox
+          {...args}
+          htmlProps={{ name: 'radiostorybook2' }}
+          size='medium'
+        >
           Medium
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} name='radiostorybook2' size='large'>
+        <Checkbox
+          {...args}
+          htmlProps={{ name: 'radiostorybook2' }}
+          size='large'
+        >
           Large
         </Checkbox>
       </Field>
@@ -85,27 +97,43 @@ export const Colors: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Checkbox {...args} checked name='default'>
+        <Checkbox {...args} htmlProps={{ checked: true, name: 'default' }}>
           Small
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} checked name='info' color='info'>
+        <Checkbox
+          {...args}
+          htmlProps={{ checked: true, name: 'info' }}
+          color='info'
+        >
           Default
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} checked name='succcess' color='success'>
+        <Checkbox
+          {...args}
+          htmlProps={{ checked: true, name: 'succcess' }}
+          color='success'
+        >
           Medium
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} checked name='warning' color='warning'>
+        <Checkbox
+          {...args}
+          htmlProps={{ checked: true, name: 'warning' }}
+          color='warning'
+        >
           Large
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} checked name='danger' color='danger'>
+        <Checkbox
+          {...args}
+          htmlProps={{ checked: true, name: 'danger' }}
+          color='danger'
+        >
           Large
         </Checkbox>
       </Field>
