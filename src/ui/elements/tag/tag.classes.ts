@@ -1,9 +1,9 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/colorClassNamesResolver';
-import { DeleteClassNameResolver } from '@/logic/classes/classNamesResolver/deleteClassNamesResolver';
-import { HoverableClassNameResolver } from '@/logic/classes/classNamesResolver/hoverableClassNamesResolver';
-import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/roundedClassNamesResolver';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/sizeClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
+import { DeleteClassNameResolver } from '@/logic/classes/classNamesResolver/delete/deleteClassNamesResolver';
+import { HoverableClassNameResolver } from '@/logic/classes/classNamesResolver/hoverable/hoverableClassNamesResolver';
+import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/rounded/roundedClassNamesResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Color } from '@/logic/interfaces/props/color';
 import { Delete } from '@/logic/interfaces/props/delete';

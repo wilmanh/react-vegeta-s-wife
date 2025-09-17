@@ -5,7 +5,7 @@ import { Element } from '@/ui/elements/generic/element';
 import { MenuItemProps } from './menu-item.props';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
+import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
 
 const MenuItem = ({
   children,

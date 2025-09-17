@@ -3,7 +3,7 @@ import { GenericObject } from '@/logic/interfaces/genericObject';
 import { NavbarProps } from './navbar.props';
 import { Color } from '@/logic/interfaces/props/color';
 import { container } from 'tsyringe';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/colorClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
 
 export class NavbarClasses<T extends NavbarProps & Color>
   implements ClassNameFactory<T>

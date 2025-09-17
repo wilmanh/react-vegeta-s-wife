@@ -5,7 +5,7 @@ import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/colorClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
 
 const Panel = ({
   className,

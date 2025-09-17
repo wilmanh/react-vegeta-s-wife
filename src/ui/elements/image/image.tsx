@@ -4,7 +4,7 @@ import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { ImageProps } from './image.props';
 import { ImageClasses } from './image.classes';
-import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/roundedClassNamesResolver';
+import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/rounded/roundedClassNamesResolver';
 
 export const Image = ({
   shape,

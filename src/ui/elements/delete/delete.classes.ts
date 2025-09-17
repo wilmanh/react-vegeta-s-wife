@@ -1,5 +1,5 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/sizeClassNamesResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Size } from '@/logic/interfaces/props/size';
 import { container } from 'tsyringe';

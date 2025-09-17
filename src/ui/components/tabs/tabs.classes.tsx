@@ -1,8 +1,8 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/sizeClassNamesResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { container } from 'tsyringe';
 import { TabsProps } from './tabs.props';
+import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
 
 export class TabsClasses<T extends TabsProps> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {

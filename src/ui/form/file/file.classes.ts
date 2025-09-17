@@ -1,10 +1,10 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/sizeClassNamesResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { container } from 'tsyringe';
 import { FileProps } from './file.props';
-import { FullwidthClassNameResolver } from '@/logic/classes/classNamesResolver/fullwidthClassNamesResolver';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/colorClassNamesResolver';
+import { FullwidthClassNameResolver } from '@/logic/classes/classNamesResolver/fullwidth/fullwidthClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
 
 export class FileClasses<T extends FileProps> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {

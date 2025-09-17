@@ -4,8 +4,8 @@ import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { Input as InputProps } from '@/logic/interfaces/props/input';
 import { container } from 'tsyringe';
-import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/inputClassNamesResolver';
 import classNames from 'classnames';
+import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/input/inputClassNamesResolver';
 
 const Textarea = ({
   className,

@@ -3,13 +3,13 @@ import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
-import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/inputClassNamesResolver';
 import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
-import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/roundedClassNamesResolver';
 import { IsRounded, Style } from '@/logic/interfaces/props/style';
-import { StyleClassNameResolver } from '@/logic/classes/classNamesResolver/styleClassNamesResolver';
+import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/input/inputClassNamesResolver';
+import { StyleClassNameResolver } from '@/logic/classes/classNamesResolver/style/styleClassNamesResolver';
+import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/rounded/roundedClassNamesResolver';
 
 const Switch = ({
   className,

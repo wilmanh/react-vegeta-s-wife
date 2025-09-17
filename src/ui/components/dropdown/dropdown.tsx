@@ -10,7 +10,7 @@ import { container } from 'tsyringe';
 import { DropdownClasses } from './dropdown.classes';
 import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/colorClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
 
 const Dropdown = ({
   className,

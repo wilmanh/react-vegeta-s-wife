@@ -4,9 +4,9 @@ import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { Input as InputProps } from '@/logic/interfaces/props/input';
 import { container } from 'tsyringe';
-import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/inputClassNamesResolver';
 import classNames from 'classnames';
-import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/roundedClassNamesResolver';
+import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/input/inputClassNamesResolver';
+import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/rounded/roundedClassNamesResolver';
 
 const Input = ({
   className,

@@ -2,10 +2,10 @@ import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
 import { container } from 'tsyringe';
 import { State } from '@/logic/interfaces/props/state';
 import classNames from 'classnames';
+import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
 
 const PanelTab = ({
   active,

@@ -3,8 +3,8 @@ import { JSX } from 'react';
 import { HorizontalFieldProps } from './horizontalField.props';
 import Field from '../field';
 import { container } from 'tsyringe';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/sizeClassNamesResolver';
 import classNames from 'classnames';
+import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
 
 const HorizontalField = ({
   label,

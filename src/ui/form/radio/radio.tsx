@@ -3,10 +3,10 @@ import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
-import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/inputClassNamesResolver';
 import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
+import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/input/inputClassNamesResolver';
 
 const Radio = ({
   className,

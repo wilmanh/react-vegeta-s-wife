@@ -4,8 +4,8 @@ import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { CrumbProps } from './crumb.props';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
 import { ElementProps } from '@/ui/elements/generic/element.props';
+import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
 
 export const Crumb = ({
   children,

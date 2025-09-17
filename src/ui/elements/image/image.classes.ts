@@ -1,6 +1,6 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { RatioClassNameResolver } from '@/logic/classes/classNamesResolver/ratioClassNamesResolver';
-import { ShapeClassNameResolver } from '@/logic/classes/classNamesResolver/shapeClassNamesResolver';
+import { RatioClassNameResolver } from '@/logic/classes/classNamesResolver/ratio/ratioClassNamesResolver';
+import { ShapeClassNameResolver } from '@/logic/classes/classNamesResolver/shape/shapeClassNamesResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Ratio } from '@/logic/interfaces/props/ratio';
 import { Shape } from '@/logic/interfaces/props/shape';

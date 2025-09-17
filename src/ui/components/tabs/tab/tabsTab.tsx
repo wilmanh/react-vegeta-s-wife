@@ -3,9 +3,9 @@ import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
 import { Element } from '@/ui/elements/generic/element';
 import { TabsTabProps } from './tabsTab.props';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
+import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
 
 const Tab = ({
   children,

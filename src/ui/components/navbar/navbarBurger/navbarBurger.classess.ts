@@ -1,5 +1,5 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/stateClassNamesResolver';
+import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { State } from '@/logic/interfaces/props/state';
 import { container } from 'tsyringe';

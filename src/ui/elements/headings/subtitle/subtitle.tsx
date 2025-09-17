@@ -4,8 +4,8 @@ import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { HeadingProps } from '../heading.props';
 import { Element } from '../../generic/element';
-import { HeadingClassNameResolver } from '@/logic/classes/classNamesResolver/headingClassNamesResolver';
 import { ElementProps } from '../../generic/element.props';
+import { HeadingClassNameResolver } from '@/logic/classes/classNamesResolver/heading/headingClassNamesResolver';
 
 export const Subtitle = ({
   className,

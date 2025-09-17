@@ -41,7 +41,8 @@ export const arrayAlignContent = [
 
 export const arrayAlignItems = [
   'stretch',
-  'baseline, self-start',
+  'baseline',
+  'self-start',
   'self-end',
 ] as const;
 export const arrayAlignSelf = [
