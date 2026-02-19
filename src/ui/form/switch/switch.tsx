@@ -7,9 +7,9 @@ import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
 import { IsRounded, Style } from '@/logic/interfaces/props/style';
-import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/input/inputClassNamesResolver';
-import { StyleClassNameResolver } from '@/logic/classes/classNamesResolver/style/styleClassNamesResolver';
-import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/rounded/roundedClassNamesResolver';
+import { InputClassNameResolver } from '@/logic/classes/classNameResolver/input/inputClassNameResolver';
+import { StyleClassNameResolver } from '@/logic/classes/classNameResolver/style/styleClassNameResolver';
+import { RoundedClassNameResolver } from '@/logic/classes/classNameResolver/rounded/roundedClassNameResolver';
 
 const Switch = ({
   className,

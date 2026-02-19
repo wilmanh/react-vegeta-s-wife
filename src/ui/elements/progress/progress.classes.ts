@@ -1,6 +1,6 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';

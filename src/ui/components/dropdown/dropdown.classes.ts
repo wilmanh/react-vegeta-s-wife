@@ -2,7 +2,7 @@ import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { DropdownProps } from './dropdown.props';
 import { container } from 'tsyringe';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
+import { StateClassNameResolver } from '@/logic/classes/classNameResolver/state/stateClassNameResolver';
 
 export class DropdownClasses<T extends Omit<DropdownProps, 'title'>>
   implements ClassNameFactory<T>

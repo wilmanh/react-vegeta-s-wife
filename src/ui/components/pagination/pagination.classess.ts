@@ -2,8 +2,8 @@ import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { PaginationProps } from './pagination.props';
 import { container } from 'tsyringe';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
-import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/rounded/roundedClassNamesResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { RoundedClassNameResolver } from '@/logic/classes/classNameResolver/rounded/roundedClassNameResolver';
 
 export class PagintaionClasses<T extends PaginationProps>
   implements ClassNameFactory<T>

@@ -1,5 +1,5 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Color } from '@/logic/interfaces/props/color';
 import { container } from 'tsyringe';

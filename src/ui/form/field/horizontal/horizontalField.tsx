@@ -4,7 +4,7 @@ import { HorizontalFieldProps } from './horizontalField.props';
 import Field from '../field';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
 
 const HorizontalField = ({
   label,

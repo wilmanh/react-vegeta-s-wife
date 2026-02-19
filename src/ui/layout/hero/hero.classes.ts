@@ -2,7 +2,7 @@ import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { HeroProps } from './hero.props';
 import { container } from 'tsyringe';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
 
 export class HeroClasses<T extends HeroProps> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {

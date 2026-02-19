@@ -6,8 +6,8 @@ import { container } from 'tsyringe';
 import { Color } from '@/logic/interfaces/props/color';
 import classNames from 'classnames';
 import { Size } from '@/logic/interfaces/props/size';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
 
 const Message = ({
   children,

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { HeadingProps } from '../heading.props';
 import { Element } from '../../generic/element';
 import { ElementProps } from '../../generic/element.props';
-import { HeadingClassNameResolver } from '@/logic/classes/classNamesResolver/heading/headingClassNamesResolver';
+import { HeadingClassNameResolver } from '@/logic/classes/classNameResolver/heading/headingClassNameResolver';
 
 export const Subtitle = ({
   className,

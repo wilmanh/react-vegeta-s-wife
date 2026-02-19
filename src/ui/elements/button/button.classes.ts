@@ -1,10 +1,10 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { ColorClassNameResolver } from '@/logic/classes/classNamesResolver/color/colorClassNamesResolver';
-import { CommonClassNameResolver } from '@/logic/classes/classNamesResolver/common/commonClassNamesResolver';
-import { FullwidthClassNameResolver } from '@/logic/classes/classNamesResolver/fullwidth/fullwidthClassNamesResolver';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
-import { StyleClassNameResolver } from '@/logic/classes/classNamesResolver/style/styleClassNamesResolver';
+import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
+import { CommonClassNameResolver } from '@/logic/classes/classNameResolver/common/commonClassNameResolver';
+import { FullwidthClassNameResolver } from '@/logic/classes/classNameResolver/fullwidth/fullwidthClassNameResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { StateClassNameResolver } from '@/logic/classes/classNameResolver/state/stateClassNameResolver';
+import { StyleClassNameResolver } from '@/logic/classes/classNameResolver/style/styleClassNameResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Color } from '@/logic/interfaces/props/color';
 import { Common } from '@/logic/interfaces/props/common';

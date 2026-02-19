@@ -4,6 +4,8 @@ import { JSX } from 'react';
 import classNames from 'classnames';
 import { IntrinsicElementsNoSVG } from '@/logic/types/propsOf';
 import { ElementProps } from './element.props';
+import { container } from 'tsyringe';
+import { ElementClasses } from './element.classes';
 
 export const Element = <T extends AnyElement>({
   as,
@@ -12,6 +14,12 @@ export const Element = <T extends AnyElement>({
   children,
   className,
   htmlProps,
+  colors,
+  extra,
+  flexbox,
+  spacing,
+  typography,
+  visibility,
   ...props
 }: ElementProps<T>): JSX.Element => {
   if (!as && !nameOf) {
@@ -21,9 +29,21 @@ export const Element = <T extends AnyElement>({
   if (!Generic) {
     throw new Error(`Element: Unknown "as" property value: ${as}`);
   }
+  const elementClasses = container.resolve(ElementClasses);
   return (
     <Generic
-      className={classNames(className, nameOf)}
+      className={classNames(
+        elementClasses.prepareClasses({
+          colors,
+          flexbox,
+          spacing,
+          visibility,
+          typography,
+          extra,
+        }),
+        className,
+        nameOf,
+      )}
       key={key}
       {...htmlProps}
       {...props}

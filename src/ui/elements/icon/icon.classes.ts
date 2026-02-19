@@ -2,7 +2,7 @@ import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { container } from 'tsyringe';
 import { IconProps } from './icon.props';
-import { SizeClassNameResolver } from '@/logic/classes/classNamesResolver/size/sizeClassNamesResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
 import { ColorHelpers } from '@/ui/helpers/colors/colors.helpers';
 
 export class IconClasses<T extends Omit<IconProps, 'text'>>

@@ -5,7 +5,7 @@ import { Element } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import { DropdownItemProps } from './dropdownItem.props';
 import classNames from 'classnames';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
+import { StateClassNameResolver } from '@/logic/classes/classNameResolver/state/stateClassNameResolver';
 
 const DropdownItem = ({
   as,

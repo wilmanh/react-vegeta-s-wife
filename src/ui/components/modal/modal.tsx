@@ -6,7 +6,7 @@ import Background from './background/background';
 import { container } from 'tsyringe';
 import { State } from '@/logic/interfaces/props/state';
 import classNames from 'classnames';
-import { StateClassNameResolver } from '@/logic/classes/classNamesResolver/state/stateClassNamesResolver';
+import { StateClassNameResolver } from '@/logic/classes/classNameResolver/state/stateClassNameResolver';
 
 const Modal = ({
   children,

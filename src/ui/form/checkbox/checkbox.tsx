@@ -6,7 +6,7 @@ import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
-import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/input/inputClassNamesResolver';
+import { InputClassNameResolver } from '@/logic/classes/classNameResolver/input/inputClassNameResolver';
 
 const Checkbox = ({
   className,

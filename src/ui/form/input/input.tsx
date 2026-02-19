@@ -5,8 +5,8 @@ import { Element } from '@/ui/elements/generic/element';
 import { Input as InputProps } from '@/logic/interfaces/props/input';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { InputClassNameResolver } from '@/logic/classes/classNamesResolver/input/inputClassNamesResolver';
-import { RoundedClassNameResolver } from '@/logic/classes/classNamesResolver/rounded/roundedClassNamesResolver';
+import { InputClassNameResolver } from '@/logic/classes/classNameResolver/input/inputClassNameResolver';
+import { RoundedClassNameResolver } from '@/logic/classes/classNameResolver/rounded/roundedClassNameResolver';
 
 const Input = ({
   className,
