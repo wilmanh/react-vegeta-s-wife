@@ -18,13 +18,16 @@ export class ElementClasses<T extends Helpers> implements ClassNameFactory<T> {
     const typographyHelpers = container.resolve(TypographyHelpers);
     const othersHelpers = container.resolve(OthersHelpers);
 
+    const { flexbox, spacing, typography, visibility, extra, ...colors } =
+      parameters;
+
     return {
-      ...colorHelpers.prepareClasses(parameters?.colors ?? {}),
-      ...flexboxHelpers.prepareClasses(parameters?.flexbox ?? {}),
-      ...spacingHelpers.prepareClasses(parameters?.spacing ?? {}),
-      ...visibilityHelpers.prepareClasses(parameters?.visibility ?? {}),
-      ...typographyHelpers.prepareClasses(parameters?.typography ?? {}),
-      ...othersHelpers.prepareClasses(parameters?.extra ?? {}),
+      ...colorHelpers.prepareClasses(colors ?? {}),
+      ...flexboxHelpers.prepareClasses(flexbox ?? {}),
+      ...spacingHelpers.prepareClasses(spacing ?? {}),
+      ...visibilityHelpers.prepareClasses(visibility ?? {}),
+      ...typographyHelpers.prepareClasses(typography ?? {}),
+      ...othersHelpers.prepareClasses(extra ?? {}),
     };
   };
 }

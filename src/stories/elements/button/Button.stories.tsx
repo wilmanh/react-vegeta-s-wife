@@ -48,7 +48,7 @@ const meta = {
     ...argDisabled,
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+  args: { htmlProps: { onClick: fn() } },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -166,7 +166,7 @@ export const LightColors: Story = {
 
 export const Sizes: Story = {
   render: (args: object) => (
-    <Buttons style={{ gap: 18 }}>
+    <Buttons htmlProps={{ style: { gap: 20 } }}>
       <Button {...args} size='small'>
         small
       </Button>

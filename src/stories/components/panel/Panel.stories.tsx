@@ -58,7 +58,7 @@ export const Example: Story = {
           <PanelIcon>
             <GrBug />
           </PanelIcon>
-          Bulma
+          Vegeta
         </PanelBlock>
         <PanelBlock>
           <PanelIcon>

@@ -13,7 +13,6 @@ const Checkbox = ({
   color,
   size,
   children,
-  htmlProps,
   ...props
 }: Color &
   Size &
@@ -36,9 +35,7 @@ const Checkbox = ({
         {...props}
         className={classNames(className)}
         as={'input'}
-        htmlProps={
-          { type: 'checkbox', ...htmlProps } as JSX.IntrinsicElements['input']
-        }
+        type='checkbox'
       />
       <span
         className={classNames(

@@ -5,8 +5,7 @@ import { SpacingHelperProps } from '@/ui/helpers/spacing/spacing.helpers.props';
 import { TypographyHelperProps } from '@/ui/helpers/typography/typography.helpers.props';
 import { VisibilityHelperProps } from '@/ui/helpers/visibility/visibility.helpers.props';
 
-export interface Helpers {
-  colors?: ColorHelperProps;
+export interface Helpers extends ColorHelperProps {
   flexbox?: FlexboxHelperProps;
   spacing?: SpacingHelperProps;
   typography?: TypographyHelperProps;

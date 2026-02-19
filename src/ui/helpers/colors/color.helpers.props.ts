@@ -60,4 +60,6 @@ export interface ColorHelperProps {
   backgroundColor?: ColorHelper;
   textShade?: ShadeHelper;
   backgroundShade?: ShadeHelper;
+  textInverted?: boolean;
+  backgroundInverted?: boolean;
 }

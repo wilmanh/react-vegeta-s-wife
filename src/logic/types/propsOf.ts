@@ -7,5 +7,5 @@ export type IntrinsicElementsNoSVG = Omit<
 export type PropsOf<Tag> = Tag extends keyof IntrinsicElementsNoSVG
   ? IntrinsicElementsNoSVG[Tag]
   : Tag extends React.ComponentType<infer Props>
-  ? Props & JSX.IntrinsicAttributes
-  : never;
+    ? Props & JSX.IntrinsicAttributes
+    : never;

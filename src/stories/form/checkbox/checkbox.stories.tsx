@@ -41,12 +41,12 @@ export const Primary: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Checkbox {...args} htmlProps={{ name: 'radiostorybook' }}>
+        <Checkbox {...args} name='radiostorybook'>
           Selected
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} htmlProps={{ name: 'radiostorybook' }}>
+        <Checkbox {...args} name='radiostorybook'>
           Unselected
         </Checkbox>
       </Field>

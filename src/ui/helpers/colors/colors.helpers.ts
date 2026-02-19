@@ -11,14 +11,18 @@ export class ColorHelpers<T extends ColorHelperProps>
       textColor: txtColor,
       backgroundShade,
       textShade,
+      backgroundInverted,
+      textInverted,
     } = parameters;
-    const backgroundColor = backgroundShade
-      ? `${bgColor}-${backgroundShade}`
-      : bgColor;
-    const textColor = textShade ? `${txtColor}-${textShade}` : txtColor;
+    const backgroundColor = `${bgColor}${
+      backgroundShade ? `-${backgroundShade}` : ''
+    }${backgroundInverted ? '-invert' : ''}`;
+    const textColor = `${txtColor}${textShade ? `-${textShade}` : ''}${
+      textInverted ? '-invert' : ''
+    }`;
     return {
-      [`has-background-${backgroundColor}`]: backgroundColor,
-      [`has-text-${textColor}`]: textColor,
+      [`has-background-${backgroundColor}`]: bgColor,
+      [`has-text-${textColor}`]: txtColor,
     };
   };
 }

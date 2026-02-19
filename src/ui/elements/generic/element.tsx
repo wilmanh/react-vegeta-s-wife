@@ -13,8 +13,12 @@ export const Element = <T extends AnyElement>({
   nameOf,
   children,
   className,
-  htmlProps,
-  colors,
+  backgroundColor,
+  backgroundShade,
+  textColor,
+  backgroundInverted,
+  textInverted,
+  textShade,
   extra,
   flexbox,
   spacing,
@@ -34,7 +38,12 @@ export const Element = <T extends AnyElement>({
     <Generic
       className={classNames(
         elementClasses.prepareClasses({
-          colors,
+          backgroundColor,
+          backgroundShade,
+          textColor,
+          backgroundInverted,
+          textInverted,
+          textShade,
           flexbox,
           spacing,
           visibility,
@@ -45,7 +54,6 @@ export const Element = <T extends AnyElement>({
         nameOf,
       )}
       key={key}
-      {...htmlProps}
       {...props}
     >
       {children}
