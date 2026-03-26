@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
 import { ColumnsProps } from './columns.props';
@@ -23,6 +23,9 @@ const Columns = ({
     'nameOf' | 'as'
   >): JSX.Element => {
   const fieldClasses = container.resolve(ColumnsClasses);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element
       className={classNames(

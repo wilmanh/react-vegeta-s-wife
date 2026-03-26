@@ -74,19 +74,19 @@ export const Icons: Story = {
     children: (
       <>
         <Crumb>
-          <Icon size='small' textColor='danger'>
+          <Icon scale='small' textColor='danger'>
             <GrBug aria-hidden='true' />
           </Icon>
           <span>Home</span>
         </Crumb>
         <Crumb>
-          <Icon size='small' textColor='danger'>
+          <Icon scale='small' textColor='danger'>
             <GrBug aria-hidden='true' />
           </Icon>
           <span>Docs</span>
         </Crumb>
         <Crumb active>
-          <Icon size='small' textColor='danger'>
+          <Icon scale='small' textColor='danger'>
             <GrBug aria-hidden='true' />
           </Icon>
           <span>Components</span>

@@ -1,13 +1,17 @@
 import 'reflect-metadata';
-import { AnyElement } from '@/logic/types/anyElement';
 import { JSX } from 'react';
-import { Element } from '../generic/element';
+import { Element as E } from '../generic/element';
 import { ElementProps } from '@/ui/elements/generic/element.props';
 
-export const Block = <T extends AnyElement>({
+export const Block = ({
   children,
   ...props
-}: Omit<ElementProps<T>, 'nameOf'>): JSX.Element | undefined => {
+}: Omit<ElementProps<JSX.IntrinsicElements['div']>, 'nameOf' | 'as'>):
+  | JSX.Element
+  | undefined => {
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element nameOf='block' {...props}>
       {children}

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { container } from 'tsyringe';
 import { ColumnProps } from './column.props';
 import { ColumnClasses } from './column.classes';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { ElementProps } from '@/ui/elements/generic/element.props';
 
 const Column = ({
@@ -20,6 +20,9 @@ const Column = ({
     'nameOf' | 'as'
   >): JSX.Element => {
   const fieldClasses = container.resolve(ColumnClasses);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element
       className={classNames(

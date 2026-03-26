@@ -5,17 +5,21 @@ import Field from '../field';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 const HorizontalField = ({
   label,
   body,
-  size,
-}: HorizontalFieldProps): JSX.Element => {
+  scale,
+  ...props
+}: ElementProps<JSX.IntrinsicElements['div']> &
+  HorizontalFieldProps): JSX.Element => {
   const sizeClasses = container
     .resolve(SizeClassNameResolver)
-    .prepareClasses({ size });
+    .prepareClasses({ scale });
+
   return (
-    <Field className='is-horizontal'>
+    <Field className='is-horizontal' {...props}>
       <div className={classNames('field-label', sizeClasses)}>{label}</div>
       <div className='field-body'>{body}</div>
     </Field>

@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 
 const PaginationList = ({
   children,
@@ -11,6 +11,9 @@ const PaginationList = ({
     ElementProps<JSX.IntrinsicElements['ul']>,
     'nameOf' | 'as'
   >): JSX.Element => {
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['ul']>
+  >;
   return (
     <Element nameOf='pagination-list' as={'ul'} {...props}>
       {children}

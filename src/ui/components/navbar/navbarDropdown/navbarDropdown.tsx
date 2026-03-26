@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import NavbarDropdownProps from './navbarDropdown.props';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
@@ -24,6 +24,9 @@ const NavbarDropdown = ({
     position,
     boxed,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element
       className={classNames(className, classes)}

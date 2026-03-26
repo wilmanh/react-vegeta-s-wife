@@ -6,10 +6,10 @@ import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/si
 
 export class TabsClasses<T extends TabsProps> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
-    const { size, position, boxed, toggle, rounded, fullwidth } = parameters;
+    const { scale, position, boxed, toggle, rounded, fullwidth } = parameters;
     const sizeClass = container.resolve(SizeClassNameResolver);
     return {
-      ...sizeClass.prepareClasses({ size }),
+      ...sizeClass.prepareClasses({ scale }),
       [`is-boxed`]: boxed,
       [`is-toggle`]: toggle,
       [`is-fullwidth`]: fullwidth,

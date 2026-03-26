@@ -6,9 +6,9 @@ import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
 import { container } from 'tsyringe';
 
-export class ProgressClasses<T extends Color & Size>
-  implements ClassNameFactory<T>
-{
+export class ProgressClasses<
+  T extends Color & Size,
+> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const colorClass = container.resolve(ColorClassNameResolver);
     const sizeClass = container.resolve(SizeClassNameResolver);
@@ -18,7 +18,7 @@ export class ProgressClasses<T extends Color & Size>
         dark: parameters?.dark,
         light: parameters?.light,
       }),
-      ...sizeClass.prepareClasses({ size: parameters?.size }),
+      ...sizeClass.prepareClasses({ scale: parameters?.scale }),
     };
   };
 }

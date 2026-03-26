@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { ContainerProps } from './container.props';
 import { container } from 'tsyringe';
@@ -20,6 +20,9 @@ const Container = ({
     'nameOf' | 'as'
   >): JSX.Element => {
   const containerClasses = container.resolve(ContainerClasses);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element
       className={classNames(

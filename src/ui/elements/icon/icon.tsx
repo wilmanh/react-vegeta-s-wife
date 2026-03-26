@@ -4,31 +4,33 @@ import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { IconProps } from './icon.props';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '../generic/element';
+import { Element as E } from '../generic/element';
 import { IconClasses } from './icon.classes';
+
+type IconTags = JSX.IntrinsicElements['span'] | JSX.IntrinsicElements['div'];
 
 export const Icon = ({
   as,
   text,
-  size,
+  scale,
   left,
   right,
   children,
   className,
   textColor,
   ...props
-}: Omit<
-  ElementProps<JSX.IntrinsicElements['span'] | JSX.IntrinsicElements['div']>,
-  'nameOf'
-> &
-  IconProps): JSX.Element | undefined => {
+}: Omit<ElementProps<IconTags>, 'nameOf'> & IconProps):
+  | JSX.Element
+  | undefined => {
   const classesResolver = container.resolve(IconClasses);
   const iconClasses = classesResolver.prepareClasses({
     textColor,
-    size,
+    scale,
     left,
     right,
   });
+  const Element = E as React.ComponentType<ElementProps<IconTags>>;
+
   const asDefault = as ?? 'span';
   return (
     <Element

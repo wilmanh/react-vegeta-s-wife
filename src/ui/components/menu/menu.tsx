@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 
 const Menu = ({
   children,
@@ -11,6 +11,9 @@ const Menu = ({
     ElementProps<JSX.IntrinsicElements['aside']>,
     'nameOf'
   >): JSX.Element => {
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['aside']>
+  >;
   return (
     <Element nameOf='menu' as={'aside'} {...props}>
       {children}

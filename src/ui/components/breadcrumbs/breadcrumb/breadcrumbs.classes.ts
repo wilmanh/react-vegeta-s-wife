@@ -4,14 +4,14 @@ import { container } from 'tsyringe';
 import { BreadcrumbProps } from './breadcrumb.props';
 import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
 
-export class BreadcrumbClasses<T extends BreadcrumbProps>
-  implements ClassNameFactory<T>
-{
+export class BreadcrumbClasses<
+  T extends BreadcrumbProps,
+> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
-    const { size, position, separator } = parameters;
+    const { scale, position, separator } = parameters;
     const sizeClass = container.resolve(SizeClassNameResolver);
     return {
-      ...sizeClass.prepareClasses({ size }),
+      ...sizeClass.prepareClasses({ scale }),
       [`is-${position}`]: position !== 'left' ? position : false,
       [`has-${separator}-separator`]: separator,
     };

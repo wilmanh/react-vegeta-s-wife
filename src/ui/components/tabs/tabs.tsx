@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { TabsProps } from './tabs.props';
@@ -15,7 +15,7 @@ const Tabs = ({
   rounded,
   toggle,
   boxed,
-  size,
+  scale,
   ...props
 }: PropsWithChildren &
   TabsProps &
@@ -23,10 +23,13 @@ const Tabs = ({
     ElementProps<JSX.IntrinsicElements['div']>,
     'nameOf' | 'as'
   >): JSX.Element => {
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   const classesResolver = container.resolve(TabsClasses);
   const classes = classesResolver.prepareClasses({
     position,
-    size,
+    scale,
     boxed,
     fullwidth,
     rounded,

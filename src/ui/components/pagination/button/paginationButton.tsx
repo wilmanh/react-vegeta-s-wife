@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { PaginationButtonProps } from './paginationButton.props';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
@@ -23,6 +23,9 @@ const PaginationButton = ({
   const classes = classResolver.prepareClasses({
     disabled,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['a']>
+  >;
   return (
     <Element
       className={classNames(className, classes)}

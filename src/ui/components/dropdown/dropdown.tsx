@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { DropdownProps } from './dropdown.props';
 import { Button } from '@/ui/elements/button/button';
 import { Icon } from '@/ui/elements/icon/icon';
@@ -14,7 +14,6 @@ import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/
 
 const Dropdown = ({
   className,
-  htmlProps,
   hoverable,
   children,
   active,
@@ -42,6 +41,9 @@ const Dropdown = ({
     light,
     dark,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
 
   return (
     <Element
@@ -62,11 +64,7 @@ const Dropdown = ({
           </Icon>
         </Button>
       </Element>
-      <Element
-        nameOf='dropdown-menu'
-        htmlProps={{ id: 'testing', role: 'menu', ...htmlProps }}
-        as='div'
-      >
+      <Element nameOf='dropdown-menu' role='menu' as='div'>
         <Element nameOf='dropdown-content' as='div'>
           {children}
         </Element>

@@ -8,7 +8,7 @@ export class DeleteClasses<T extends Size> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const sizeClass = container.resolve(SizeClassNameResolver);
     return {
-      ...sizeClass.prepareClasses({ size: parameters?.size }),
+      ...sizeClass.prepareClasses({ scale: parameters?.scale }),
     };
   };
 }

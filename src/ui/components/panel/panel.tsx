@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
@@ -25,6 +25,9 @@ const Panel = ({
   const classes = colorClass.prepareClasses({
     color,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['nav']>
+  >;
   return (
     <Element
       className={classNames(className, classes)}

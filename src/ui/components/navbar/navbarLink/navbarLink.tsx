@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { NavbarLinkProps } from './navbarLink.props';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
@@ -22,6 +22,9 @@ const NavbarLink = ({
   const classes = classResolver.prepareClasses({
     arrowless,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['a']>
+  >;
   return (
     <Element
       className={classNames(className, classes)}

@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import { PaginationLinkClasses } from './paginationLink.classess';
 import { PaginationLinkProps } from './paginationLink.props';
@@ -22,6 +22,9 @@ const PaginationLink = ({
   const classes = classResolver.prepareClasses({
     current,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['a']>
+  >;
   return (
     <li>
       <Element

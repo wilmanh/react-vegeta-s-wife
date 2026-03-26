@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
 import { SectionProps } from './section.props';
@@ -16,6 +16,9 @@ const Section = ({
     ElementProps<JSX.IntrinsicElements['div']>,
     'nameOf' | 'as'
   >): JSX.Element => {
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   const sectionClasses = container.resolve(SectionClasses);
   return (
     <Element

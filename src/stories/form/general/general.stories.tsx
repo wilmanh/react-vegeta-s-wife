@@ -2,7 +2,6 @@ import Input from '@/ui/form/input/input';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
 import Field from '@/ui/form/field/field';
-import { FieldProps } from '@/ui/form/field/field.props';
 import Label from '@/ui/form/label/label';
 import Control from '@/ui/form/control/control';
 import { Icon } from '@/ui/elements/icon/icon';
@@ -33,10 +32,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-type ArgsProps = FieldProps;
-
 export const CompleteFormExample: Story = {
-  render: (args: ArgsProps) => (
+  render: (args: object) => (
     <>
       <Field>
         <Label className='has-text-black'>Name</Label>
@@ -48,10 +45,10 @@ export const CompleteFormExample: Story = {
         <Label className='has-text-black'>UserName</Label>
         <Control iconLeft iconRight>
           <Input {...args} color='success' value={'bulmaio'} />
-          <Icon size='small' left>
+          <Icon scale='small' left>
             <GrMail />
           </Icon>
-          <Icon size='small' right>
+          <Icon scale='small' right>
             <GrCheckmark />
           </Icon>
         </Control>
@@ -61,10 +58,10 @@ export const CompleteFormExample: Story = {
         <Label className='has-text-black'>Email</Label>
         <Control iconLeft iconRight>
           <Input {...args} color='danger' value={'bulmaio'} />
-          <Icon size='small' left>
+          <Icon scale='small' left>
             <GrMail />
           </Icon>
-          <Icon size='small' right>
+          <Icon scale='small' right>
             <GrStatusWarning />
           </Icon>
         </Control>
@@ -107,7 +104,7 @@ export const CompleteFormExample: Story = {
 };
 
 export const Addons: Story = {
-  render: (args: ArgsProps) => (
+  render: (args: object) => (
     <>
       <Field addons>
         <Control>
@@ -140,7 +137,7 @@ export const Addons: Story = {
 };
 
 export const Expanded: Story = {
-  render: (args: ArgsProps) => (
+  render: (args: object) => (
     <>
       <Field addons>
         <Control>
@@ -172,7 +169,7 @@ export const Expanded: Story = {
 };
 
 export const GroupedMultiline: Story = {
-  render: (args: ArgsProps) => (
+  render: () => (
     <Field grouped multiline>
       <Control>
         <Button color='info'>one</Button>

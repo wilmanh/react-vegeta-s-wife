@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { State } from '@/logic/interfaces/props/state';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
@@ -23,6 +23,9 @@ const NavbarMenu = ({
   const classes = classResolver.prepareClasses({
     active,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div'] | JSX.IntrinsicElements['a']>
+  >;
   return (
     <Element
       className={classNames(className, classes)}

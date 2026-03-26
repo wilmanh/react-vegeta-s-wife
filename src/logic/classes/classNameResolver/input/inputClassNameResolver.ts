@@ -6,12 +6,12 @@ import { ColorClassNameResolver } from '../color/colorClassNameResolver';
 import { SizeClassNameResolver } from '../size/sizeClassNameResolver';
 import { StateClassNameResolver } from '../state/stateClassNameResolver';
 
-export class InputClassNameResolver<T extends Input>
-  implements ClassNameFactory<T>
-{
+export class InputClassNameResolver<
+  T extends Input,
+> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const {
-      size,
+      scale,
       dark,
       color,
       light,
@@ -26,7 +26,7 @@ export class InputClassNameResolver<T extends Input>
     return {
       ['is-static']: frozen,
       ['has-fixed-size']: fixed,
-      ...sizeClass.prepareClasses({ size }),
+      ...sizeClass.prepareClasses({ scale }),
       ...colorClass.prepareClasses({
         color,
         dark,

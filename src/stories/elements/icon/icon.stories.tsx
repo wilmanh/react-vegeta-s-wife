@@ -43,7 +43,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   render: (args: IconProps) => (
     <Icon {...args}>
-      <GrBug size={args.size} />
+      <GrBug size={args.scale} />
     </Icon>
   ),
 };
@@ -51,22 +51,22 @@ export const Primary: Story = {
 export const Colors: Story = {
   render: (args) => (
     <div className='buttons'>
-      <Icon {...args} size={'large'} textColor='primary'>
+      <Icon {...args} scale={'large'} textColor='primary'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} size={'large'} textColor='link'>
+      <Icon {...args} scale={'large'} textColor='link'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} size={'large'} textColor='info'>
+      <Icon {...args} scale={'large'} textColor='info'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} size={'large'} textColor='success'>
+      <Icon {...args} scale={'large'} textColor='success'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} size={'large'} textColor='warning'>
+      <Icon {...args} scale={'large'} textColor='warning'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} size={'large'} textColor='danger'>
+      <Icon {...args} scale={'large'} textColor='danger'>
         <GrBug size={'large'} />
       </Icon>
     </div>

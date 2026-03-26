@@ -43,7 +43,7 @@ export const Example: Story = {
 };
 
 export const Colors: Story = {
-  render: (args: ArgsProps) => (
+  render: (args: object) => (
     <>
       <Field>
         <Textarea {...args} value='default' />
@@ -65,26 +65,26 @@ export const Colors: Story = {
 };
 
 export const Sizes: Story = {
-  render: (args: ArgsProps) => (
+  render: (args: object) => (
     <>
       <Field>
-        <Textarea {...args} value='small' size='small' />
+        <Textarea {...args} value='small' scale='small' />
       </Field>
       <Field>
         <Textarea {...args} value='default' />
       </Field>
       <Field>
-        <Textarea {...args} value='medium' size='medium' />
+        <Textarea {...args} value='medium' scale='medium' />
       </Field>
       <Field>
-        <Textarea {...args} value='large' size='large' />
+        <Textarea {...args} value='large' scale='large' />
       </Field>
     </>
   ),
 };
 
 export const Loading: Story = {
-  render: (args: ArgsProps) => (
+  render: (args: object) => (
     <Field>
       <Textarea {...args} disabled value='loading' />
     </Field>

@@ -3,7 +3,7 @@ import { JSX } from 'react';
 import classNames from 'classnames';
 import { InputType } from './buttonType';
 import { container } from 'tsyringe';
-import { Element } from '../generic/element';
+import { Element as E } from '../generic/element';
 import { ElementProps } from '@/ui/elements/generic/element.props';
 import { ButtonProps } from './button.props';
 import { ButtonClasses } from './button.classes';
@@ -28,8 +28,7 @@ export const Button = <T extends AnyElement>({
     loading,
     outlined,
     rounded,
-    htmlProps,
-    size,
+    scale,
     noResponsive,
     static: frozen,
     ...params
@@ -49,7 +48,7 @@ export const Button = <T extends AnyElement>({
       loading,
       outlined,
       rounded,
-      size,
+      scale,
     }),
   };
   const asDefault = as ?? 'button';
@@ -60,22 +59,20 @@ export const Button = <T extends AnyElement>({
   if (frozen) {
     return <span className={classNames('button', classes)}>{child}</span>;
   }
-
+  const Element = E as React.ComponentType<
+    ElementProps<
+      | JSX.IntrinsicElements['input']
+      | JSX.IntrinsicElements['a']
+      | JSX.IntrinsicElements['button']
+    >
+  >;
   return (
     <Element
       as={inputType ? 'input' : asDefault}
       nameOf='button'
       className={classNames(classes)}
-      htmlProps={
-        {
-          type: inputType,
-          value: value as string,
-          ...htmlProps,
-        } as
-          | JSX.IntrinsicElements['input']
-          | JSX.IntrinsicElements['a']
-          | JSX.IntrinsicElements['button']
-      }
+      type={inputType}
+      value={value}
       key={key}
       {...params}
     >

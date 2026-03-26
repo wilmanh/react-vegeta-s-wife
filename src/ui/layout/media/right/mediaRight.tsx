@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 const MediaRight = ({
   children,
@@ -11,6 +11,9 @@ const MediaRight = ({
   ElementProps<JSX.IntrinsicElements['div']>,
   'nameOf' | 'as'
 >): JSX.Element => {
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element
       className={classNames(className)}

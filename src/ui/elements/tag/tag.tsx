@@ -3,9 +3,10 @@ import { JSX } from 'react';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { TagProps } from './tag.props';
-import { Element } from '../generic/element';
 import { TagClasses } from './tag.classes';
 import { ElementProps } from '../generic/element.props';
+import { Element as E } from '../generic/element';
+import { TagTags } from '../tags/tags.type';
 
 export const Tag = ({
   hoverable,
@@ -15,17 +16,11 @@ export const Tag = ({
   deleted,
   color,
   light,
-  size,
+  scale,
   dark,
   as,
   ...props
-}: ElementProps<
-  | JSX.IntrinsicElements['span']
-  | JSX.IntrinsicElements['a']
-  | JSX.IntrinsicElements['div']
-  | JSX.IntrinsicElements['button']
-> &
-  TagProps): JSX.Element => {
+}: ElementProps<TagTags> & TagProps): JSX.Element => {
   const classesResolver = container.resolve(TagClasses);
   const tagClasses = classesResolver.prepareClasses({
     hoverable,
@@ -34,10 +29,10 @@ export const Tag = ({
     light,
     deleted,
     dark,
-    size,
+    scale,
   });
   const asDefault = as ?? 'span';
-
+  const Element = E as React.ComponentType<ElementProps<TagTags>>;
   return (
     <Element
       className={classNames(className, tagClasses)}

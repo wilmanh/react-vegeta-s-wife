@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { Input as InputProps } from '@/logic/interfaces/props/input';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
@@ -14,7 +14,7 @@ const Input = ({
   dark,
   light,
   rounded,
-  size,
+  scale,
   focus,
   hover,
   static: frozen,
@@ -26,6 +26,9 @@ const Input = ({
   >): JSX.Element => {
   const inputClasses = container.resolve(InputClassNameResolver);
   const roundedClasses = container.resolve(RoundedClassNameResolver);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['input']>
+  >;
   return (
     <Element
       className={classNames(
@@ -35,7 +38,7 @@ const Input = ({
           color,
           dark,
           light,
-          size,
+          scale,
           focus,
           hover,
           static: frozen,

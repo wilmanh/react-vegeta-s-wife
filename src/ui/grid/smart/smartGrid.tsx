@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { SmartGridProps } from './smartGrid.props';
 import classNames from 'classnames';
 import { SmartGridClasses } from './smartGrid.classes';
@@ -21,6 +21,9 @@ const Grid = ({
     'nameOf' | 'as'
   >): JSX.Element => {
   const smartGridClasses = container.resolve(SmartGridClasses);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element
       className={classNames(

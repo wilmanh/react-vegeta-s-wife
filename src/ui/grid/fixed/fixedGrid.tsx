@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { container } from 'tsyringe';
 import { FixedGridClasses } from './fixedGrid.classes';
@@ -19,6 +19,9 @@ const FixedGrid = ({
     'nameOf' | 'as'
   >): JSX.Element => {
   const fixedClasses = container.resolve(FixedGridClasses);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element
       className={classNames(

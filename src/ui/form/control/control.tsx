@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 import { ControlProps } from './control.props';
 import { ControlClasses } from './control.classes';
@@ -21,6 +21,9 @@ const Control = ({
     'nameOf' | 'as'
   >): JSX.Element => {
   const controlClasses = container.resolve(ControlClasses);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['div']>
+  >;
   return (
     <Element
       className={classNames(

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { FileProps } from './file.props';
@@ -13,7 +13,7 @@ const File = ({
   label,
   name,
   color,
-  size,
+  scale,
   centered,
   right,
   boxed,
@@ -21,10 +21,12 @@ const File = ({
   fullwidth,
   dark,
   light,
-  htmlProps,
   ...props
 }: FileProps & ElementProps<JSX.IntrinsicElements['input']>): JSX.Element => {
   const inputClasses = container.resolve(FileClasses);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['input']>
+  >;
   return (
     <div
       className={classNames(
@@ -32,7 +34,7 @@ const File = ({
         'file',
         inputClasses.prepareClasses({
           color,
-          size,
+          scale,
           dark,
           light,
           fullwidth,
@@ -48,13 +50,8 @@ const File = ({
           nameOf='file-input'
           as={'input'}
           {...props}
-          htmlProps={
-            {
-              type: 'file',
-              name: 'file',
-              ...htmlProps,
-            } as ElementProps<JSX.IntrinsicElements['input']>
-          }
+          name={name ?? 'file'}
+          type={'file'}
         />
         <span className='file-cta'>
           <span className='file-icon'>{icon ?? <GrDownload />}</span>

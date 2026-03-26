@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { CrumbProps } from './crumb.props';
@@ -17,6 +17,9 @@ export const Crumb = ({
   CrumbProps): JSX.Element => {
   const classesResolver = container.resolve(StateClassNameResolver);
   const classes = classesResolver.prepareClasses({ active });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['li']>
+  >;
   return (
     <Element
       nameOf=''

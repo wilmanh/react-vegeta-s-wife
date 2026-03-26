@@ -41,12 +41,12 @@ export const Primary: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Radio {...args} htmlProps={{ name: 'radiostorybook' }}>
+        <Radio {...args} name='radiostorybook'>
           Selected
         </Radio>
       </Field>
       <Field>
-        <Radio {...args} htmlProps={{ name: 'radiostorybook' }}>
+        <Radio {...args} name='radiostorybook'>
           Unselected
         </Radio>
       </Field>
@@ -58,22 +58,22 @@ export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Radio {...args} htmlProps={{ name: 'radiostorybook2' }} size='small'>
+        <Radio {...args} name='radiostorybook2' scale='small'>
           Small
         </Radio>
       </Field>
       <Field>
-        <Radio {...args} htmlProps={{ name: 'radiostorybook2' }}>
+        <Radio {...args} name='radiostorybook2'>
           Default
         </Radio>
       </Field>
       <Field>
-        <Radio {...args} htmlProps={{ name: 'radiostorybook2' }} size='medium'>
+        <Radio {...args} name='radiostorybook2' scale='medium'>
           Medium
         </Radio>
       </Field>
       <Field>
-        <Radio {...args} htmlProps={{ name: 'radiostorybook2' }} size='large'>
+        <Radio {...args} name='radiostorybook2' scale='large'>
           Large
         </Radio>
       </Field>
@@ -85,43 +85,27 @@ export const Colors: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Radio {...args} htmlProps={{ checked: true, name: 'default' }}>
+        <Radio {...args} checked={true} name='default'>
           Small
         </Radio>
       </Field>
       <Field>
-        <Radio
-          {...args}
-          htmlProps={{ checked: true, name: 'info' }}
-          color='info'
-        >
+        <Radio {...args} checked={true} name='info' color='info'>
           Default
         </Radio>
       </Field>
       <Field>
-        <Radio
-          {...args}
-          htmlProps={{ checked: true, name: 'succcess' }}
-          color='success'
-        >
+        <Radio {...args} checked={true} name='succcess' color='success'>
           Medium
         </Radio>
       </Field>
       <Field>
-        <Radio
-          {...args}
-          htmlProps={{ checked: true, name: 'warning' }}
-          color='warning'
-        >
+        <Radio {...args} checked={true} name='warning' color='warning'>
           Large
         </Radio>
       </Field>
       <Field>
-        <Radio
-          {...args}
-          htmlProps={{ checked: true, name: 'danger' }}
-          color='danger'
-        >
+        <Radio {...args} checked={true} name='danger' color='danger'>
           Large
         </Radio>
       </Field>

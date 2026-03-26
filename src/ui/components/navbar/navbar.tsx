@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import { NavbarProps } from './navbar.props';
 import classNames from 'classnames';
@@ -15,7 +15,6 @@ const Navbar = ({
   shadow,
   transparent,
   className,
-  htmlProps,
   ...props
 }: PropsWithChildren &
   NavbarProps &
@@ -28,16 +27,16 @@ const Navbar = ({
     spaced,
     shadow,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['nav']>
+  >;
   return (
     <Element
       className={classNames(className, classes)}
       nameOf='navbar'
       as={'nav'}
-      htmlProps={{
-        role: htmlProps?.role ?? 'navigation',
-        'aria-label': htmlProps?.['aria-label'] ?? 'main navigation',
-        ...htmlProps,
-      }}
+      role={props?.role ?? 'navigation'}
+      aria-label={props?.['aria-label'] ?? 'main navigation'}
       {...props}
     >
       {children}

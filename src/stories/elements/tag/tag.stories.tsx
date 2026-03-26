@@ -4,16 +4,11 @@ import { Tag } from '@/ui/elements/tag/tag';
 import { Delete as Del } from '@/ui/elements/delete/delete';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { fn } from 'storybook/test';
-import {
-  AnchorHTMLAttributes,
-  ButtonHTMLAttributes,
-  ComponentType,
-  DetailedHTMLProps,
-  HTMLAttributes,
-} from 'react';
+import { ComponentType } from 'react';
 import { Tags } from '@/ui/elements/tags/tags';
 import { TagProps } from '@/ui/elements/tag/tag.props';
-import { JSX } from 'react/jsx-runtime';
+import { TagTags } from '@/ui/elements/tags/tags.type';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -48,20 +43,7 @@ export const Primary: Story = {
   },
 };
 
-type ArgsProps = JSX.IntrinsicAttributes &
-  ((
-    | DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>
-    | DetailedHTMLProps<
-        AnchorHTMLAttributes<HTMLAnchorElement>,
-        HTMLAnchorElement
-      >
-    | DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-    | DetailedHTMLProps<
-        ButtonHTMLAttributes<HTMLButtonElement>,
-        HTMLButtonElement
-      >
-  ) &
-    TagProps);
+type ArgsProps = ElementProps<TagTags> & TagProps;
 
 export const BlackAndWhite: Story = {
   render: (args: ArgsProps) => (
@@ -141,14 +123,14 @@ export const LightColors: Story = {
 export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <Tags style={{ gap: 18 }}>
-      <Tag {...args} size='small'>
+      <Tag {...args} scale='small'>
         small
       </Tag>
       <Tag {...args}>Default</Tag>
-      <Tag {...args} size='medium'>
+      <Tag {...args} scale='medium'>
         medium
       </Tag>
-      <Tag {...args} size='large'>
+      <Tag {...args} scale='large'>
         large
       </Tag>
     </Tags>
@@ -170,7 +152,7 @@ export const Delete: Story = {
     <Tags>
       <Tag {...args} color='primary'>
         Delete
-        <Del size='small' />
+        <Del scale='small' />
       </Tag>
     </Tags>
   ),

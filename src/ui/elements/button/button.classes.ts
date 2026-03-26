@@ -16,8 +16,7 @@ import { container } from 'tsyringe';
 
 export class ButtonClasses<
   T extends Common & Color & Size & FullWidth & Style & State,
-> implements ClassNameFactory<T>
-{
+> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const commonClass = container.resolve(CommonClassNameResolver);
     const colorClass = container.resolve(ColorClassNameResolver);
@@ -28,7 +27,7 @@ export class ButtonClasses<
 
     return {
       ...commonClass.prepareClasses({ loading: parameters?.loading }),
-      ...sizeClass.prepareClasses({ size: parameters?.size }),
+      ...sizeClass.prepareClasses({ scale: parameters?.scale }),
       ...colorClass.prepareClasses({
         color: parameters?.color,
         dark: parameters?.dark,

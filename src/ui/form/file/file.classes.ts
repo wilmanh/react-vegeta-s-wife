@@ -17,7 +17,7 @@ export class FileClasses<T extends FileProps> implements ClassNameFactory<T> {
       color,
       dark,
       light,
-      size,
+      scale,
     } = parameters;
     const fullWidthClass = container.resolve(FullwidthClassNameResolver);
     const colorClass = container.resolve(ColorClassNameResolver);
@@ -29,7 +29,7 @@ export class FileClasses<T extends FileProps> implements ClassNameFactory<T> {
       [`is-centered`]: centered,
       ['is-boxed']: boxed,
       ...fullWidthClass.prepareClasses({ fullwidth: fullwidth }),
-      ...sizeClass.prepareClasses({ size }),
+      ...sizeClass.prepareClasses({ scale }),
       ...colorClass.prepareClasses({
         color,
         dark,

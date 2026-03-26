@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { Color } from '@/logic/interfaces/props/color';
@@ -15,10 +15,9 @@ const Switch = ({
   className,
   color,
   isRounded,
-  size,
+  scale,
   outlined,
   children,
-  htmlProps,
   ...props
 }: Color &
   Size &
@@ -32,6 +31,9 @@ const Switch = ({
   const inputClasses = container.resolve(InputClassNameResolver);
   const styleClasses = container.resolve(StyleClassNameResolver);
   const roundedResolver = container.resolve(RoundedClassNameResolver);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['input']>
+  >;
   return (
     <label
       className={classNames(
@@ -39,7 +41,7 @@ const Switch = ({
         styleClasses.prepareClasses({ outlined }),
         roundedResolver.prepareClasses({ isRounded }),
         inputClasses.prepareClasses({
-          size,
+          scale,
         }),
       )}
     >
@@ -47,9 +49,7 @@ const Switch = ({
         {...props}
         className={classNames(className)}
         as={'input'}
-        htmlProps={
-          { type: 'checkbox', ...htmlProps } as JSX.IntrinsicElements['input']
-        }
+        type='checkbox'
       />
       <span
         className={classNames(

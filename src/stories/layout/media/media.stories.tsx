@@ -51,7 +51,7 @@ export const Default: Story = {
         </MediaLeft>
         <MediaContent>
           <Content>
-            <Subtitle hSize='6'>
+            <Subtitle hSize={6}>
               <strong>John Smith</strong> <small>@johnsmith</small>{' '}
               <small>31m</small>
               <br />
@@ -63,17 +63,17 @@ export const Default: Story = {
           <Level mobile>
             <LevelLeft>
               <LevelItem>
-                <Icon size='small'>
+                <Icon scale='small'>
                   <i className='fas fa-reply'></i>
                 </Icon>
               </LevelItem>
               <LevelItem>
-                <Icon size='small'>
+                <Icon scale='small'>
                   <i className='fas fa-retweet'></i>
                 </Icon>
               </LevelItem>
               <LevelItem>
-                <Icon size='small'>
+                <Icon scale='small'>
                   <i className='fas fa-heart'></i>
                 </Icon>
               </LevelItem>
@@ -134,7 +134,7 @@ export const Nesting: Story = {
         </MediaLeft>
         <MediaContent>
           <Content className='is-color-text-black'>
-            <Subtitle hSize='6'>
+            <Subtitle hSize={6}>
               <strong>Barbara Middleton</strong>
               <br />
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
@@ -156,7 +156,7 @@ export const Nesting: Story = {
             </MediaLeft>
             <MediaContent>
               <Content>
-                <Subtitle hSize='6'>
+                <Subtitle hSize={6}>
                   <strong>Sean Brown</strong>
                   <br />
                   Donec sollicitudin urna eget eros malesuada sagittis.
@@ -170,13 +170,13 @@ export const Nesting: Story = {
                 </Subtitle>
               </Content>
               <Media>
-                <Subtitle hSize='6'>
+                <Subtitle hSize={6}>
                   Vivamus quis semper metus, non tincidunt dolor. Vivamus in mi
                   eu lorem cursus ullamcorper sit amet nec massa.
                 </Subtitle>
               </Media>
               <Media>
-                <Subtitle hSize='6'>
+                <Subtitle hSize={6}>
                   Morbi vitae diam et purus tincidunt porttitor vel vitae augue.
                   Praesent malesuada metus sed pharetra euismod. Cras tellus
                   odio, tincidunt iaculis diam non, porta aliquet tortor.
@@ -193,7 +193,7 @@ export const Nesting: Story = {
             </MediaLeft>
             <MediaContent>
               <Content>
-                <Subtitle hSize='6'>
+                <Subtitle hSize={6}>
                   <strong>Kayli Eunice </strong>
                   <br />
                   Sed convallis scelerisque mauris, non pulvinar nunc mattis

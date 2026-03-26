@@ -41,12 +41,12 @@ export const Primary: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Switch {...args} htmlProps={{ name: 'radiostorybook' }}>
+        <Switch {...args} name='radiostorybook'>
           Selected
         </Switch>
       </Field>
       <Field>
-        <Switch {...args} isRounded htmlProps={{ name: 'radiostorybook' }}>
+        <Switch {...args} isRounded name='radiostorybook'>
           Unselected
         </Switch>
       </Field>
@@ -58,22 +58,22 @@ export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Switch {...args} htmlProps={{ name: 'radiostorybook2' }} size='small'>
+        <Switch {...args} name='radiostorybook2' scale='small'>
           Small
         </Switch>
       </Field>
       <Field>
-        <Switch {...args} htmlProps={{ name: 'radiostorybook2' }}>
+        <Switch {...args} name='radiostorybook2'>
           Default
         </Switch>
       </Field>
       <Field>
-        <Switch {...args} htmlProps={{ name: 'radiostorybook2' }} size='medium'>
+        <Switch {...args} name='radiostorybook2' scale='medium'>
           Medium
         </Switch>
       </Field>
       <Field>
-        <Switch {...args} htmlProps={{ name: 'radiostorybook2' }} size='large'>
+        <Switch {...args} name='radiostorybook2' scale='large'>
           Large
         </Switch>
       </Field>
@@ -85,25 +85,17 @@ export const Colors: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Switch {...args} htmlProps={{ checked: true, name: 'default' }}>
+        <Switch {...args} checked={true} name='default'>
           Small
         </Switch>
       </Field>
       <Field>
-        <Switch
-          {...args}
-          htmlProps={{ checked: true, name: 'info' }}
-          color='info'
-        >
+        <Switch {...args} checked={true} name='info' color='info'>
           Default
         </Switch>
       </Field>
       <Field>
-        <Switch
-          {...args}
-          htmlProps={{ checked: true, name: 'succcess' }}
-          color='success'
-        >
+        <Switch {...args} checked={true} name='succcess' color='success'>
           Medium
         </Switch>
       </Field>
@@ -111,19 +103,15 @@ export const Colors: Story = {
         <Switch
           {...args}
           isRounded
-          htmlProps={{ checked: true, name: 'warning' }}
+          checked={true}
+          name='warning'
           color='warning'
         >
           Large
         </Switch>
       </Field>
       <Field>
-        <Switch
-          {...args}
-          isRounded
-          htmlProps={{ checked: true, name: 'danger' }}
-          color='danger'
-        >
+        <Switch {...args} isRounded checked={true} name='danger' color='danger'>
           Large
         </Switch>
       </Field>
@@ -135,21 +123,12 @@ export const Outlined: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Switch
-          outlined
-          {...args}
-          htmlProps={{ checked: true, name: 'default' }}
-        >
+        <Switch outlined {...args} checked={true} name='default'>
           Small
         </Switch>
       </Field>
       <Field>
-        <Switch
-          outlined
-          {...args}
-          htmlProps={{ checked: true, name: 'info' }}
-          color='info'
-        >
+        <Switch outlined {...args} checked={true} name='info' color='info'>
           Default
         </Switch>
       </Field>
@@ -157,7 +136,8 @@ export const Outlined: Story = {
         <Switch
           outlined
           {...args}
-          htmlProps={{ checked: true, name: 'succcess' }}
+          checked={true}
+          name='succcess'
           color='success'
         >
           Medium
@@ -168,7 +148,8 @@ export const Outlined: Story = {
           outlined
           isRounded
           {...args}
-          htmlProps={{ checked: true, name: 'warning' }}
+          checked={true}
+          name='warning'
           color='warning'
         >
           Large
@@ -179,7 +160,8 @@ export const Outlined: Story = {
           outlined
           isRounded
           {...args}
-          htmlProps={{ checked: true, name: 'danger' }}
+          checked={true}
+          name='danger'
           color='danger'
         >
           Large

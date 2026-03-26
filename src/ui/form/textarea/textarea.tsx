@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { Input as InputProps } from '@/logic/interfaces/props/input';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
@@ -12,7 +12,7 @@ const Textarea = ({
   color,
   dark,
   light,
-  size,
+  scale,
   focus,
   hover,
   fixed,
@@ -23,6 +23,9 @@ const Textarea = ({
     'nameOf' | 'as'
   >): JSX.Element => {
   const inputClasses = container.resolve(InputClassNameResolver);
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['textarea']>
+  >;
   return (
     <Element
       className={classNames(
@@ -31,7 +34,7 @@ const Textarea = ({
           color,
           dark,
           light,
-          size,
+          scale,
           focus,
           hover,
           fixed,

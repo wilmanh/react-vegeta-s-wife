@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 
 const PanelHeading = ({
   children,
@@ -11,6 +11,9 @@ const PanelHeading = ({
     ElementProps<JSX.IntrinsicElements['p']>,
     'nameOf' | 'as'
   >): JSX.Element => {
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['p']>
+  >;
   return (
     <Element nameOf='panel-heading' as={'p'} {...props}>
       {children}

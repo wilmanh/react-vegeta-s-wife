@@ -3,9 +3,10 @@ import { JSX } from 'react';
 import { container } from 'tsyringe';
 import classNames from 'classnames';
 import { HeadingProps } from '../heading.props';
-import { Element } from '../../generic/element';
+import { Element as E } from '../../generic/element';
 import { ElementProps } from '../../generic/element.props';
 import { HeadingClassNameResolver } from '@/logic/classes/classNameResolver/heading/headingClassNameResolver';
+import { HeadingTags } from '../heading.type';
 
 export const Title = ({
   className,
@@ -14,22 +15,14 @@ export const Title = ({
   hSize,
   as,
   ...props
-}: ElementProps<
-  | JSX.IntrinsicElements['p']
-  | JSX.IntrinsicElements['h1']
-  | JSX.IntrinsicElements['h2']
-  | JSX.IntrinsicElements['h3']
-  | JSX.IntrinsicElements['h4']
-  | JSX.IntrinsicElements['h5']
-  | JSX.IntrinsicElements['h6']
-> &
-  HeadingProps): JSX.Element => {
+}: ElementProps<HeadingTags> & HeadingProps): JSX.Element => {
   const classesResolver = container.resolve(HeadingClassNameResolver);
   const tagClasses = classesResolver.prepareClasses({
     spaced,
     hSize,
   });
   const asDefault = as ?? 'p';
+  const Element = E as React.ComponentType<ElementProps<HeadingTags>>;
 
   return (
     <Element

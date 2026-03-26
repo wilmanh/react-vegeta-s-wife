@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import { container } from 'tsyringe';
 import { State } from '@/logic/interfaces/props/state';
 import classNames from 'classnames';
@@ -22,6 +22,9 @@ const PanelTab = ({
   const classes = stateClass.prepareClasses({
     active,
   });
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['a']>
+  >;
   return (
     <Element
       className={classNames(className, classes)}

@@ -6,7 +6,7 @@ import { ProgressProps } from './progress.props';
 import { ProgressClasses } from './progress.classes';
 
 export const Progress = ({
-  size,
+  scale,
   children,
   color,
   ...props
@@ -17,7 +17,7 @@ export const Progress = ({
     <progress
       className={classNames(
         'progress',
-        classesResolver.prepareClasses({ color, size }),
+        classesResolver.prepareClasses({ color, scale }),
       )}
       {...props}
     >

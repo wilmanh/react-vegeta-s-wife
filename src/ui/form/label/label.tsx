@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { JSX } from 'react';
 import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element } from '@/ui/elements/generic/element';
+import { Element as E } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
 
 const Label = ({
@@ -11,6 +11,9 @@ const Label = ({
   ElementProps<JSX.IntrinsicElements['label']>,
   'nameOf' | 'as'
 >): JSX.Element => {
+  const Element = E as React.ComponentType<
+    ElementProps<JSX.IntrinsicElements['label']>
+  >;
   return (
     <Element
       className={classNames(className)}

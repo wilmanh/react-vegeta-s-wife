@@ -103,19 +103,19 @@ export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <File {...args} name='default' size={'small'} />
+        <File {...args} name='default' scale={'small'} />
       </Field>
       <Field>
         <File {...args} name='warning' />
       </Field>
       <Field>
-        <File {...args} name='warning' size={'medium'} />
+        <File {...args} name='warning' scale={'medium'} />
       </Field>
       <Field>
-        <File {...args} name='danger' size={'large'} />
+        <File {...args} name='danger' scale={'large'} />
       </Field>
       <Field>
-        <File {...args} boxed name='info' size={'large'} />
+        <File {...args} boxed name='info' scale={'large'} />
       </Field>
     </>
   ),

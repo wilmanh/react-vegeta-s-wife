@@ -12,9 +12,9 @@ import { Size } from '@/logic/interfaces/props/size';
 import { Rounded } from '@/logic/interfaces/props/style';
 import { container } from 'tsyringe';
 
-export class TagClasses<T extends Color & Size & Rounded & Delete & Hoverable>
-  implements ClassNameFactory<T>
-{
+export class TagClasses<
+  T extends Color & Size & Rounded & Delete & Hoverable,
+> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const colorClass = container.resolve(ColorClassNameResolver);
     const sizeClass = container.resolve(SizeClassNameResolver);
@@ -29,7 +29,7 @@ export class TagClasses<T extends Color & Size & Rounded & Delete & Hoverable>
       }),
       ...hoverClass.prepareClasses({ hoverable: parameters?.hoverable }),
       ...deleteClass.prepareClasses({ deleted: parameters?.deleted }),
-      ...sizeClass.prepareClasses({ size: parameters?.size }),
+      ...sizeClass.prepareClasses({ scale: parameters?.scale }),
       ...roundedClass.prepareClasses({ rounded: parameters?.rounded }),
     };
   };

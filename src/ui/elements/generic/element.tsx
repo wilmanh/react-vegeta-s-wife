@@ -1,13 +1,14 @@
 import 'reflect-metadata';
 import { AnyElement } from '@/logic/types/anyElement';
-import { JSX } from 'react';
 import classNames from 'classnames';
 import { IntrinsicElementsNoSVG } from '@/logic/types/propsOf';
 import { ElementProps } from './element.props';
 import { container } from 'tsyringe';
 import { ElementClasses } from './element.classes';
 
-export const Element = <T extends AnyElement>({
+export const Element = <
+  T extends React.ComponentType<ElementProps<AnyElement>>,
+>({
   as,
   key,
   nameOf,
@@ -25,7 +26,7 @@ export const Element = <T extends AnyElement>({
   typography,
   visibility,
   ...props
-}: ElementProps<T>): JSX.Element => {
+}: ElementProps<T>) => {
   if (!as && !nameOf) {
     throw new Error('Element requires either "as" or "nameOf" property');
   }
@@ -58,5 +59,5 @@ export const Element = <T extends AnyElement>({
     >
       {children}
     </Generic>
-  ) as JSX.Element;
+  );
 };
