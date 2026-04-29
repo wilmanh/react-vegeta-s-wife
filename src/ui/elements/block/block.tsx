@@ -1,12 +1,14 @@
-import 'reflect-metadata';
 import { JSX } from 'react';
-import { Element as E } from '../generic/element';
+import 'reflect-metadata';
+
 import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { Element as E } from '../generic/element';
 
 export const Block = ({
   children,
   ...props
-}: Omit<ElementProps<JSX.IntrinsicElements['div']>, 'nameOf' | 'as'>):
+}: Omit<ElementProps<JSX.IntrinsicElements['div']>, 'nameOf'>):
   | JSX.Element
   | undefined => {
   const Element = E as React.ComponentType<

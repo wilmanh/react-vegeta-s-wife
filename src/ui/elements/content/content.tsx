@@ -1,11 +1,12 @@
-import 'reflect-metadata';
-import { AnyElement } from '@/logic/types/anyElement';
 import { JSX, PropsWithChildren } from 'react';
-import { Element as E } from '../generic/element';
+import 'reflect-metadata';
+
 import { AsElementType } from '@/logic/interfaces/props/elementType';
+
+import { Element as E } from '../generic/element';
 import { ElementProps } from '../generic/element.props';
 
-export const Content = <T extends AnyElement>({
+export const Content = <T extends JSX.IntrinsicElements['div']>({
   children,
   ...props
 }: ElementProps<T> & AsElementType & PropsWithChildren): JSX.Element => {

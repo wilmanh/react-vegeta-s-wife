@@ -1,20 +1,22 @@
-import { Button } from '@/ui/elements/button/button';
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
-import { Icon } from '@/ui/elements/icon/icon';
 import { GrBug } from 'react-icons/gr';
-import { argColors } from '@/stories/Types/argColors';
-import { argLightness } from '@/stories/Types/argLightness';
-import { argSizes } from '@/stories/Types/argSizes';
-import { argResponsive } from '@/stories/Types/argResponsive';
-import { argFullwidth } from '@/stories/Types/argFullwidth';
-import { argStyles } from '@/stories/Types/argStyles';
-import { argStates } from '@/stories/Types/argStates';
-import { argLoading } from '@/stories/Types/argLoading';
-import { argDisabled } from '@/stories/Types/argDisabled';
-import { Buttons } from '@/ui/elements/buttons/buttons';
 
+import { fn } from 'storybook/test';
+
+import { argColors } from '@/stories/Types/argColors';
+import { argDisabled } from '@/stories/Types/argDisabled';
+import { argFullwidth } from '@/stories/Types/argFullwidth';
+import { argLightness } from '@/stories/Types/argLightness';
+import { argLoading } from '@/stories/Types/argLoading';
+import { argResponsive } from '@/stories/Types/argResponsive';
+import { argSizes } from '@/stories/Types/argSizes';
+import { argStates } from '@/stories/Types/argStates';
+import { argStyles } from '@/stories/Types/argStyles';
+import { Button } from '@/ui/elements/button/button';
+import { Buttons } from '@/ui/elements/buttons/buttons';
+import { Icon } from '@/ui/elements/icon/icon';
+
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Elements/Button',

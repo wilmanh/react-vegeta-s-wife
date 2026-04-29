@@ -1,16 +1,18 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { Element as E } from '../generic/element';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { Delete } from '../delete/delete';
-import { NotificationProps } from './notification.props';
-import { NotificationClasses } from './notification.classes';
+import { Element as E } from '../generic/element';
 import { ElementProps } from '../generic/element.props';
+import { NotificationClasses } from './notification.classes';
+import { NotificationProps } from './notification.props';
 
 export const Notification = ({
   as,
   key,
+  className,
   children,
   onClose,
   ...props
@@ -26,7 +28,7 @@ export const Notification = ({
   return (
     <Element
       as={as}
-      className={classNames(classes)}
+      className={classNames(classes, className)}
       nameOf='notification'
       key={key}
       {...props}

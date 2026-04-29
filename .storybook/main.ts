@@ -11,8 +11,8 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      include: ['../../../packages/horizon/src/**/*.{ts,tsx}'],
-      tsconfigPath: '../tsconfig.app.json',
+      include: ['../src/**/*.{ts,tsx}'],
+      tsconfigPath: '../tsconfig.storybook.json',
       compilerOptions: {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,

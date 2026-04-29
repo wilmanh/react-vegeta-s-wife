@@ -1,11 +1,13 @@
-import 'reflect-metadata';
-import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element as E } from '@/ui/elements/generic/element';
-import { PaginationProps } from './pagination.props';
-import { container } from 'tsyringe';
-import { PagintaionClasses } from './pagination.classess';
 import classNames from 'classnames';
+import { JSX, PropsWithChildren } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
+import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { PaginationClasses } from './pagination.classess';
+import { PaginationProps } from './pagination.props';
 
 const Pagination = ({
   isRounded,
@@ -20,7 +22,7 @@ const Pagination = ({
     ElementProps<JSX.IntrinsicElements['nav']>,
     'nameOf' | 'as'
   >): JSX.Element => {
-  const classResolver = container.resolve(PagintaionClasses);
+  const classResolver = container.resolve(PaginationClasses);
   const classes = classResolver.prepareClasses({
     position,
     isRounded,

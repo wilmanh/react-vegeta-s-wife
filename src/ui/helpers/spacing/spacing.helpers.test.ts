@@ -1,19 +1,17 @@
+import classNames from 'classnames';
 import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { describe, expect, it } from 'vitest';
 
-import { container } from 'tsyringe';
-import { SpacingHelpers } from './spacing.helpers';
 import { shuffleArray } from '@/logic/functions/shuffle';
+
+import { SpacingHelpers } from './spacing.helpers';
 import { SpacingHelper } from './spacing.helpers.props';
-import classNames from 'classnames';
+
 const arrayNumbers = [0, '1', 2, '3', 'auto'];
 
-const spacingTests = [
-  shuffleArray(arrayNumbers),
-  //   shuffleArray(arrayNumbers),
-  //   shuffleArray(arrayNumbers),
-  //   shuffleArray(arrayNumbers),
-];
+const spacingTests = [shuffleArray(arrayNumbers)];
 
 const spacingHelper = container.resolve(SpacingHelpers);
 describe('SpacingHelper', () => {

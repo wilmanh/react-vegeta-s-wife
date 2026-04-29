@@ -1,11 +1,13 @@
-import 'reflect-metadata';
-import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element as E } from '@/ui/elements/generic/element';
-import { MenuItemProps } from './menu-item.props';
 import classNames from 'classnames';
+import { JSX, PropsWithChildren } from 'react';
+import 'reflect-metadata';
 import { container } from 'tsyringe';
+
 import { StateClassNameResolver } from '@/logic/classes/classNameResolver/state/stateClassNameResolver';
+import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { MenuItemProps } from './menu-item.props';
 
 const MenuItem = ({
   children,
@@ -23,11 +25,11 @@ const MenuItem = ({
     active,
   });
   return (
-    <Element nameOf='' as={'li'}>
+    <E nameOf='' as={'li'}>
       <a className={classNames(className, classes)} {...props}>
         {children}
       </a>
-    </Element>
+    </E>
   );
 };
 

@@ -1,11 +1,13 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element as E } from '@/ui/elements/generic/element';
-import { SmartGridProps } from './smartGrid.props';
 import classNames from 'classnames';
-import { SmartGridClasses } from './smartGrid.classes';
+import { JSX } from 'react';
+import 'reflect-metadata';
 import { container } from 'tsyringe';
+
+import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { SmartGridClasses } from './smartGrid.classes';
+import { SmartGridProps } from './smartGrid.props';
 
 const Grid = ({
   gap,

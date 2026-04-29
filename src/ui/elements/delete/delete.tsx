@@ -1,14 +1,17 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { Element as E } from '../generic/element';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { Size } from '@/logic/interfaces/props/size';
-import { DeleteClasses } from './delete.classes';
+
+import { Element as E } from '../generic/element';
 import { ElementProps } from '../generic/element.props';
+import { DeleteClasses } from './delete.classes';
 
 export const Delete = ({
   key,
+  className,
   ...props
 }: ElementProps<JSX.IntrinsicElements['div']> & Size):
   | JSX.Element
@@ -19,7 +22,7 @@ export const Delete = ({
   >;
   return (
     <Element
-      className={classNames(classesResolver.prepareClasses(props))}
+      className={classNames(classesResolver.prepareClasses(props), className)}
       nameOf='delete'
       as='button'
       key={key}

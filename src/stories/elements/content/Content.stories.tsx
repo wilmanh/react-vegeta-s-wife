@@ -1,9 +1,12 @@
-import { Content } from '@/ui/elements/content/content';
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
+
+import { fn } from 'storybook/test';
+
+import { Content } from '@/ui/elements/content/content';
+
 import { text } from './text';
 
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Elements/Content',

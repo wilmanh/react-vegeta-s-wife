@@ -1,21 +1,23 @@
-import Input from '@/ui/form/input/input';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
-import Field from '@/ui/form/field/field';
-import Label from '@/ui/form/label/label';
-import Control from '@/ui/form/control/control';
-import { Icon } from '@/ui/elements/icon/icon';
 import { GrCheckmark, GrMail, GrStatusWarning } from 'react-icons/gr';
-import Help from '@/ui/form/help/help';
-import Textarea from '@/ui/form/textarea/textarea';
-import Checkbox from '@/ui/form/checkbox/checkbox';
-import Radio from '@/ui/form/radio/radio';
-import { Button } from '@/ui/elements/button/button';
 
+import { Button } from '@/ui/elements/button/button';
+import { Icon } from '@/ui/elements/icon/icon';
+import Checkbox from '@/ui/form/checkbox/checkbox';
+import Control from '@/ui/form/control/control';
+import Field from '@/ui/form/field/field';
+import Help from '@/ui/form/help/help';
+import Input from '@/ui/form/input/input';
+import Label from '@/ui/form/label/label';
+import Radio from '@/ui/form/radio/radio';
+import Textarea from '@/ui/form/textarea/textarea';
+
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Form/General',
   component: Field as ComponentType,
+
   decorators: (Story) => (
     <div style={{ padding: '2rem' }} className='theme-light'>
       <Story />

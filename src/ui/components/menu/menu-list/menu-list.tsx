@@ -1,7 +1,8 @@
-import 'reflect-metadata';
 import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
+import 'reflect-metadata';
+
 import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 const MenuList = ({
   children,
@@ -9,9 +10,9 @@ const MenuList = ({
 }: PropsWithChildren &
   Omit<ElementProps<JSX.IntrinsicElements['ul']>, 'nameOf'>): JSX.Element => {
   return (
-    <Element nameOf='menu-list' as={'ul'} {...props}>
+    <E nameOf='menu-list' as={'ul'} {...props}>
       {children}
-    </Element>
+    </E>
   );
 };
 

@@ -1,12 +1,14 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { Element as E } from '@/ui/elements/generic/element';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { FileProps } from './file.props';
-import { FileClasses } from './file.classes';
+import { JSX } from 'react';
 import { GrDownload } from 'react-icons/gr';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
+import { Element as E } from '@/ui/elements/generic/element';
 import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { FileClasses } from './file.classes';
+import { FileProps } from './file.props';
 
 const File = ({
   className,

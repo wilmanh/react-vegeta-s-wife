@@ -1,15 +1,21 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
 import classNames from 'classnames';
-import { InputType } from './buttonType';
+import { JSX } from 'react';
+import 'reflect-metadata';
 import { container } from 'tsyringe';
-import { Element as E } from '../generic/element';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { ButtonProps } from './button.props';
-import { ButtonClasses } from './button.classes';
-import { AnyElement } from '@/logic/types/anyElement';
 
-export const Button = <T extends AnyElement>({
+import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { Element as E } from '../generic/element';
+import { ButtonClasses } from './button.classes';
+import { ButtonProps } from './button.props';
+import { InputType } from './buttonType';
+
+export const Button = <
+  T extends
+    | JSX.IntrinsicElements['input']
+    | JSX.IntrinsicElements['a']
+    | JSX.IntrinsicElements['button'],
+>({
   as,
   children,
   key,
@@ -29,6 +35,7 @@ export const Button = <T extends AnyElement>({
     outlined,
     rounded,
     scale,
+    className,
     noResponsive,
     static: frozen,
     ...params
@@ -70,7 +77,7 @@ export const Button = <T extends AnyElement>({
     <Element
       as={inputType ? 'input' : asDefault}
       nameOf='button'
-      className={classNames(classes)}
+      className={classNames(classes, className)}
       type={inputType}
       value={value}
       key={key}

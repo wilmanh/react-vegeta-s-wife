@@ -1,10 +1,12 @@
+import classNames from 'classnames';
 import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { describe, expect, it } from 'vitest';
 
-import { container } from 'tsyringe';
-import classNames from 'classnames';
-import { SizeClassNameResolver } from './sizeClassNameResolver';
 import { Sizes } from '@/logic/types/sizes';
+
+import { SizeClassNameResolver } from './sizeClassNameResolver';
 
 describe('Size', () => {
   it.each([['small'], ['normal'], ['medium'], ['large'], [undefined]])(
@@ -12,7 +14,7 @@ describe('Size', () => {
     (size) => {
       const sizeClass = container.resolve(SizeClassNameResolver);
       const classes = sizeClass.prepareClasses({
-        size: size as Sizes,
+        scale: size as Sizes,
       });
       expect(classNames(classes)).toEqual(size ? `is-${size}` : '');
     },

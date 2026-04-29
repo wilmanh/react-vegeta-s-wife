@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
-import SmartGrid from '@/ui/grid/smart/smartGrid';
+
 import Cell from '@/ui/grid/cell/cell';
+import SmartGrid from '@/ui/grid/smart/smartGrid';
 
 const numberArray = (length: number, start = 1) =>
   Array.from({ length }, (_, i) => i + start);
@@ -49,7 +50,7 @@ export const Basics: Story = {
     children: (
       <>
         {cellsArray.map((cell) => (
-          <Cell key={cell}>
+          <Cell key={`cell-${cell}`}>
             <p className='bd-notification is-primary'>
               <code>Cell {cell}</code>
             </p>

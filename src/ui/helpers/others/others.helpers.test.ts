@@ -1,9 +1,10 @@
+import classNames from 'classnames';
 import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { describe, expect, it } from 'vitest';
 
-import { container } from 'tsyringe';
 import { OthersHelpers } from './others.helpers';
-import classNames from 'classnames';
 
 const othersHelpers = container.resolve(OthersHelpers);
 describe('OthersHelpers', () => {

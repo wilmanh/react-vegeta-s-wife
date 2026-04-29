@@ -1,13 +1,15 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
 import classNames from 'classnames';
+import { JSX } from 'react';
+import 'reflect-metadata';
 import { container } from 'tsyringe';
-import { ProgressProps } from './progress.props';
+
 import { ProgressClasses } from './progress.classes';
+import { ProgressProps } from './progress.props';
 
 export const Progress = ({
   scale,
   children,
+  className,
   color,
   ...props
 }: JSX.IntrinsicElements['progress'] & ProgressProps): JSX.Element => {
@@ -18,6 +20,7 @@ export const Progress = ({
       className={classNames(
         'progress',
         classesResolver.prepareClasses({ color, scale }),
+        className,
       )}
       {...props}
     >
