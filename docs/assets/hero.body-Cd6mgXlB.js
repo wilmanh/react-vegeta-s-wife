@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime-u17CrQMm.js";import{c as t}from"./index-Bi8qpGUj.js";import{E as a}from"./element-DVQbf_BR.js";const p=({children:s,className:o,...e})=>{const m=a;return r.jsx(m,{className:t(o),nameOf:"hero-body",as:"div",...e,children:s})};export{p as H};

@@ -1,0 +1,1 @@
+import{j as e}from"./jsx-runtime-u17CrQMm.js";import"./index-Bi8qpGUj.js";import{E as m}from"./element-DVQbf_BR.js";const a=({children:t,...n})=>{const o=m;return e.jsx(o,{nameOf:"content",...n,children:t})};export{a as C};
