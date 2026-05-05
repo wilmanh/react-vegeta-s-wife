@@ -1,15 +1,17 @@
+import { ComponentType } from 'react';
+
+import { fn } from 'storybook/test';
+
 import { argColors } from '@/stories/Types/argColors';
 import { argSizes } from '@/stories/Types/argSizes';
-import { Tag } from '@/ui/elements/tag/tag';
 import { Delete as Del } from '@/ui/elements/delete/delete';
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
-import { ComponentType } from 'react';
-import { Tags } from '@/ui/elements/tags/tags';
-import { TagProps } from '@/ui/elements/tag/tag.props';
-import { TagTags } from '@/ui/elements/tags/tags.type';
 import { ElementProps } from '@/ui/elements/generic/element.props';
+import { Tag } from '@/ui/elements/tag/tag';
+import { TagProps } from '@/ui/elements/tag/tag.props';
+import { Tags } from '@/ui/elements/tags/tags';
+import { TagTags } from '@/ui/elements/tags/tags.type';
 
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Elements/Tag',
@@ -123,14 +125,14 @@ export const LightColors: Story = {
 export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <Tags style={{ gap: 18 }}>
-      <Tag {...args} scale='small'>
+      <Tag {...args} size='small'>
         small
       </Tag>
       <Tag {...args}>Default</Tag>
-      <Tag {...args} scale='medium'>
+      <Tag {...args} size='medium'>
         medium
       </Tag>
-      <Tag {...args} scale='large'>
+      <Tag {...args} size='large'>
         large
       </Tag>
     </Tags>
@@ -152,7 +154,7 @@ export const Delete: Story = {
     <Tags>
       <Tag {...args} color='primary'>
         Delete
-        <Del scale='small' />
+        <Del size='small' />
       </Tag>
     </Tags>
   ),

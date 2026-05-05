@@ -14,7 +14,7 @@ const Pagination = ({
   className,
   children,
   position,
-  scale,
+  size,
   ...props
 }: PropsWithChildren &
   PaginationProps &
@@ -26,7 +26,7 @@ const Pagination = ({
   const classes = classResolver.prepareClasses({
     position,
     isRounded,
-    scale,
+    size,
   });
   const Element = E as React.ComponentType<
     ElementProps<JSX.IntrinsicElements['nav']>

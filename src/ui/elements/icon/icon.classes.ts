@@ -1,9 +1,11 @@
-import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { GenericObject } from '@/logic/interfaces/genericObject';
 import { container } from 'tsyringe';
-import { IconProps } from './icon.props';
+
+import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { GenericObject } from '@/logic/interfaces/genericObject';
 import { ColorHelpers } from '@/ui/helpers/colors/colors.helpers';
+
+import { IconProps } from './icon.props';
 
 export class IconClasses<
   T extends Omit<IconProps, 'text'>,
@@ -14,7 +16,7 @@ export class IconClasses<
     return {
       'is-right': parameters?.right,
       'is-left': parameters?.left,
-      ...sizeClass.prepareClasses({ scale: parameters?.scale }),
+      ...sizeClass.prepareClasses({ size: parameters?.size }),
       ...textColorClass.prepareClasses({ textColor: parameters.textColor }),
     };
   };

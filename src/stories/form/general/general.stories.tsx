@@ -47,10 +47,10 @@ export const CompleteFormExample: Story = {
         <Label className='has-text-black'>UserName</Label>
         <Control iconLeft iconRight>
           <Input {...args} color='success' value={'bulmaio'} />
-          <Icon scale='small' left>
+          <Icon size='small' left>
             <GrMail />
           </Icon>
-          <Icon scale='small' right>
+          <Icon size='small' right>
             <GrCheckmark />
           </Icon>
         </Control>
@@ -60,10 +60,10 @@ export const CompleteFormExample: Story = {
         <Label className='has-text-black'>Email</Label>
         <Control iconLeft iconRight>
           <Input {...args} color='danger' value={'bulmaio'} />
-          <Icon scale='small' left>
+          <Icon size='small' left>
             <GrMail />
           </Icon>
-          <Icon scale='small' right>
+          <Icon size='small' right>
             <GrStatusWarning />
           </Icon>
         </Control>

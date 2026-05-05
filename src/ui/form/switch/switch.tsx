@@ -1,29 +1,25 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element as E } from '@/ui/elements/generic/element';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { Color } from '@/logic/interfaces/props/color';
-import { Size } from '@/logic/interfaces/props/size';
-import { IsRounded, Style } from '@/logic/interfaces/props/style';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { InputClassNameResolver } from '@/logic/classes/classNameResolver/input/inputClassNameResolver';
-import { StyleClassNameResolver } from '@/logic/classes/classNameResolver/style/styleClassNameResolver';
 import { RoundedClassNameResolver } from '@/logic/classes/classNameResolver/rounded/roundedClassNameResolver';
+import { StyleClassNameResolver } from '@/logic/classes/classNameResolver/style/styleClassNameResolver';
+import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { SwitchProps } from './switch.props';
 
 const Switch = ({
   className,
   color,
   isRounded,
-  scale,
+  inputSize,
   outlined,
   children,
   ...props
-}: Color &
-  Size &
-  Pick<Style, 'outlined'> &
-  Style &
-  IsRounded &
+}: SwitchProps &
   Omit<
     ElementProps<JSX.IntrinsicElements['input']>,
     'nameOf' | 'as'
@@ -41,7 +37,7 @@ const Switch = ({
         styleClasses.prepareClasses({ outlined }),
         roundedResolver.prepareClasses({ isRounded }),
         inputClasses.prepareClasses({
-          scale,
+          size: inputSize,
         }),
       )}
     >

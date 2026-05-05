@@ -10,10 +10,10 @@ export class BreadcrumbClasses<
   T extends BreadcrumbProps,
 > implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
-    const { scale, position, separator } = parameters;
+    const { size, position, separator } = parameters;
     const sizeClass = container.resolve(SizeClassNameResolver);
     return {
-      ...sizeClass.prepareClasses({ scale }),
+      ...sizeClass.prepareClasses({ size }),
       [`is-${position}`]: position !== 'left' ? position : false,
       [`has-${separator}-separator`]: separator,
     };

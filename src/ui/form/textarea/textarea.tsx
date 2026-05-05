@@ -1,18 +1,19 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element as E } from '@/ui/elements/generic/element';
-import { Input as InputProps } from '@/logic/interfaces/props/input';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { InputClassNameResolver } from '@/logic/classes/classNameResolver/input/inputClassNameResolver';
+import { Input as InputProps } from '@/logic/interfaces/props/input';
+import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 const Textarea = ({
   className,
   color,
   dark,
   light,
-  scale,
+  size,
   focus,
   hover,
   fixed,
@@ -34,7 +35,7 @@ const Textarea = ({
           color,
           dark,
           light,
-          scale,
+          size,
           focus,
           hover,
           fixed,

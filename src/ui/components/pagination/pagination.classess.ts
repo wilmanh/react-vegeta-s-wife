@@ -11,7 +11,7 @@ export class PaginationClasses<
   T extends PaginationProps,
 > implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
-    const { position, isRounded, scale } = parameters;
+    const { position, isRounded, size } = parameters;
     const sizeClass = container.resolve(SizeClassNameResolver);
 
     const roundedResolver = container.resolve(RoundedClassNameResolver);
@@ -19,7 +19,7 @@ export class PaginationClasses<
     return {
       [`is-centered`]: position === 'centered',
       [`is-right`]: position === 'right',
-      ...sizeClass.prepareClasses({ scale }),
+      ...sizeClass.prepareClasses({ size }),
       ...roundedResolver.prepareClasses({ isRounded }),
     };
   };

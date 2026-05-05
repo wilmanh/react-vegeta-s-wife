@@ -1,12 +1,13 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { TagProps } from './tag.props';
-import { TagClasses } from './tag.classes';
-import { ElementProps } from '../generic/element.props';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { Element as E } from '../generic/element';
+import { ElementProps } from '../generic/element.props';
 import { TagTags } from '../tags/tags.type';
+import { TagClasses } from './tag.classes';
+import { TagProps } from './tag.props';
 
 export const Tag = ({
   hoverable,
@@ -16,7 +17,7 @@ export const Tag = ({
   deleted,
   color,
   light,
-  scale,
+  size,
   dark,
   as,
   ...props
@@ -29,7 +30,7 @@ export const Tag = ({
     light,
     deleted,
     dark,
-    scale,
+    size,
   });
   const asDefault = as ?? 'span';
   const Element = E as React.ComponentType<ElementProps<TagTags>>;

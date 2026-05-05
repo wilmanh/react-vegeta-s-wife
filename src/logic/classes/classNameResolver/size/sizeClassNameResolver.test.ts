@@ -14,7 +14,7 @@ describe('Size', () => {
     (size) => {
       const sizeClass = container.resolve(SizeClassNameResolver);
       const classes = sizeClass.prepareClasses({
-        scale: size as Sizes,
+        size: size as Sizes,
       });
       expect(classNames(classes)).toEqual(size ? `is-${size}` : '');
     },

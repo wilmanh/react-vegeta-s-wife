@@ -1,3 +1,5 @@
+import { container } from 'tsyringe';
+
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
 import { CommonClassNameResolver } from '@/logic/classes/classNameResolver/common/commonClassNameResolver';
@@ -12,7 +14,6 @@ import { FullWidth } from '@/logic/interfaces/props/fullwidth';
 import { Size } from '@/logic/interfaces/props/size';
 import { State } from '@/logic/interfaces/props/state';
 import { Style } from '@/logic/interfaces/props/style';
-import { container } from 'tsyringe';
 
 export class ButtonClasses<
   T extends Common & Color & Size & FullWidth & Style & State,
@@ -27,7 +28,7 @@ export class ButtonClasses<
 
     return {
       ...commonClass.prepareClasses({ loading: parameters?.loading }),
-      ...sizeClass.prepareClasses({ scale: parameters?.scale }),
+      ...sizeClass.prepareClasses({ size: parameters?.size }),
       ...colorClass.prepareClasses({
         color: parameters?.color,
         dark: parameters?.dark,

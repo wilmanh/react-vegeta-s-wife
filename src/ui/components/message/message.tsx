@@ -1,20 +1,21 @@
-import 'reflect-metadata';
-import { JSX, PropsWithChildren } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element as E } from '@/ui/elements/generic/element';
-import { container } from 'tsyringe';
-import { Color } from '@/logic/interfaces/props/color';
 import classNames from 'classnames';
-import { Size } from '@/logic/interfaces/props/size';
-import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { JSX, PropsWithChildren } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
+import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { Color } from '@/logic/interfaces/props/color';
+import { Size } from '@/logic/interfaces/props/size';
+import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 
 const Message = ({
   children,
   color,
   light,
   dark,
-  scale,
+  size,
   className,
   ...props
 }: PropsWithChildren &
@@ -25,7 +26,7 @@ const Message = ({
     'nameOf'
   >): JSX.Element => {
   const sizeClassResolver = container.resolve(SizeClassNameResolver);
-  const sizeClasses = sizeClassResolver.prepareClasses({ scale });
+  const sizeClasses = sizeClassResolver.prepareClasses({ size });
   const colorClassesResolver = container.resolve(ColorClassNameResolver);
   const colorClasses = colorClassesResolver.prepareClasses({
     color,

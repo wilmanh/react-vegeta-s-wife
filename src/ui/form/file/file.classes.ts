@@ -1,10 +1,12 @@
-import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { GenericObject } from '@/logic/interfaces/genericObject';
 import { container } from 'tsyringe';
-import { FileProps } from './file.props';
-import { FullwidthClassNameResolver } from '@/logic/classes/classNameResolver/fullwidth/fullwidthClassNameResolver';
+
+import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
+import { FullwidthClassNameResolver } from '@/logic/classes/classNameResolver/fullwidth/fullwidthClassNameResolver';
 import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { GenericObject } from '@/logic/interfaces/genericObject';
+
+import { FileProps } from './file.props';
 
 export class FileClasses<T extends FileProps> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
@@ -17,7 +19,7 @@ export class FileClasses<T extends FileProps> implements ClassNameFactory<T> {
       color,
       dark,
       light,
-      scale,
+      inputSize,
     } = parameters;
     const fullWidthClass = container.resolve(FullwidthClassNameResolver);
     const colorClass = container.resolve(ColorClassNameResolver);
@@ -29,7 +31,7 @@ export class FileClasses<T extends FileProps> implements ClassNameFactory<T> {
       [`is-centered`]: centered,
       ['is-boxed']: boxed,
       ...fullWidthClass.prepareClasses({ fullwidth: fullwidth }),
-      ...sizeClass.prepareClasses({ scale }),
+      ...sizeClass.prepareClasses({ size: inputSize }),
       ...colorClass.prepareClasses({
         color,
         dark,

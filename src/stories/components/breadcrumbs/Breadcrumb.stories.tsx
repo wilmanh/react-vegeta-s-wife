@@ -1,11 +1,13 @@
-import { Breadcrumb } from '@/ui/components/breadcrumbs/breadcrumb/breadcrumb';
-import { Crumb } from '@/ui/components/breadcrumbs/crumb/crumb';
-import { Icon } from '@/ui/elements/icon/icon';
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
 import { GrBug } from 'react-icons/gr';
 
+import { fn } from 'storybook/test';
+
+import { Breadcrumb } from '@/ui/components/breadcrumbs/breadcrumb/breadcrumb';
+import { Crumb } from '@/ui/components/breadcrumbs/crumb/crumb';
+import { Icon } from '@/ui/elements/icon/icon';
+
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Components/Breadcrumbs',
@@ -74,19 +76,19 @@ export const Icons: Story = {
     children: (
       <>
         <Crumb>
-          <Icon scale='small' textColor='danger'>
+          <Icon size='small' textColor='danger'>
             <GrBug aria-hidden='true' />
           </Icon>
           <span>Home</span>
         </Crumb>
         <Crumb>
-          <Icon scale='small' textColor='danger'>
+          <Icon size='small' textColor='danger'>
             <GrBug aria-hidden='true' />
           </Icon>
           <span>Docs</span>
         </Crumb>
         <Crumb active>
-          <Icon scale='small' textColor='danger'>
+          <Icon size='small' textColor='danger'>
             <GrBug aria-hidden='true' />
           </Icon>
           <span>Components</span>

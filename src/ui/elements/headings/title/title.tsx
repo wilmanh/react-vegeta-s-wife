@@ -1,11 +1,13 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { HeadingProps } from '../heading.props';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
+import { HeadingClassNameResolver } from '@/logic/classes/classNameResolver/heading/headingClassNameResolver';
+
 import { Element as E } from '../../generic/element';
 import { ElementProps } from '../../generic/element.props';
-import { HeadingClassNameResolver } from '@/logic/classes/classNameResolver/heading/headingClassNameResolver';
+import { HeadingProps } from '../heading.props';
 import { HeadingTags } from '../heading.type';
 
 export const Title = ({

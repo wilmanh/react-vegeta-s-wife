@@ -1,10 +1,11 @@
-import { argSizes } from '@/stories/Types/argSizes';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
-import Textarea from '@/ui/form/textarea/textarea';
-import { argColors } from '@/stories/Types/argColors';
-import Field from '@/ui/form/field/field';
 
+import { argColors } from '@/stories/Types/argColors';
+import { argSizes } from '@/stories/Types/argSizes';
+import Field from '@/ui/form/field/field';
+import Textarea from '@/ui/form/textarea/textarea';
+
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Form/Textarea',
@@ -68,16 +69,16 @@ export const Sizes: Story = {
   render: (args: object) => (
     <>
       <Field>
-        <Textarea {...args} value='small' scale='small' />
+        <Textarea {...args} value='small' size='small' />
       </Field>
       <Field>
         <Textarea {...args} value='default' />
       </Field>
       <Field>
-        <Textarea {...args} value='medium' scale='medium' />
+        <Textarea {...args} value='medium' size='medium' />
       </Field>
       <Field>
-        <Textarea {...args} value='large' scale='large' />
+        <Textarea {...args} value='large' size='large' />
       </Field>
     </>
   ),

@@ -34,7 +34,7 @@ export const Button = <
     loading,
     outlined,
     rounded,
-    scale,
+    size,
     className,
     noResponsive,
     static: frozen,
@@ -55,7 +55,7 @@ export const Button = <
       loading,
       outlined,
       rounded,
-      scale,
+      size,
     }),
   };
   const asDefault = as ?? 'button';

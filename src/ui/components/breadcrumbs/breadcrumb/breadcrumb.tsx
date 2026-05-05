@@ -1,17 +1,19 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { Element as E } from '@/ui/elements/generic/element';
-import { BreadcrumbProps } from './breadcrumb.props';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { BreadcrumbClasses } from './breadcrumbs.classes';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
+import { Element as E } from '@/ui/elements/generic/element';
 import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { BreadcrumbProps } from './breadcrumb.props';
+import { BreadcrumbClasses } from './breadcrumbs.classes';
 
 export const Breadcrumb = ({
   children,
   position,
   separator,
-  scale,
+  size,
   className,
   ...props
 }: Omit<ElementProps<JSX.IntrinsicElements['nav']>, 'nameOf'> &
@@ -23,7 +25,7 @@ export const Breadcrumb = ({
   const classes = classesResolver.prepareClasses({
     position,
     separator,
-    scale,
+    size,
   });
   return (
     <Element

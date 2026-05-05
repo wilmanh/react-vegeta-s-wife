@@ -1,10 +1,11 @@
+import { container } from 'tsyringe';
+
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
 import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
-import { container } from 'tsyringe';
 
 export class ProgressClasses<
   T extends Color & Size,
@@ -18,7 +19,7 @@ export class ProgressClasses<
         dark: parameters?.dark,
         light: parameters?.light,
       }),
-      ...sizeClass.prepareClasses({ scale: parameters?.scale }),
+      ...sizeClass.prepareClasses({ size: parameters?.size }),
     };
   };
 }

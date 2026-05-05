@@ -169,17 +169,17 @@ export const LightColors: Story = {
 export const Sizes: Story = {
   render: (args: object) => (
     <Buttons style={{ gap: 20 }}>
-      <Button {...args} scale='small'>
+      <Button {...args} size='small'>
         small
       </Button>
       <Button {...args}>Default</Button>
-      <Button {...args} scale='normal'>
+      <Button {...args} size='normal'>
         normal
       </Button>
-      <Button {...args} scale='medium'>
+      <Button {...args} size='medium'>
         medium
       </Button>
-      <Button {...args} scale='large'>
+      <Button {...args} size='large'>
         large
       </Button>
     </Buttons>

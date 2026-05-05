@@ -1,18 +1,20 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { IconProps } from './icon.props';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { ElementProps } from '@/ui/elements/generic/element.props';
+
 import { Element as E } from '../generic/element';
 import { IconClasses } from './icon.classes';
+import { IconProps } from './icon.props';
 
 type IconTags = JSX.IntrinsicElements['span'] | JSX.IntrinsicElements['div'];
 
 export const Icon = ({
   as,
   text,
-  scale,
+  size,
   left,
   right,
   children,
@@ -25,7 +27,7 @@ export const Icon = ({
   const classesResolver = container.resolve(IconClasses);
   const iconClasses = classesResolver.prepareClasses({
     textColor,
-    scale,
+    size,
     left,
     right,
   });

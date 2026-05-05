@@ -1,3 +1,5 @@
+import { container } from 'tsyringe';
+
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
 import { DeleteClassNameResolver } from '@/logic/classes/classNameResolver/delete/deleteClassNameResolver';
@@ -10,7 +12,6 @@ import { Delete } from '@/logic/interfaces/props/delete';
 import { Hoverable } from '@/logic/interfaces/props/hoverable';
 import { Size } from '@/logic/interfaces/props/size';
 import { Rounded } from '@/logic/interfaces/props/style';
-import { container } from 'tsyringe';
 
 export class TagClasses<
   T extends Color & Size & Rounded & Delete & Hoverable,
@@ -29,7 +30,7 @@ export class TagClasses<
       }),
       ...hoverClass.prepareClasses({ hoverable: parameters?.hoverable }),
       ...deleteClass.prepareClasses({ deleted: parameters?.deleted }),
-      ...sizeClass.prepareClasses({ scale: parameters?.scale }),
+      ...sizeClass.prepareClasses({ size: parameters?.size }),
       ...roundedClass.prepareClasses({ rounded: parameters?.rounded }),
     };
   };

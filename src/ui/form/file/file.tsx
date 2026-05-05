@@ -15,7 +15,7 @@ const File = ({
   label,
   name,
   color,
-  scale,
+  inputSize,
   centered,
   right,
   boxed,
@@ -36,7 +36,7 @@ const File = ({
         'file',
         inputClasses.prepareClasses({
           color,
-          scale,
+          inputSize,
           dark,
           light,
           fullwidth,

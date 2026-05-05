@@ -1,24 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
-import Media from '@/ui/layout/media/media';
-import MediaLeft from '@/ui/layout/media/left/mediaLeft';
-import MediaContent from '@/ui/layout/media/content/mediaContent';
-import MediaRight from '@/ui/layout/media/right/mediaRight';
-import { Image } from '@/ui/elements/image/image';
-import { Content } from '@/ui/elements/content/content';
-import { Subtitle } from '@/ui/elements/headings/subtitle/subtitle';
-import Level from '@/ui/layout/level/level';
-import LevelLeft from '@/ui/layout/level/left/levelLeft';
-import LevelItem from '@/ui/layout/level/item/levelItem';
-import { Icon } from '@/ui/elements/icon/icon';
-import { Delete } from '@/ui/elements/delete/delete';
-import Field from '@/ui/form/field/field';
-import Control from '@/ui/form/control/control';
-import Textarea from '@/ui/form/textarea/textarea';
-import LevelRight from '@/ui/layout/level/right/levelRight';
+
+import { fn } from 'storybook/test';
+
 import { Button } from '@/ui/elements/button/button';
+import { Content } from '@/ui/elements/content/content';
+import { Delete } from '@/ui/elements/delete/delete';
+import { Subtitle } from '@/ui/elements/headings/subtitle/subtitle';
+import { Icon } from '@/ui/elements/icon/icon';
+import { Image } from '@/ui/elements/image/image';
 import Checkbox from '@/ui/form/checkbox/checkbox';
+import Control from '@/ui/form/control/control';
+import Field from '@/ui/form/field/field';
+import Textarea from '@/ui/form/textarea/textarea';
+import LevelItem from '@/ui/layout/level/item/levelItem';
+import LevelLeft from '@/ui/layout/level/left/levelLeft';
+import Level from '@/ui/layout/level/level';
+import LevelRight from '@/ui/layout/level/right/levelRight';
+import MediaContent from '@/ui/layout/media/content/mediaContent';
+import MediaLeft from '@/ui/layout/media/left/mediaLeft';
+import Media from '@/ui/layout/media/media';
+import MediaRight from '@/ui/layout/media/right/mediaRight';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -63,17 +65,17 @@ export const Default: Story = {
           <Level mobile>
             <LevelLeft>
               <LevelItem>
-                <Icon scale='small'>
+                <Icon size='small'>
                   <i className='fas fa-reply'></i>
                 </Icon>
               </LevelItem>
               <LevelItem>
-                <Icon scale='small'>
+                <Icon size='small'>
                   <i className='fas fa-retweet'></i>
                 </Icon>
               </LevelItem>
               <LevelItem>
-                <Icon scale='small'>
+                <Icon size='small'>
                   <i className='fas fa-heart'></i>
                 </Icon>
               </LevelItem>

@@ -1,22 +1,24 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { HorizontalFieldProps } from './horizontalField.props';
-import Field from '../field';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
 import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import Field from '../field';
+import { HorizontalFieldProps } from './horizontalField.props';
 
 const HorizontalField = ({
   label,
   body,
-  scale,
+  size,
   ...props
 }: ElementProps<JSX.IntrinsicElements['div']> &
   HorizontalFieldProps): JSX.Element => {
   const sizeClasses = container
     .resolve(SizeClassNameResolver)
-    .prepareClasses({ scale });
+    .prepareClasses({ size });
 
   return (
     <Field className='is-horizontal' {...props}>

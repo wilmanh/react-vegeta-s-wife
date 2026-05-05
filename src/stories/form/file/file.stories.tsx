@@ -1,15 +1,16 @@
-import { argSizes } from '@/stories/Types/argSizes';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType } from 'react';
+
+import { argColors } from '@/stories/Types/argColors';
+import { argSizes } from '@/stories/Types/argSizes';
+import Field from '@/ui/form/field/field';
 import File from '@/ui/form/file/file';
 import { FileProps } from '@/ui/form/file/file.props';
-import { argColors } from '@/stories/Types/argColors';
-import Field from '@/ui/form/field/field';
 
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Form/File',
-  component: File as ComponentType,
+  component: File as ComponentType<FileProps>,
   decorators: (Story) => (
     <div style={{ padding: '1rem' }} className='theme-light'>
       <Story />
@@ -103,19 +104,19 @@ export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <File {...args} name='default' scale={'small'} />
+        <File {...args} name='default' inputSize={'small'} />
       </Field>
       <Field>
         <File {...args} name='warning' />
       </Field>
       <Field>
-        <File {...args} name='warning' scale={'medium'} />
+        <File {...args} name='warning' inputSize={'medium'} />
       </Field>
       <Field>
-        <File {...args} name='danger' scale={'large'} />
+        <File {...args} name='danger' inputSize={'large'} />
       </Field>
       <Field>
-        <File {...args} boxed name='info' scale={'large'} />
+        <File {...args} boxed name='info' inputSize={'large'} />
       </Field>
     </>
   ),

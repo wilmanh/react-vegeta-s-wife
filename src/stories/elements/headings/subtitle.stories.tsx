@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
 import { ComponentType } from 'react';
+
+import { fn } from 'storybook/test';
+
+import { ArrayOfHeadingSizes } from '@/logic/types/sizes';
 import { argHeadingSizes } from '@/stories/Types/argHeadings';
 import { argSpaced } from '@/stories/Types/argSpaced';
-import { ArrayOfHeadingSizes } from '@/logic/types/sizes';
 import { Subtitle } from '@/ui/elements/headings/subtitle/subtitle';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -48,7 +50,7 @@ export const Primary: Story = {
 
 export const Subtitles: Story = {
   render: () => (
-    <div>
+    <>
       <Subtitle spaced hSize={1}>
         Subtitle 1
       </Subtitle>
@@ -67,6 +69,6 @@ export const Subtitles: Story = {
       <Subtitle spaced hSize={6}>
         Subtitle 6
       </Subtitle>
-    </div>
+    </>
   ),
 };

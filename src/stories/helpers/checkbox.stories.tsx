@@ -1,13 +1,13 @@
-import { argSizes } from '@/stories/Types/argSizes';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType, JSX } from 'react';
-import { Color } from '@/logic/interfaces/props/color';
-import { Size } from '@/logic/interfaces/props/size';
+
+import { argColors } from '@/stories/Types/argColors';
+import { argSizes } from '@/stories/Types/argSizes';
 import { ElementProps } from '@/ui/elements/generic/element.props';
 import Checkbox from '@/ui/form/checkbox/checkbox';
-import { argColors } from '@/stories/Types/argColors';
 import Field from '@/ui/form/field/field';
+import { SwitchProps } from '@/ui/form/switch/switch.props';
 
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Form/Checkbox',
@@ -32,8 +32,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-type ArgsProps = Color &
-  Size &
+type ArgsProps = SwitchProps &
   Omit<ElementProps<JSX.IntrinsicElements['input']>, 'nameOf' | 'as'>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
@@ -58,7 +57,7 @@ export const Sizes: Story = {
   render: (args: ArgsProps) => (
     <>
       <Field>
-        <Checkbox {...args} scale={'small'} name='radiostorybook2'>
+        <Checkbox {...args} inputSize={'small'} name='radiostorybook2'>
           Small
         </Checkbox>
       </Field>
@@ -68,12 +67,12 @@ export const Sizes: Story = {
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} name='radiostorybook2' scale='medium'>
+        <Checkbox {...args} name='radiostorybook2' inputSize='medium'>
           Medium
         </Checkbox>
       </Field>
       <Field>
-        <Checkbox {...args} name='radiostorybook2' scale='large'>
+        <Checkbox {...args} name='radiostorybook2' inputSize='large'>
           Large
         </Checkbox>
       </Field>

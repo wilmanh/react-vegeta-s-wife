@@ -1,19 +1,20 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element as E } from '@/ui/elements/generic/element';
-import { container } from 'tsyringe';
 import classNames from 'classnames';
-import { Color } from '@/logic/interfaces/props/color';
-import { Size } from '@/logic/interfaces/props/size';
+import { JSX } from 'react';
+import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { InputClassNameResolver } from '@/logic/classes/classNameResolver/input/inputClassNameResolver';
-type CheckboxProps = Color &
-  Size &
-  Omit<ElementProps<JSX.IntrinsicElements['input']>, 'nameOf' | 'as' | 'size'>;
+import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { SwitchProps } from '../switch/switch.props';
+
+type CheckboxProps = SwitchProps &
+  Omit<ElementProps<JSX.IntrinsicElements['input']>, 'nameOf' | 'as'>;
 const Checkbox = ({
   className,
   color,
-  scale,
+  inputSize,
   children,
   ...props
 }: CheckboxProps): JSX.Element => {
@@ -27,7 +28,7 @@ const Checkbox = ({
         'b-checkbox',
         'checkbox',
         inputClasses.prepareClasses({
-          scale,
+          size: inputSize,
         }),
       )}
     >

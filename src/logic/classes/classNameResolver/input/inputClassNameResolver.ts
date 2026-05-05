@@ -1,7 +1,9 @@
-import { GenericObject } from '@/logic/interfaces/genericObject';
 import { container } from 'tsyringe';
-import { ClassNameFactory } from '../../classNameFactory';
+
+import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Input } from '@/logic/interfaces/props/input';
+
+import { ClassNameFactory } from '../../classNameFactory';
 import { ColorClassNameResolver } from '../color/colorClassNameResolver';
 import { SizeClassNameResolver } from '../size/sizeClassNameResolver';
 import { StateClassNameResolver } from '../state/stateClassNameResolver';
@@ -11,7 +13,7 @@ export class InputClassNameResolver<
 > implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const {
-      scale,
+      size,
       dark,
       color,
       light,
@@ -26,7 +28,7 @@ export class InputClassNameResolver<
     return {
       ['is-static']: frozen,
       ['has-fixed-size']: fixed,
-      ...sizeClass.prepareClasses({ scale }),
+      ...sizeClass.prepareClasses({ size }),
       ...colorClass.prepareClasses({
         color,
         dark,

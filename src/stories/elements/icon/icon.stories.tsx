@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
-import { Icon } from '@/ui/elements/icon/icon';
-import { GrBug } from 'react-icons/gr';
 import { ComponentType } from 'react';
-import { IconProps } from '@/ui/elements/icon/icon.props';
+import { GrBug } from 'react-icons/gr';
+
+import { fn } from 'storybook/test';
+
 import { argTextColors } from '@/stories/Types/argColors';
 import { argSizes } from '@/stories/Types/argSizes';
+import { Icon } from '@/ui/elements/icon/icon';
+import { IconProps } from '@/ui/elements/icon/icon.props';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -43,7 +45,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   render: (args: IconProps) => (
     <Icon {...args}>
-      <GrBug size={args.scale} />
+      <GrBug size={args.size} />
     </Icon>
   ),
 };
@@ -51,22 +53,22 @@ export const Primary: Story = {
 export const Colors: Story = {
   render: (args) => (
     <div className='buttons'>
-      <Icon {...args} scale={'large'} textColor='primary'>
+      <Icon {...args} size={'large'} textColor='primary'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} scale={'large'} textColor='link'>
+      <Icon {...args} size={'large'} textColor='link'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} scale={'large'} textColor='info'>
+      <Icon {...args} size={'large'} textColor='info'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} scale={'large'} textColor='success'>
+      <Icon {...args} size={'large'} textColor='success'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} scale={'large'} textColor='warning'>
+      <Icon {...args} size={'large'} textColor='warning'>
         <GrBug size={'large'} />
       </Icon>
-      <Icon {...args} scale={'large'} textColor='danger'>
+      <Icon {...args} size={'large'} textColor='danger'>
         <GrBug size={'large'} />
       </Icon>
     </div>
