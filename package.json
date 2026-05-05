@@ -1,7 +1,7 @@
 {
   "name": "react-ui-vegetas-wife",
   "private": false,
-  "version": "0.1.6",
+  "version": "0.1.7",
   "type": "module",
   "description": "React UI component library built on top of Bulma.",
   "license": "MIT",
