@@ -87,46 +87,5 @@ TypeScript prop types are exported from the package, for example:
 import type { ButtonProps, InputProps, Colors, Sizes } from 'react-ui-vegetas-wife';
 ```
 
-## Development
-
-Install dependencies:
-
-```sh
-npm install
-```
-
-Run Storybook:
-
-```sh
-npm run storybook
-```
-
-Build the library:
-
-```sh
-npm run build
-```
-
-Run tests:
-
-```sh
-npm run test -- --run
-```
-
-Run lint:
-
-```sh
-npm run lint
-```
-
-## Build Output
-
-The Vite library build emits:
-
-- `dist/react-vegetas-wife.js` for ESM consumers.
-- `dist/react-vegetas-wife.cjs` for CommonJS consumers.
-- `dist/react-vegetas-wife.css` for library-specific control styles.
-
-## License
 
 MIT
