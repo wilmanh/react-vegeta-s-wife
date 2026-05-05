@@ -1,0 +1,97 @@
+.token.tag {
+  padding: 0 !important;
+  display: inline !important;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+}
+
+.bd-notification {
+  --bulma-notification-h: var(--bulma-scheme-h);
+  --bulma-notification-s: var(--bulma-scheme-s);
+  --bulma-notification-background-l: var(--bulma-background-l);
+  --bulma-notification-color-l: var(--bulma-text-l);
+  background-color: hsl(
+    var(--bulma-notification-h),
+    var(--bulma-notification-s),
+    var(--bulma-notification-background-l)
+  );
+  border-radius: var(--bulma-radius);
+  color: hsl(
+    var(--bulma-notification-h),
+    var(--bulma-notification-s),
+    var(--bulma-notification-color-l)
+  );
+  font-weight: var(--bulma-weight-semibold);
+  padding: 1.25rem 0;
+  position: relative;
+  text-align: center;
+}
+
+.bd-notification.is-primary {
+  --bulma-notification-h: var(--bulma-primary-h);
+  --bulma-notification-s: var(--bulma-primary-s);
+  --bulma-notification-background-l: var(--bulma-primary-l);
+  --bulma-notification-color-l: var(--bulma-primary-invert-l);
+}
+
+.bd-notification.is-info {
+  --bulma-notification-h: var(--bulma-info-h);
+  --bulma-notification-s: var(--bulma-info-s);
+  --bulma-notification-background-l: var(--bulma-info-l);
+  --bulma-notification-color-l: var(--bulma-info-invert-l);
+}
+
+.bd-notification.is-danger {
+  --bulma-notification-h: var(--bulma-danger-h);
+  --bulma-notification-s: var(--bulma-danger-s);
+  --bulma-notification-background-l: var(--bulma-danger-l);
+  --bulma-notification-color-l: var(--bulma-danger-invert-l);
+}
+
+.bd-klmn-gap.bd-is-selected,
+.bd-klmn-value,
+.bd-klmn-value.bd-is-selected {
+  background-color: orange;
+  color: black;
+}
+
+.bd-klmn-gaps {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.bd-klmn-label {
+  margin: 0.25rem auto 0.25rem 0;
+  color: black;
+}
+
+.bd-klmn-value {
+  font-size: 1rem;
+}
+
+.bd-klmn-gap.bd-is-selected,
+.bd-klmn-value,
+.bd-klmn-value.bd-is-selected {
+  background-color: orange;
+  color: black;
+}
+
+.bd-klmn-gap,
+.bd-klmn-value {
+  background-color: black;
+  border-radius: var(--bulma-radius);
+  color: orange;
+  font-family: var(--bulma-family-monospace);
+  font-size: 0.75rem;
+  margin: 0.25rem 0 0.25rem 0.5rem;
+  padding: 0.375em 0.75em;
+  text-align: center;
+  vertical-align: middle !important;
+  white-space: nowrap;
+}

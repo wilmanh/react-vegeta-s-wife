@@ -1,0 +1,74 @@
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { ComponentType } from 'react';
+
+import { fn } from 'storybook/test';
+
+import { ArrayOfHeadingSizes } from '@/logic/types/sizes';
+import { argHeadingSizes } from '@/stories/Types/argHeadings';
+import { argSpaced } from '@/stories/Types/argSpaced';
+import { Subtitle } from '@/ui/elements/headings/subtitle/subtitle';
+
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+const meta = {
+  title: 'Bulma/Elements/Headings/Subtitle',
+  component: Subtitle as ComponentType,
+  decorators: (Story) => (
+    <div className='theme-light'>
+      <Story />
+    </div>
+  ),
+  parameters: {
+    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+    layout: 'centered',
+  },
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  tags: ['autodocs'],
+
+  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  argTypes: {
+    as: {
+      control: 'select',
+      options: ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    },
+    ...argHeadingSizes,
+    ...argSpaced,
+  },
+  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+  args: { onClick: fn() },
+} satisfies Meta<typeof Subtitle>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Primary: Story = {
+  args: {
+    children: 'Title 1',
+    hSize: ArrayOfHeadingSizes[0],
+  },
+};
+
+export const Subtitles: Story = {
+  render: () => (
+    <>
+      <Subtitle spaced hSize={1}>
+        Subtitle 1
+      </Subtitle>
+      <Subtitle spaced hSize={2}>
+        Subtitle 2
+      </Subtitle>
+      <Subtitle spaced hSize={3}>
+        Subtitle 3
+      </Subtitle>
+      <Subtitle spaced hSize={4}>
+        Subtitle 4
+      </Subtitle>
+      <Subtitle spaced hSize={5}>
+        Subtitle 5
+      </Subtitle>
+      <Subtitle spaced hSize={6}>
+        Subtitle 6
+      </Subtitle>
+    </>
+  ),
+};

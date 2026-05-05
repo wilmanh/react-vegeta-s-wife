@@ -1,0 +1,116 @@
+import { ComponentType } from 'react';
+import { LiaAngleDownSolid } from 'react-icons/lia';
+
+import { fn } from 'storybook/test';
+
+import Card from '@/ui/components/card/card';
+import CardContent from '@/ui/components/card/content/content';
+import CardFooter from '@/ui/components/card/footer/footer';
+import CardHeader from '@/ui/components/card/header/header';
+import CardImage from '@/ui/components/card/image/image';
+import { Content } from '@/ui/elements/content/content';
+import { Icon } from '@/ui/elements/icon/icon';
+import { Image } from '@/ui/elements/image/image';
+
+import type { Meta, StoryObj } from '@storybook/react-vite';
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+const meta = {
+  title: 'Bulma/Components/Card',
+  component: Card as ComponentType,
+
+  decorators: (Story) => (
+    <div className='theme-light'>
+      <Story />
+    </div>
+  ),
+  parameters: {
+    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+    layout: 'centered',
+  },
+  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  tags: ['autodocs'],
+  // More on argTypes: https://storybook.js.org/docs/api/argtypes
+  argTypes: {
+    as: {
+      options: ['div', 'section'],
+    },
+  },
+  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+  args: { onClick: fn() },
+} satisfies Meta<typeof Card>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Example: Story = {
+  args: {
+    children: (
+      <>
+        <CardImage>
+          <Image
+            ratio='4by3'
+            src='https://bulma.io/assets/images/placeholders/1280x960.png'
+            alt='Placeholder image'
+          />
+        </CardImage>
+        <CardContent>
+          <div className='media'>
+            <div className='media-left'>
+              <Image
+                shape='48x48'
+                src='https://bulma.io/assets/images/placeholders/96x96.png'
+                alt='Placeholder image'
+              />
+            </div>
+            <div className='media-content'>
+              <p className='title is-4'>John Smith</p>
+              <p className='subtitle is-6'>@johnsmith</p>
+            </div>
+          </div>
+          <Content>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            nec iaculis mauris. <a>@bulmaio</a>. <a href='#'>#css</a>
+            <a href='#'>#responsive</a>
+            <br />
+            <time dateTime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+          </Content>
+        </CardContent>
+      </>
+    ),
+  },
+};
+
+export const Example1: Story = {
+  args: {
+    children: (
+      <>
+        <CardHeader
+          title='Component'
+          icon={
+            <Icon>
+              <LiaAngleDownSolid size={'large'} />
+            </Icon>
+          }
+        ></CardHeader>
+
+        <CardContent>
+          <Content>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+            nec iaculis mauris. <a>@bulmaio</a>. <a href='#'>#css</a>
+            <a href='#'>#responsive</a>
+            <br />
+            <time dateTime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+          </Content>
+        </CardContent>
+        <CardFooter
+          items={[
+            { id: 'item-1', value: 'Save' },
+            { id: 'item-2', value: 'Edit' },
+            { id: 'item-3', value: 'Cance;' },
+          ]}
+        ></CardFooter>
+      </>
+    ),
+  },
+};

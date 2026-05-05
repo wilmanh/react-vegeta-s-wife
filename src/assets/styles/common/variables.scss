@@ -1,0 +1,85 @@
+@use 'bulma/sass/utilities/derived-variables' as c;
+@use 'bulma/sass/utilities/initial-variables' as i;
+@use 'bulma/sass/utilities/functions' as f;
+
+$dual-colors: f.mergeColorMaps(
+  (
+    'white': (
+      i.$white,
+      i.$black,
+    ),
+    'black': (
+      i.$black,
+      i.$white,
+    ),
+    'light': (
+      c.$light,
+      c.$dark,
+    ),
+    'dark': (
+      c.$dark,
+      c.$light,
+    ),
+    'text': (
+      c.$text,
+      f.bulmaFindColorInvert(c.$text),
+    ),
+    'primary': (
+      c.$primary,
+      f.bulmaFindColorInvert(c.$primary),
+    ),
+    'link': (
+      c.$link,
+      f.bulmaFindColorInvert(c.$link),
+    ),
+    'info': (
+      c.$info,
+      f.bulmaFindColorInvert(c.$info),
+    ),
+    'success': (
+      c.$success,
+      f.bulmaFindColorInvert(c.$success),
+    ),
+    'warning': (
+      c.$warning,
+      f.bulmaFindColorInvert(c.$warning),
+    ),
+    'danger': (
+      c.$danger,
+      f.bulmaFindColorInvert(c.$danger),
+    ),
+  ),
+  c.$custom-colors
+) !default;
+
+$speed-slow: 150ms !default;
+$speed-slower: 250ms !default;
+
+$radio-active-background-color: c.$primary !default;
+$radio-size: 1.25em !default;
+$radio-colors: c.$colors !default;
+
+/* Box-shadow on hover */
+$radio-has-shadows: 0 !default;
+
+$switch-width-number: 2.75 !default;
+$switch-width: $switch-width-number * 1em !default;
+$switch-padding: 0.2em !default;
+$switch-outlined-padding: 0.1em !default;
+$switch-active-background-color: c.$primary !default;
+
+/* Box-shadow */
+$switch-has-shadows: 0 !default;
+$switch-knob-has-shadows: 0 !default;
+
+$checkbox-active-background-color: c.$primary !default;
+$checkbox-background-color: transparent !default;
+$checkbox-border-color: i.$grey !default;
+$checkbox-border-radius: i.$radius !default;
+$checkbox-border-width: 2px !default;
+$checkbox-checkmark-color: f.bulmaFindColorInvert(c.$primary);
+$checkbox-size: 1.25em !default;
+$checkbox-colors: $dual-colors !default;
+
+/* Box-shadow on hover */
+$checkbox-has-shadows: 0 !default;
