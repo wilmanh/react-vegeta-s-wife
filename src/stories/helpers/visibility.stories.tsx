@@ -51,7 +51,7 @@ export const Default: Story = {
             </tr>
             <tr>
               <td>
-                <code>{'show'}</code>
+                <code>{'show="flex"'}</code>
               </td>
               <td>
                 <code>is-flex</code>
@@ -59,7 +59,7 @@ export const Default: Story = {
             </tr>
             <tr>
               <td>
-                <code>{'hiddenMobile: true } }}'}</code>
+                <code>{'hiddenMobile'}</code>
               </td>
               <td>
                 <code>is-hidden-mobile</code>
