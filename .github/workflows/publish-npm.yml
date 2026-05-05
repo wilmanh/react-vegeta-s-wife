@@ -33,4 +33,4 @@ jobs:
 
       - run: pnpm publish --access public --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.VEGETAS_WIFE }}
+          NODE_AUTH_TOKEN: ${{ secrets.VEGETA_TOKEN }}
