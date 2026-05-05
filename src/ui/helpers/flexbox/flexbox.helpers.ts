@@ -1,10 +1,11 @@
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { GenericObject } from '@/logic/interfaces/genericObject';
+
 import { FlexboxHelperProps } from './flexbox.helpers.props';
 
-export class FlexboxHelpers<T extends FlexboxHelperProps>
-  implements ClassNameFactory<T>
-{
+export class FlexboxHelpers<
+  T extends FlexboxHelperProps,
+> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const {
       alignContent,

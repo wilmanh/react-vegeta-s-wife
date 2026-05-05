@@ -1,7 +1,9 @@
+import classNames from 'classnames';
 import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { describe, expect, it } from 'vitest';
 
-import { container } from 'tsyringe';
 import { FlexboxHelpers } from './flexbox.helpers';
 import {
   AlignContent,
@@ -17,7 +19,7 @@ import {
   arrayLeftRight,
   arrayStartEnd,
 } from './flexbox.helpers.props';
-import classNames from 'classnames';
+
 const alignItemsTests = [
   ...arrayFlexStartEnd,
   ...arrayAlignItems,

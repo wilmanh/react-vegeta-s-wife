@@ -1,3 +1,5 @@
+import { container } from 'tsyringe';
+
 import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { GenericObject } from '@/logic/interfaces/genericObject';
 import { Helpers } from '@/logic/interfaces/props/helpers';
@@ -7,7 +9,6 @@ import { OthersHelpers } from '@/ui/helpers/others/others.helpers';
 import { SpacingHelpers } from '@/ui/helpers/spacing/spacing.helpers';
 import { TypographyHelpers } from '@/ui/helpers/typography/typography.helpers';
 import { VisibilityHelpers } from '@/ui/helpers/visibility/visibility.helpers';
-import { container } from 'tsyringe';
 
 export class ElementClasses<T extends Helpers> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
@@ -18,16 +19,132 @@ export class ElementClasses<T extends Helpers> implements ClassNameFactory<T> {
     const typographyHelpers = container.resolve(TypographyHelpers);
     const othersHelpers = container.resolve(OthersHelpers);
 
-    const { flexbox, spacing, typography, visibility, extra, ...colors } =
-      parameters;
+    const {
+      flexDirection,
+      flexWrap,
+      justifyContent,
+      alignItems,
+      alignContent,
+      alignSelf,
+      grow,
+      shrink,
+      margin,
+      marginTop,
+      marginBottom,
+      marginLeft,
+      marginRight,
+      marginX,
+      marginY,
+      padding,
+      paddingTop,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+      paddingX,
+      paddingY,
+      m,
+      mt,
+      mb,
+      ml,
+      mr,
+      my,
+      mx,
+      p,
+      pt,
+      pb,
+      pl,
+      pr,
+      py,
+      px,
+      fontSize,
+      textAlignment,
+      textTransformation,
+      textWeight,
+      fontFamily,
+      invisible,
+      isHidden,
+      onlyScreenReader,
+      isShow,
+      clearfix,
+      pulledLeft,
+      pulledRight,
+      overlay,
+      clipped,
+      radiusless,
+      shadowless,
+      unselectable,
+      clickable,
+      relative,
+      ...colors
+    } = parameters;
 
     return {
       ...colorHelpers.prepareClasses(colors ?? {}),
-      ...flexboxHelpers.prepareClasses(flexbox ?? {}),
-      ...spacingHelpers.prepareClasses(spacing ?? {}),
-      ...visibilityHelpers.prepareClasses(visibility ?? {}),
-      ...typographyHelpers.prepareClasses(typography ?? {}),
-      ...othersHelpers.prepareClasses(extra ?? {}),
+      ...flexboxHelpers.prepareClasses({
+        alignContent,
+        alignItems,
+        justifyContent,
+        grow,
+        shrink,
+        flexDirection,
+        flexWrap,
+        alignSelf,
+      }),
+      ...spacingHelpers.prepareClasses({
+        m,
+        margin,
+        mt,
+        marginTop,
+        mr,
+        marginRight,
+        mb,
+        marginBottom,
+        ml,
+        marginLeft,
+        mx,
+        marginX,
+        my,
+        marginY,
+        p,
+        padding,
+        pt,
+        paddingTop,
+        pr,
+        paddingRight,
+        pb,
+        paddingBottom,
+        pl,
+        paddingLeft,
+        px,
+        paddingX,
+        py,
+        paddingY,
+      }),
+      ...visibilityHelpers.prepareClasses({
+        isHidden,
+        invisible,
+        onlyScreenReader,
+        isShow,
+      }),
+      ...typographyHelpers.prepareClasses({
+        fontFamily,
+        fontSize,
+        textAlignment,
+        textTransformation,
+        textWeight,
+      }),
+      ...othersHelpers.prepareClasses({
+        clearfix,
+        pulledLeft,
+        pulledRight,
+        overlay,
+        clipped,
+        radiusless,
+        shadowless,
+        unselectable,
+        clickable,
+        relative,
+      }),
     };
   };
 }
