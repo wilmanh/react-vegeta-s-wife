@@ -1,0 +1,1 @@
+const r=["white","black","text","ghost"],o=["primary","link","info","success","warning","danger"],t=[...o,...r],s={color:{control:"select",options:t}},n={textColor:{control:"select",options:o}};export{n as a,s as b};
