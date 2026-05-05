@@ -12,7 +12,7 @@ const config: StorybookConfig = {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       include: ['../src/**/*.{ts,tsx}'],
-      tsconfigPath: '../tsconfig.storybook.json',
+      tsconfigPath: './tsconfig.storybook.json',
       compilerOptions: {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,

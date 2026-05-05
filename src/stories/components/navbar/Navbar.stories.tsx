@@ -1,3 +1,5 @@
+import { ComponentType, useState } from 'react';
+
 import { argColors } from '@/stories/Types/argColors';
 import Navbar from '@/ui/components/navbar/navbar';
 import NavbarBrand from '@/ui/components/navbar/navbarBrand/navbarBrand';
@@ -12,9 +14,8 @@ import NavbarStart from '@/ui/components/navbar/navbarStart/navbarStart';
 import { Button } from '@/ui/elements/button/button';
 import { Buttons } from '@/ui/elements/buttons/buttons';
 import { Image } from '@/ui/elements/image/image';
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ComponentType, useState } from 'react';
 
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Components/Navbar',

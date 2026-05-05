@@ -1,12 +1,14 @@
+import { ComponentType } from 'react';
+
+import { ArrayOfSizes } from '@/logic/types/sizes';
 import { argSizes } from '@/stories/Types/argSizes';
 import PaginationButton from '@/ui/components/pagination/button/paginationButton';
 import PaginationEllipsis from '@/ui/components/pagination/ellipsis/paginationEllipsis';
 import PaginationLink from '@/ui/components/pagination/link/paginationLink';
 import PaginationList from '@/ui/components/pagination/list/paginationList';
 import Pagination from '@/ui/components/pagination/pagination';
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { ComponentType } from 'react';
 
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Components/Pagination',
@@ -22,7 +24,7 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    ...argSizes,
+    scale: { control: 'select', options: ArrayOfSizes },
     position: {
       control: 'select',
       options: ['centered', 'right', 'left'],

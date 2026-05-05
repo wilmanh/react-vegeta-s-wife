@@ -1,13 +1,14 @@
-import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { GenericObject } from '@/logic/interfaces/genericObject';
-import { NavbarProps } from './navbar.props';
-import { Color } from '@/logic/interfaces/props/color';
 import { container } from 'tsyringe';
-import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
 
-export class NavbarClasses<T extends NavbarProps & Color>
-  implements ClassNameFactory<T>
-{
+import { ClassNameFactory } from '@/logic/classes/classNameFactory';
+import { ColorClassNameResolver } from '@/logic/classes/classNameResolver/color/colorClassNameResolver';
+import { GenericObject } from '@/logic/interfaces/genericObject';
+
+import { NavbarProps } from './navbar.props';
+
+export class NavbarClasses<
+  T extends NavbarProps,
+> implements ClassNameFactory<T> {
   prepareClasses: (parameters: T) => GenericObject = (parameters) => {
     const { transparent, fixed, color, dark, light, shadow, spaced } =
       parameters;

@@ -1,11 +1,14 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import { Element as E } from '@/ui/elements/generic/element';
 import classNames from 'classnames';
+import { JSX } from 'react';
+import 'reflect-metadata';
 import { container } from 'tsyringe';
-import { SectionProps } from './section.props';
+
+import { Element as E } from '@/ui/elements/generic/element';
+import { ElementProps } from '@/ui/elements/generic/element.props';
+
 import { SectionClasses } from './section.classes';
+import { SectionProps } from './section.props';
+
 const Section = ({
   size,
   children,

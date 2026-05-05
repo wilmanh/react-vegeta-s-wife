@@ -1,10 +1,12 @@
+import classNames from 'classnames';
 import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { describe, expect, it } from 'vitest';
 
-import { container } from 'tsyringe';
-import classNames from 'classnames';
-import { HeadingClassNameResolver } from './headingClassNameResolver';
 import { HeadingSizes } from '@/logic/types/sizes';
+
+import { HeadingClassNameResolver } from './headingClassNameResolver';
 
 const headingClass = container.resolve(HeadingClassNameResolver);
 describe('Heading', () => {

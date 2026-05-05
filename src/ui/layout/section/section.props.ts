@@ -1,3 +1,3 @@
 export interface SectionProps {
-  size?: "medium" | "large";
+  size?: 'medium' | 'large';
 }

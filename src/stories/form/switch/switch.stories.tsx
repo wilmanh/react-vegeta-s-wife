@@ -1,13 +1,14 @@
-import { argSizes } from '@/stories/Types/argSizes';
-import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType, JSX } from 'react';
+
 import { Color } from '@/logic/interfaces/props/color';
 import { Size } from '@/logic/interfaces/props/size';
-import { ElementProps } from '@/ui/elements/generic/element.props';
-import Switch from '@/ui/form/switch/switch';
 import { argColors } from '@/stories/Types/argColors';
+import { argSizes } from '@/stories/Types/argSizes';
+import { ElementProps } from '@/ui/elements/generic/element.props';
 import Field from '@/ui/form/field/field';
+import Switch from '@/ui/form/switch/switch';
 
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Form/Switch',

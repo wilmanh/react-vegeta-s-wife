@@ -1,3 +1,8 @@
+import { ComponentType } from 'react';
+import { LiaAngleDownSolid } from 'react-icons/lia';
+
+import { fn } from 'storybook/test';
+
 import Card from '@/ui/components/card/card';
 import CardContent from '@/ui/components/card/content/content';
 import CardFooter from '@/ui/components/card/footer/footer';
@@ -6,15 +11,13 @@ import CardImage from '@/ui/components/card/image/image';
 import { Content } from '@/ui/elements/content/content';
 import { Icon } from '@/ui/elements/icon/icon';
 import { Image } from '@/ui/elements/image/image';
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { fn } from 'storybook/test';
-import { ComponentType } from 'react';
-import { LiaAngleDownSolid } from 'react-icons/lia';
 
+import type { Meta, StoryObj } from '@storybook/react-vite';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Bulma/Components/Card',
   component: Card as ComponentType,
+
   decorators: (Story) => (
     <div className='theme-light'>
       <Story />

@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ComponentType, useState } from 'react';
-import Columns from '@/ui/columns/columns/columns';
+
+import { ColumnSize, Gap } from '@/logic/types/column';
 import Column from '@/ui/columns/column/column';
+import Columns from '@/ui/columns/columns/columns';
 import { ColumnsProps } from '@/ui/columns/columns/columns.props';
 import { Box } from '@/ui/elements/box/box';
 import { Title } from '@/ui/elements/headings/title/title';
-import { ColumnSize, Gap } from '@/logic/types/column';
 
 const meta = {
   title: 'Bulma/Frame/Columns',

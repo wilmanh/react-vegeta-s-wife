@@ -1,11 +1,13 @@
-import 'reflect-metadata';
-import { JSX } from 'react';
 import classNames from 'classnames';
+import { JSX } from 'react';
+import 'reflect-metadata';
 import { container } from 'tsyringe';
-import { ColumnProps } from './column.props';
-import { ColumnClasses } from './column.classes';
+
 import { Element as E } from '@/ui/elements/generic/element';
 import { ElementProps } from '@/ui/elements/generic/element.props';
+
+import { ColumnClasses } from './column.classes';
+import { ColumnProps } from './column.props';
 
 const Column = ({
   children,

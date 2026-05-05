@@ -1,8 +1,10 @@
-import { ClassNameFactory } from '@/logic/classes/classNameFactory';
-import { GenericObject } from '@/logic/interfaces/genericObject';
 import { container } from 'tsyringe';
-import { BreadcrumbProps } from './breadcrumb.props';
+
+import { ClassNameFactory } from '@/logic/classes/classNameFactory';
 import { SizeClassNameResolver } from '@/logic/classes/classNameResolver/size/sizeClassNameResolver';
+import { GenericObject } from '@/logic/interfaces/genericObject';
+
+import { BreadcrumbProps } from './breadcrumb.props';
 
 export class BreadcrumbClasses<
   T extends BreadcrumbProps,
