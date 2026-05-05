@@ -1,7 +1,11 @@
+import classNames from 'classnames';
 import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { describe, expect, it } from 'vitest';
 
-import { container } from 'tsyringe';
+import { Display } from '@/logic/types/display';
+
 import { TypographyHelpers } from './typography.helpers';
 import {
   FontFamily,
@@ -10,8 +14,6 @@ import {
   TextWeight,
   TypographySize,
 } from './typography.helpers.props';
-import { Display } from '@/logic/types/display';
-import classNames from 'classnames';
 
 describe('TypographyHelpers', () => {
   it.each([
@@ -29,7 +31,7 @@ describe('TypographyHelpers', () => {
     (size, fontFamily, textWeight, textAlignment, textTransformation) => {
       const typographyHelpers = container.resolve(TypographyHelpers);
       const classes = typographyHelpers.prepareClasses({
-        size: size as TypographySize | Display<TypographySize>,
+        fontSize: size as TypographySize | Display<TypographySize>,
         fontFamily: fontFamily as FontFamily,
         textWeight: textWeight as TextWeight,
         textAlignment: textAlignment as TextAlignment | Display<TextAlignment>,

@@ -1,11 +1,13 @@
+import classNames from 'classnames';
 import 'reflect-metadata';
+import { container } from 'tsyringe';
+
 import { describe, expect, it } from 'vitest';
 
-import { container } from 'tsyringe';
+import { Display } from '@/logic/types/display';
+
 import { VisibilityHelpers } from './visibility.helpers';
 import { VisibiltyShow } from './visibility.helpers.props';
-import { Display } from '@/logic/types/display';
-import classNames from 'classnames';
 
 describe('VisibilityHelpers', () => {
   it.each([
@@ -23,29 +25,29 @@ describe('VisibilityHelpers', () => {
     ],
   ])(
     'has hidden %s, show %s, invisible %s and onlyScreenReader %s',
-    (hidden, show, invisible, onlyScreenReader) => {
+    (isHidden, isShow, invisible, onlyScreenReader) => {
       const visibilityHelpers = container.resolve(VisibilityHelpers);
       const classes = visibilityHelpers.prepareClasses({
-        hidden,
-        show: show as Display<VisibiltyShow> | VisibiltyShow,
+        isHidden,
+        isShow: isShow as Display<VisibiltyShow> | VisibiltyShow,
         invisible,
         onlyScreenReader,
       });
-      let hiddenResult = `${hidden ? 'is-hidden' : ''}`;
+      let hiddenResult = `${isHidden ? 'is-hidden' : ''}`;
       hiddenResult =
-        typeof hidden === 'object'
-          ? Object.entries(hidden)
+        typeof isHidden === 'object'
+          ? Object.entries(isHidden)
               .filter((item) => item[1])
               .map((item) => `is-hidden-${item[0]}`)
               .join(' ')
           : hiddenResult;
       const showResult =
-        typeof show === 'object'
-          ? Object.entries(show)
+        typeof isShow === 'object'
+          ? Object.entries(isShow)
               .filter((item) => item[1])
               .map((item) => `is-${item[1]}-${item[0]}`)
               .join(' ')
-          : `is-${show}`;
+          : `is-${isShow}`;
       expect(classNames(classes)).toEqual(
         `${hiddenResult ? hiddenResult + ' ' : ''}${
           showResult ? showResult + ' ' : ''
